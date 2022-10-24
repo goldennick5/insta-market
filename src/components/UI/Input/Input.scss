@@ -1,5 +1,6 @@
 .input-form {
     position: relative;
+    font-family: 'Inter', sans-serif;
 
     input {
       background: transparent;
@@ -10,7 +11,8 @@
       font-size: 16px;
       padding: 3px;
       color: #000;
-      font-weight: bold;
+      font-weight: 600;
+      line-height: 22px;
       outline: none;
     }
     label {
@@ -18,7 +20,7 @@
       top: 0;
       left: 0;
       color: #9E9EA8;
-      transition: all 0.3s ease;
+      transition: all 0.2s ease;
       pointer-events: none;
     }
     input:valid ~ label,
