@@ -1,6 +1,6 @@
-import './App.css';
+import './App.scss';
+import Input from "./components/UI/Input/Input";
 import { Routes, Route, Navigate } from 'react-router-dom';
-// import { Redirect } from 'react-router-dom';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 
