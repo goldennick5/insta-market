@@ -10,7 +10,7 @@ export default function App() {
         Войти
       </Button>
       <Button name="Enter" color="">
-        Вернуться в витрину
+        Вернуться в ветрину
       </Button>
       <Routes>
         <Route exact path="/" element={<Navigate to="/signin" />} />
