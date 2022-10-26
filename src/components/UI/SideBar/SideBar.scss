@@ -1,0 +1,107 @@
+.sidebar {
+  padding: 24px 16px 16px 16px;
+  width: 336px;
+  height: 610px;
+  background: #ffffff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+}
+.sidebar__profile {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.profile__image {
+  background: #f2f5ff;
+  margin-bottom: 12px;
+}
+.profile__name {
+  margin-bottom: 8px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 140%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.2px;
+  color: #15151a;
+}
+.services-content {
+  display: flex;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 30px;
+}
+.services__icon {
+  margin-right: 12px;
+}
+.questions__content {
+  display: flex;
+}
+.services__text {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.2px;
+  color: #9e9ea8;
+}
+.shop {
+  margin-top: 76px;
+  margin-bottom: 12px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 140%;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.2px;
+  color: #4b4b59;
+  background: #f4f6fc;
+  border-radius: 8px;
+}
+.shop__text {
+  padding: 18px 123px 18px 16px;
+}
+.questions {
+  padding: 12px 16px 12px 16px;
+  border: 1px solid #dbdfeb;
+  border-radius: 8px;
+}
+
+.questions__content {
+  justify-content: center;
+  align-items: center;
+}
+.questions__icon {
+  margin-right: 12px;
+}
+.questions__text {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.2px;
+  color: #15151a;
+}
+.questions__subtext {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.2px;
+  color: #9e9ea8;
+}
