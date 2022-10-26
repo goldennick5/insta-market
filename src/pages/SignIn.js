@@ -1,9 +1,8 @@
 import React from 'react';
-import SideBar from '../components/UI/SideBar/SideBar';
-// import ButtonsWrapper from '../components/UI/ButtonsWrapper';
+import ButtonsWrapper from '../components/UI/ButtonsWrapper';
 
 function SignIn() {
-  return <SideBar />;
+  return <ButtonsWrapper />;
 }
 
 export default SignIn;

@@ -7,9 +7,13 @@ import Orders from '../../../assets/images/orders.svg';
 import FAQ from '../../../assets/images/faq.svg';
 import image from '../../../assets/images/ellipse.svg';
 import shopBg from '../../../assets/images/shop-bg.svg';
+import edit from '../../../assets/images/edit.svg'
 function SideBar() {
   return (
     <div className="sidebar">
+      <button className="edit">
+        <img src={edit} alt="edit"/>
+      </button>
       <div className="sidebar__profile">
         <div
           className="profile__image"
@@ -19,41 +23,37 @@ function SideBar() {
         </div>
         <div className="profile__name">Jane Doe</div>
       </div>
-      <div>
-        <div className="services">
-          <div className="services-content">
-            <div className="services__icon">
-              <img src={Orders} alt="icon" />
-            </div>
-            <div className="services__text">Мои заказы</div>
+      <div className="services">
+        <div className="services-content">
+          <div className="services__icon">
+            <img src={Orders} alt="icon" />
           </div>
-          <div className="services-content">
-            <div className="services__icon">
-              <img src={Cards} alt="" />
-            </div>
-            <div className="services__text">Мои карты</div>
-          </div>
-          <div className="services-content">
-            <div className="services__icon">
-              <img src={Address} alt="addresss" />
-            </div>
-            <div className="services__text">Адреса доставки</div>
-          </div>
+          <div className="services__text">Мои заказы</div>
         </div>
-        <div className="shop" style={{ backgroundImage: `url(${shopBg})` }}>
-          <div className="shop__text">Хотите открыть свой магазин у нас?</div>
+        <div className="services-content">
+          <div className="services__icon">
+            <img src={Cards} alt="" />
+          </div>
+          <div className="services__text">Мои карты</div>
         </div>
-        <div className="questions">
-          <div className="questions__content">
-            <div className="questions__icon">
-              <img src={FAQ} alt="faq"></img>
-            </div>
-            <div className="questions__description">
-              <div className="questions__text">У Вас есть вопросы?</div>
-              <div className="questions__subtext">
-                Мы с радостью поможем Вам!
-              </div>
-            </div>
+        <div className="services-content">
+          <div className="services__icon">
+            <img src={Address} alt="addresss" />
+          </div>
+          <div className="services__text">Адреса доставки</div>
+        </div>
+      </div>
+      <div className="shop" style={{ backgroundImage: `url(${shopBg})` }}>
+        <div className="shop__text">Хотите открыть свой магазин у нас?</div>
+      </div>
+      <div className="questions">
+        <div className="questions__content">
+          <div className="questions__icon">
+            <img src={FAQ} alt="faq"></img>
+          </div>
+          <div className="questions__description">
+            <div className="questions__text">У Вас есть вопросы?</div>
+            <div className="questions__subtext">Мы с радостью поможем Вам!</div>
           </div>
         </div>
       </div>
