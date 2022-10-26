@@ -1,13 +1,12 @@
 import React from 'react';
 import Button from './button/Button';
-import s from './button/Button';
+
 function ButtonsWrapper() {
   return (
-    <Button name="Enter" className={`${s.btn} ${s.blue}`}>
-      Войти
-    </Button>
-
-    //   <Button name="Enter">Вернуться в витрину</Button>
+    <div>
+      <Button name="Войти" color="btnBlue"></Button>
+      <Button name="Вернуться в витрину" color="btnNoColor"></Button>
+    </div>
   );
 }
 

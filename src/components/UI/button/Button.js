@@ -1,15 +1,8 @@
 import React from 'react';
-import classes from './Button.module.scss';
-function Button({ color, children }) {
-  const style =
-    classes.btn +
-    (color === 'blue'
-      ? ' ' + classes.blue
-      : color === 'grey'
-      ? ' ' + classes.grey
-      : ' ');
+import s from './Button.module.scss';
 
-  return <button className={style}>{children}</button>;
+function Button(props) {
+  return <button className={s[props.color]}>{props.name}</button>;
 }
 
 export default Button;

@@ -1,15 +1,27 @@
-.btn {
+.btnBlue {
   width: 410px;
   height: 40px;
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 4px;
   padding: 8px 10px;
-  &.blue {
-    background-color: blue;
-    color: red;
-  }
-  &.grey {
-    background-color: grey;
-    color: white;
-  }
+  background-color: #458bf5;
+  color: #ffffff;
+}
+.btnGrey {
+  width: 410px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  padding: 8px 10px;
+  background-color: grey;
+  color: #9b9b9b;
+}
+.btnNoColor {
+  width: 410px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  padding: 8px 10px;
+  background-color: none;
+  color: #9b9b9b;
 }
