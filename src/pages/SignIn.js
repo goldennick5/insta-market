@@ -1,9 +1,8 @@
-import React from 'react'
+import React from 'react';
+import ButtonsWrapper from '../components/UI/ButtonsWrapper';
 
 function SignIn() {
-  return (
-    <div>Вход</div>
-  )
+  return <ButtonsWrapper/>;
 }
 
-export default SignIn
+export default SignIn;
