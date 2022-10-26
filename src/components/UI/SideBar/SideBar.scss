@@ -8,13 +8,14 @@
 }
 .sidebar__profile {
   margin: auto;
-  display: flex;
-  justify-content: center;
-  align-content: center;
+  position: relative;
+  text-align: center;
 }
 .profile__image {
-  background: #f2f5ff;
   margin-bottom: 12px;
+  padding: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .profile__name {
   margin-bottom: 8px;
@@ -23,9 +24,6 @@
   font-weight: 700;
   font-size: 24px;
   line-height: 140%;
-  display: flex;
-  align-items: center;
-  text-align: center;
   letter-spacing: -0.2px;
   color: #15151a;
 }
@@ -66,6 +64,8 @@
   color: #4b4b59;
   background: #f4f6fc;
   border-radius: 8px;
+  background-position: right top;
+  background-repeat: no-repeat;
 }
 .shop__text {
   padding: 18px 123px 18px 16px;

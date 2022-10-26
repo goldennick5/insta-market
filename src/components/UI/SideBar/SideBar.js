@@ -1,15 +1,20 @@
 import React from 'react';
 import './SideBar.scss';
-import Address from '../../../assets/images/Address.svg';
-import Cards from '../../../assets/images/Cards.svg';
-import Frame from '../../../assets/images/Frame.svg';
-import Orders from '../../../assets/images/Orders.svg';
-import FAQ from '../../../assets/images/FAQ.svg';
+import Address from '../../../assets/images/address.svg';
+import Cards from '../../../assets/images/cards.svg';
+import Frame from '../../../assets/images/frame.svg';
+import Orders from '../../../assets/images/orders.svg';
+import FAQ from '../../../assets/images/faq.svg';
+import image from '../../../assets/images/ellipse.svg';
+import shopBg from '../../../assets/images/shop-bg.svg';
 function SideBar() {
   return (
     <div className="sidebar">
       <div className="sidebar__profile">
-        <div className="profile__image">
+        <div
+          className="profile__image"
+          style={{ backgroundImage: `url(${image})` }}
+        >
           <img src={Frame} alt="" />
         </div>
         <div className="profile__name">Jane Doe</div>
@@ -35,7 +40,7 @@ function SideBar() {
             <div className="services__text">Адреса доставки</div>
           </div>
         </div>
-        <div className="shop">
+        <div className="shop" style={{ backgroundImage: `url(${shopBg})` }}>
           <div className="shop__text">Хотите открыть свой магазин у нас?</div>
         </div>
         <div className="questions">
