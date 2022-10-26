@@ -1,9 +1,15 @@
-import React from 'react'
+import React from 'react';
+import Wrapper from "../components/UI/Wrapper/Wrapper";
 
 function SignIn() {
-  return (
-    <div>Вход</div>
-  )
+    return (
+        <div>
+            Вход
+          <Wrapper>
+
+          </Wrapper>
+        </div>
+    )
 }
 
 export default SignIn
