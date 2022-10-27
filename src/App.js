@@ -2,6 +2,7 @@ import './App.scss';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
+import Shop from './pages/Shop';
 
 export default function App() {
   return (
