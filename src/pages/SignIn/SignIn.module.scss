@@ -1,7 +1,8 @@
 .form {
   display: flex;
   justify-content: center;
-  margin-top: 68px;
+  margin: 0 auto;
+  flex-direction: column;
 
   .title {
     font-family: 'Inter', sans-serif;
@@ -24,5 +25,3 @@
     position: relative;
   }
 }
-
-

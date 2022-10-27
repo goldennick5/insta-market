@@ -15,10 +15,12 @@ function Header() {
       {location.pathname === '/signin' || location.pathname === '/signup' ? (
         ''
       ) : (
-        <button className={s.header__exit}>
-          <img src={exit} alt="" className={s.exit__img} />
-          <div className={s.exit__text}>Выйти</div>
-        </button>
+        <div className={s.header__exit}>
+          <button className={s.exit__btn}>
+            <img src={exit} alt="" className={s.exit__img} />
+            <div className={s.exit__text}>Выйти</div>
+          </button>
+        </div>
       )}
     </div>
   );
