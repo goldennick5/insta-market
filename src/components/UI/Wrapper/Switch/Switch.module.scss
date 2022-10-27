@@ -1,0 +1,39 @@
+.switch {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 256px;
+  height: 32px;
+  padding: 4px 0px;
+  border: none;
+  background: #F4F6FC;
+  border-radius: 25px;
+  margin-top: 48px;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+
+  .switch__signin {
+    width: 128px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    cursor: pointer;
+    .paragraph {
+      font-size: 12px;
+    }
+  }
+
+  .switch__signup {
+    width: 128px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    cursor: pointer;
+    .paragraph {
+      font-size: 12px;
+    }
+  }
+}
