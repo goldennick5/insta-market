@@ -1,7 +1,7 @@
 import React from 'react';
-import Wrapper from "../components/UI/Wrapper/Wrapper";
-import s from "./SignIn.module.scss";
-import Input from "../components/UI/Input/Input";
+import Wrapper from "../../components/UI/Wrapper/Wrapper";
+import s from "../SignIn/SignIn.module.scss";
+import Input from "../../components/UI/Input/Input";
 
 function SignUp() {
     return (

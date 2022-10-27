@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import Wrapper from "../components/UI/Wrapper/Wrapper";
-import Input from '../components/UI/Input/Input';
+import Wrapper from "../../components/UI/Wrapper/Wrapper";
+import Input from '../../components/UI/Input/Input';
 import s from './SignIn.module.scss';
-import showeye from './icons/showeye.svg';
-import unshoweye from './icons/unshoweye.svg';
+import showeye from '../icons/showeye.svg';
+import unshoweye from '../icons/unshoweye.svg';
 
 function SignIn() {
     const [shown, setShown] = useState(false);
@@ -13,7 +13,7 @@ function SignIn() {
         setShown(!shown);
     }
 
-    function handleTexttChange(text) {
+    const handleTexttChange = (text) => {
         if (text !== '') {
             setShowEyeInput(true);
         } else {
