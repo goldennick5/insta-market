@@ -1,7 +1,6 @@
+import o from './OrdersPage.module.scss';
 const OrdersPage = () => {
-  return (
-    <p>ORDERS PAGE</p>
-  )
-}
+  return <div className={o.order}></div>;
+};
 
 export default OrdersPage;
