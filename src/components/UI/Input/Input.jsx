@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import './Input.scss';
-// import input from "./Input";
 
 const Input = (props) => {
     const [isLabel, setIsLabel] = useState(false);
