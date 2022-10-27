@@ -1,0 +1,13 @@
+.form {
+  display: flex;
+  justify-content: center;
+  margin-top: 68px;
+
+  .title {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 35px;
+    line-height: 24px;
+  }
+}

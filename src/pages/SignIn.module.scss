@@ -1,0 +1,28 @@
+.form {
+  display: flex;
+  justify-content: center;
+  margin-top: 68px;
+
+  .title {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 35px;
+  }
+
+  .btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 7px;
+    background: transparent;
+    border: none;
+  }
+
+  .password__container {
+    display: flex;
+    position: relative;
+  }
+}
+
+
