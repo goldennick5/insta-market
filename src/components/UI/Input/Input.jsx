@@ -13,6 +13,7 @@ const Input = (props) => {
         } else {
             setIsLabel(false);
         }
+        props.handleTexttChange(text);
     }
 
     return (
