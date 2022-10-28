@@ -65,7 +65,11 @@
 }
 
 //order__item
-
+.item__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .item__description {
   display: flex;
 }
@@ -101,7 +105,6 @@
   font-size: 14px;
   line-height: 140%;
   letter-spacing: -0.2px;
-  font-feature-settings: 'tnum' on, 'lnum' on;
   color: #7b7b84;
   margin-right: 10px;
 }
