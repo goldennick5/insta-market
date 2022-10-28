@@ -6,10 +6,16 @@
   background: #ffffff;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
   border-radius: 4px;
+  margin-bottom: 32px;
+}
+.order__item {
+  display: flex;
+  justify-content: space-between;
 }
 .order__header {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 32px;
 }
 .order__btn {
   display: flex;
@@ -56,4 +62,59 @@
   border-radius: 8px;
   padding: 3px 5px;
   color: #415273;
+}
+
+//order__item
+
+.item__description {
+  display: flex;
+}
+.item__name {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 140%;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.2px;
+  color: #15151a;
+}
+.item_details {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 140%;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.2px;
+  color: #9e9ea8;
+}
+.item__img {
+  margin-right: 10px;
+}
+.item__delivery {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: -0.2px;
+  font-feature-settings: 'tnum' on, 'lnum' on;
+  color: #7b7b84;
+  margin-right: 10px;
+}
+.item__deliveryIcon {
+  margin-right: 16px;
+}
+.item__price {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: -0.2px;
+  color: #15151a;
+  margin-right: 16px;
 }
