@@ -7,52 +7,52 @@ import React, {useState} from "react";
 const Step4 = () => {
     const [firstShown, setFirstShown] = useState(false);
     const [secondShown, setSecondShown] = useState(false);
-    const [showFirstEyeInput, setFirstShowEyeInput] = useState(false);
-    const [showSecondEyeInput, setSecondShowEyeInput] = useState(false);
+    const [showFirstEyeInput, setShowFirstEyeInput] = useState(false);
+    const [showSecondEyeInput, setShowSecondEyeInput] = useState(false);
 
-    const toggleFirstPassword = () => {
+    function toggleFirstPassword() {
         setFirstShown(!firstShown);
     }
 
-    const toggleSecondPassword = () =>  {
+    function toggleSecondPassword() {
         setSecondShown(!secondShown);
     }
 
-    const handleFirstPasswordChange = (text) => {
-        if (text !== '') {
-            setFirstShowEyeInput(true);
+    const handleFirstChange = (first_text) => {
+        if (first_text !== '') {
+            setShowFirstEyeInput(true);
         } else {
-            setFirstShowEyeInput(false);
+            setShowFirstEyeInput(false);
         }
     }
 
-    const handleSecondPasswordChange = (text) => {
-        if (text !== '') {
-            setSecondShowEyeInput(true);
+    const handleSecondChange = (second_text) => {
+        if (second_text !== '') {
+            setShowSecondEyeInput(true);
         } else {
-            setSecondShowEyeInput(false);
+            setShowSecondEyeInput(false);
         }
     }
 
     return (
-        <div className={s.step4_container}>
+        <div>
             <div>
-                <h2 className={s.title_step4}>Придумайте пароль</h2>
+                <h2 className={s.title_step4}>Расскажите<br/>немного о себе</h2>
             </div>
             <div className={s.password__container}>
                 <Input type={firstShown ? 'text' : 'password'}
                        label__focus="Пароль"
                        label="Введите пароль"
-                       handleFirstPasswordChange={handleFirstPasswordChange.bind(this)}/>
-                {showFirstEyeInput ? <button className={s.btn} onClick={toggleFirstPassword}>
+                       handleTexttChange={handleFirstChange}/>
+                {showFirstEyeInput ? <button className={s.btn__first} onClick={toggleFirstPassword}>
                     {firstShown ? <img src={showeye}/> : <img src={unshoweye}/>}
                 </button> : ''}
 
                 <Input type={secondShown ? 'text' : 'password'}
-                       label__focus="Пароль"
-                       label="Введите пароль"
-                       handleSecondPasswordChange={handleSecondPasswordChange}/>
-                {showSecondEyeInput ? <button className={s.btn} onClick={toggleSecondPassword}>
+                       label__focus="Повторитель п  ароль"
+                       label="Повторитель пароль"
+                       handleTexttChange={handleSecondChange}/>
+                {showSecondEyeInput ? <button className={s.btn__second} onClick={toggleSecondPassword}>
                     {secondShown ? <img src={showeye}/> : <img src={unshoweye}/>}
                 </button> : ''}
             </div>

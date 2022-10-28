@@ -55,7 +55,7 @@ function SignIn(props) {
 }
 
 const mapStateToProps = (state) => ({
-    signInData: state.auth
+    signInData: state.login
 })
 
 const mapDispatchToProps = (dispatch) => ({

@@ -3,18 +3,16 @@ import './Input.scss';
 
 const Input = (props) => {
     const [isLabel, setIsLabel] = useState(false);
-    const [value, setValue] = useState('');
+    const [value, setValue] = useState( '');
 
     const handleTextChange = (text) => {
         setValue(text);
+        props.handleTexttChange(text);
         if(text !== ''){
             setIsLabel(true);
         } else {
             setIsLabel(false);
         }
-        props.handleTexttChange(text);
-        props.handleFirstPasswordChange(text);
-        props.handleSecondPasswordChange(text);
     }
 
     return (

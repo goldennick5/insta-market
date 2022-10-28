@@ -6,22 +6,28 @@ import Step2 from "./steps/Step2";
 import Step3 from "./steps/Step3";
 import Step4 from "./steps/Step4";
 import Button from "../../components/UI/button/Button";
+import {connect, useDispatch, useSelector} from "react-redux";
+import {changeMsg, showInfo} from "../../store/reducers/loginReducer";
+import {goStep} from "../../store/reducers/signUpReducer";
 
-function SignUp() {
-    const [step, setStep] = useState(1)
+function SignUp(props) {
+    const [stepp, setStep] = useState(1)
+    const dispatch = useDispatch();
+    const step = useSelector(state => state.step);
+    console.log(step)
 
     function handleStepsUp(){
-        setStep(step + 1);
+        props.goStep()
     }
 
     return (
         <div className={s.form}>
             <Wrapper>
                 <div className={s.subform}>
-                    {step === 1 && <Step1 />}
-                    {step === 2 && <Step2 />}
-                    {step === 3 && <Step3 />}
-                    {step === 4 && <Step4 /> }
+                    {props.signUpData === 1 && <Step1 />}
+                    {props.signUpData === 2 && <Step2 />}
+                    {props.signUpData === 3 && <Step3 />}
+                    {props.signUpData === 4 && <Step4 /> }
                 </div>
             </Wrapper>
             <div className={s.btn__container}>
@@ -37,4 +43,14 @@ function SignUp() {
     );
 }
 
-export default SignUp;
+const mapStateToProps = (state) => ({
+    signUpData: state.signup.step
+})
+
+const mapDispatchToProps = (dispatch) => ({
+    goStep: () => {
+        dispatch(goStep())
+    }
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp)
