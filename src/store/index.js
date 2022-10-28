@@ -1,13 +1,13 @@
 import { combineReducers, createStore } from "redux";
-import authReducer from "./reducers/authReducer";
+import loginReducer from "./reducers/loginReducer";
 
-let reducers = combineReducers({
-    auth: authReducer,
+let rootReducers = combineReducers({
+    login: loginReducer,
     orders: {},
     cards: {},
     addresses: {}
 })
 
-let store = createStore(reducers)
+const store = createStore(rootReducers)
 
 export default store;

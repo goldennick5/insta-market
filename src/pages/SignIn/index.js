@@ -5,7 +5,8 @@ import s from './SignIn.module.scss';
 import showeye from '../icons/showeye.svg';
 import unshoweye from '../icons/unshoweye.svg';
 import {connect} from "react-redux";
-import {changeMsg, showInfo} from "../../store/reducers/authReducer";
+import {changeMsg, showInfo} from "../../store/reducers/loginReducer";
+import Button from "../../components/UI/button/Button";
 
 function SignIn(props) {
     const [shown, setShown] = useState(false);
@@ -23,20 +24,16 @@ function SignIn(props) {
         }
     }
 
-    const changeText = () => {
-        props.changeMsg('HELLO!')
-    }
-
     return (
         <div className={s.form}>
             <Wrapper>
-                <div style={{marginTop: '18px'}}>
+                <div className={s.subform}>
                     <div>
                         <h2 className={s.title}>Привет!</h2>
                     </div>
-                    <Input value={props.signInData.phoneNumber} label__focus="Номер телефона" label="Введите номер телефона"/>
+                    <Input label__focus="Номер телефона" label="Введите номер телефона"/>
                     <div className={s.password__container}>
-                        <Input value={props.signInData.password} type={shown ? 'text' : 'password'}
+                        <Input type={shown ? 'text' : 'password'}
                                label__focus="Пароль"
                                label="Введите пароль"
                                handleTexttChange={handleTexttChange}/>
@@ -45,12 +42,14 @@ function SignIn(props) {
                         </button> : ''}
                     </div>
                 </div>
-                {
-                    props.signInData.showInfo && <p>{props.signInData.msg}</p>
-                }
             </Wrapper>
-            <button onClick={props.showInfo}>click me</button>
-            <button onClick={changeText}>change msg</button>
+            <div className={s.btn__container}>
+                <Button color={'btnBlue'}
+                        name='Войти'/>
+                <Button color={'btnNoColor'}
+                        name='Вернуться в витрину'
+                        class={'btn'}/>
+            </div>
         </div>
     )
 }
@@ -59,17 +58,17 @@ const mapStateToProps = (state) => ({
     signInData: state.auth
 })
 
-// const mapDispatchToProps = (dispatch) => ({
-//     showInfo: () => {
-//         dispatch(showInfo())
-//     },
-//     changeMsg: (msg) => {
-//         dispatch(changeMsg(msg))
-//     }
-// })
+const mapDispatchToProps = (dispatch) => ({
+     showInfo: () => {
+         dispatch(showInfo())
+     },
+     changeMsg: (msg) => {
+         dispatch(changeMsg(msg))
+     }
+ })
 
 
-export default connect(mapStateToProps, {showInfo, changeMsg})(SignIn)
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn)
 
 // function connect(mapStateToProps, mapDispatchToProps) {
 //     state

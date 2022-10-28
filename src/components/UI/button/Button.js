@@ -4,7 +4,7 @@ import s from './Button.module.scss';
 function Button(props) {
 
   return (
-    <button className={s[props.color]}  onClick={() => console.log('Click')} >
+    <button className={`${s[props.color]} ${s[props.class]}`} onClick={props.handleStepsUp}>
       {props.name}
     </button>
   );

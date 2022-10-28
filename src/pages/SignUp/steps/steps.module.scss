@@ -1,0 +1,61 @@
+.title_step1 {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 45px;
+  line-height: 24px;
+}
+
+.title_step2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 45px;
+  line-height: 24px;
+}
+
+.title_step3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.paragraph_step3 {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 140%;
+  letter-spacing: -0.2px;
+  color: #7E7E7E;
+  margin: 30px 0px;
+}
+
+.step4_container{
+  display: flex;
+  flex-direction: column;
+}
+
+.title_step4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  margin-bottom: 40px;
+}
+
+.btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: 7px;
+  background: transparent;
+  border: none;
+}
+
+.password__container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}

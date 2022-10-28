@@ -1,13 +1,16 @@
 .form {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  margin-top: 68px;
 
-  .title {
-    font-family: 'Inter', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 35px;
-    line-height: 24px;
+  .subform {
+    margin-top: 45px;
+  }
+
+  .btn__container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
   }
 }

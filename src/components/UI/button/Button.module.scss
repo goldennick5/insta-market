@@ -4,6 +4,12 @@
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 4px;
   padding: 8px 10px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.1px;
   background-color: #458bf5;
   color: #ffffff;
 }
@@ -22,6 +28,15 @@
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 4px;
   padding: 8px 10px;
-  background-color: none;
-  color: #9b9b9b;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.1px;
+  color: #9B9B9B;
+  background-color: transparent;
+}
+.btn {
+  margin-top: 8px;
 }

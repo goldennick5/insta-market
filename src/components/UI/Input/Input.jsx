@@ -5,7 +5,7 @@ const Input = (props) => {
     const [isLabel, setIsLabel] = useState(false);
     const [value, setValue] = useState('');
 
-    function handleTextChange(text) {
+    const handleTextChange = (text) => {
         setValue(text);
         if(text !== ''){
             setIsLabel(true);
@@ -13,6 +13,8 @@ const Input = (props) => {
             setIsLabel(false);
         }
         props.handleTexttChange(text);
+        props.handleFirstPasswordChange(text);
+        props.handleSecondPasswordChange(text);
     }
 
     return (
