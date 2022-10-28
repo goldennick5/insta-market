@@ -7,17 +7,14 @@ import Step3 from "./steps/Step3";
 import Step4 from "./steps/Step4";
 import Button from "../../components/UI/button/Button";
 import {connect, useDispatch, useSelector} from "react-redux";
-import {changeMsg, showInfo} from "../../store/reducers/loginReducer";
-import {goStep} from "../../store/reducers/signUpReducer";
+import {goStep, incrementStep} from "../../store/reducers/signUpReducer";
 
 function SignUp(props) {
-    const [stepp, setStep] = useState(1)
-    const dispatch = useDispatch();
     const step = useSelector(state => state.step);
     console.log(step)
 
     function handleStepsUp(){
-        props.goStep()
+        props.incrementStep()
     }
 
     return (
@@ -34,8 +31,7 @@ function SignUp(props) {
                 <Button handleStepsUp={handleStepsUp}
                         color={'btnBlue'}
                         name='Продолжить'/>
-                <Button onClick={() => setStep(step + 1)}
-                        color={'btnNoColor'}
+                <Button color={'btnNoColor'}
                         name='Вернуться в витрину'
                         class={'btn'}/>
             </div>
@@ -48,8 +44,8 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-    goStep: () => {
-        dispatch(goStep())
+    incrementStep: () => {
+        dispatch(incrementStep())
     }
 })
 

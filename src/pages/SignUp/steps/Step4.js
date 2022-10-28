@@ -37,7 +37,7 @@ const Step4 = () => {
     return (
         <div>
             <div>
-                <h2 className={s.title_step4}>Расскажите<br/>немного о себе</h2>
+                <h2 className={s.title_step4}>Придумайте пароль</h2>
             </div>
             <div className={s.password__container}>
                 <Input type={firstShown ? 'text' : 'password'}

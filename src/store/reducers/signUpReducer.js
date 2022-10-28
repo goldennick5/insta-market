@@ -1,4 +1,4 @@
-const STEPS = "STEPS";
+const INCREMENT__STEPS = "INCREMENT__STEPS";
 
 const initState = {
     step: 1
@@ -6,16 +6,16 @@ const initState = {
 
 const signUpReducer = (state = initState, action) => {
     switch (action.type) {
-        case "STEPS":
+        case INCREMENT__STEPS:
             return {...state, step: state.step + 1}
         default:
             return state
     }
 }
 
-export const goStep = () => (
+export const incrementStep = () => (
     {
-        type: STEPS
+        type: INCREMENT__STEPS
     }
 )
 
