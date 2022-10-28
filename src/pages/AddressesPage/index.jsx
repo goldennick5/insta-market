@@ -1,6 +1,6 @@
 import a from './Addresses.module.scss';
 const AddressesPage = () => {
-  return <div className={a.address}></div>;
+  return <div className={a.address}>csdcsc</div>;
 };
 
 export default AddressesPage;
