@@ -1,18 +1,18 @@
 import React from 'react';
 import './SideBar.scss';
-import Address from '../../../assets/images/Address.svg';
-import Cards from '../../../assets/images/Cards.svg';
-import Frame from '../../../assets/images/Frame.svg';
-import Orders from '../../../assets/images/Orders.svg';
-import FAQ from '../../../assets/images/FAQ.svg';
+import Address from '../../../assets/images/address.svg';
+import Cards from '../../../assets/images/cards.svg';
+import Frame from '../../../assets/images/frame.svg';
+import Orders from '../../../assets/images/orders.svg';
+import FAQ from '../../../assets/images/faq.svg';
 import image from '../../../assets/images/ellipse.svg';
 import shopBg from '../../../assets/images/shop-bg.svg';
-import edit from '../../../assets/images/edit.svg'
+import edit from '../../../assets/images/edit.svg';
 function SideBar() {
   return (
     <div className="sidebar">
       <button className="edit">
-        <img src={edit} alt="edit"/>
+        <img src={edit} alt="edit" />
       </button>
       <div className="sidebar__profile">
         <div

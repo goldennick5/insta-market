@@ -41,7 +41,7 @@ function SignIn(props) {
                                label="Введите пароль"
                                handleTexttChange={handleTexttChange}/>
                         {showEyeInput ? <button className={s.btn} onClick={togglePassword}>
-                            {shown ? <img src={showeye}/> : <img src={unshoweye}/>}
+                            {shown ? <img alt=""src={showeye}/> : <img alt=""src={unshoweye}/>}
                         </button> : ''}
                     </div>
                 </div>
