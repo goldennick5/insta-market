@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Wrapper from "../../components/UI/Wrapper/Wrapper";
 import s from "./SignUp.module.scss";
 import Step1 from "./steps/Step1";
@@ -6,31 +6,79 @@ import Step2 from "./steps/Step2";
 import Step3 from "./steps/Step3";
 import Step4 from "./steps/Step4";
 import Button from "../../components/UI/button/Button";
-import {connect, useDispatch, useSelector} from "react-redux";
-import {goStep, incrementStep} from "../../store/reducers/signUpReducer";
+import {connect} from "react-redux";
+import {enterPhoneNum,enterEmail, enterName, enterPassword, incrementStep} from "../../store/reducers/signUpReducer";
 
 function SignUp(props) {
-    const step = useSelector(state => state.step);
-    console.log(step)
+    const [disable, setDisable] = useState(true);
 
-    function handleStepsUp(){
+    const handleStepsUp = () => {
         props.incrementStep()
     }
+
+    const disableBtn = () => {
+        setDisable(!disable)
+    }
+
+    const sumStepUpAndDisableBtn = () => {
+        handleStepsUp();
+        disableBtn();
+    }
+
+    console.log(props.signUpPhoneNum);
+
+    const enterPhoneNum = (value) => {
+        props.enterPhoneNum(value);
+        if(props.signUpPhoneNum !== ''){
+            setDisable(false);
+        } else{
+            setDisable(true);
+        }
+    }
+
+    const enterName = (value) => {
+        props.enterName(value);
+        if(props.signUpName !== ''){
+            setDisable(false);
+        } else {
+            setDisable(true);
+        }
+    }
+
+    const enterEmail = (value) => {
+        props.enterEmail(value);
+        if(props.signUpEmail !== ''){
+            setDisable(false);
+        } else {
+            setDisable(true);
+        }
+    }
+
+    const enterPassword = (value) => {
+        props.enterPassword(value);
+        if(props.signUpPassword !== ''){
+            setDisable(false);
+        } else {
+            setDisable(true);
+        }
+    }
+
 
     return (
         <div className={s.form}>
             <Wrapper>
                 <div className={s.subform}>
-                    {props.signUpData === 1 && <Step1 />}
-                    {props.signUpData === 2 && <Step2 />}
-                    {props.signUpData === 3 && <Step3 />}
-                    {props.signUpData === 4 && <Step4 /> }
+                    {props.signUpData === 1 && <Step1 handleTexttChange={enterPhoneNum}/>}
+                    {props.signUpData === 2 && <Step2 handleTexttChange={enterName}/>}
+                    {props.signUpData === 3 && <Step3 handleTexttChange={enterEmail}/>}
+                    {props.signUpData === 4 && <Step4 handleTexttChange={enterPassword}/>}
                 </div>
             </Wrapper>
             <div className={s.btn__container}>
-                <Button handleStepsUp={handleStepsUp}
-                        color={'btnBlue'}
-                        name='Продолжить'/>
+                <Button color={'btnBlue'}
+                        name='Продолжить'
+                        disable={disable}
+                        sumStepUpAndDisableBtn={sumStepUpAndDisableBtn}/>
                 <Button color={'btnNoColor'}
                         name='Вернуться в витрину'
                         class={'btn'}/>
@@ -40,12 +88,28 @@ function SignUp(props) {
 }
 
 const mapStateToProps = (state) => ({
-    signUpData: state.signup.step
+    signUpData: state.signup.step,
+    signUpPhoneNum: state.signup.values.phoneNum,
+    signUpName: state.signup.values.name,
+    signUpEmail: state.signup.values.email,
+    signUpPassword: state.signup.values.password
 })
 
 const mapDispatchToProps = (dispatch) => ({
     incrementStep: () => {
         dispatch(incrementStep())
+    },
+    enterPhoneNum: (value) => {
+        dispatch(enterPhoneNum(value))
+    },
+    enterName: (value) => {
+        dispatch(enterName(value))
+    },
+    enterEmail: (value) => {
+        dispatch(enterEmail(value))
+    },
+    enterPassword: (value) => {
+        dispatch(enterPassword(value))
     }
 })
 

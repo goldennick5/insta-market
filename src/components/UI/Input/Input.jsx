@@ -7,12 +7,12 @@ const Input = (props) => {
 
     const handleTextChange = (text) => {
         setValue(text);
-        props.handleTexttChange(text);
         if(text !== ''){
             setIsLabel(true);
         } else {
             setIsLabel(false);
         }
+        props.handleTexttChange(text);
     }
 
     return (

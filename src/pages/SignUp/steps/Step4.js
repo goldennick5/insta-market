@@ -49,8 +49,8 @@ const Step4 = () => {
                 </button> : ''}
 
                 <Input type={secondShown ? 'text' : 'password'}
-                       label__focus="Повторитель п  ароль"
-                       label="Повторитель пароль"
+                       label__focus="Повторите пароль"
+                       label="Повторите пароль"
                        handleTexttChange={handleSecondChange}/>
                 {showSecondEyeInput ? <button className={s.btn__second} onClick={toggleSecondPassword}>
                     {secondShown ? <img src={showeye}/> : <img src={unshoweye}/>}
