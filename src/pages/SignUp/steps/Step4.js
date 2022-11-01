@@ -4,7 +4,7 @@ import showeye from "../../icons/showeye.svg";
 import unshoweye from "../../icons/unshoweye.svg";
 import React, {useState} from "react";
 
-const Step4 = () => {
+const Step4 = (props) => {
     const [firstShown, setFirstShown] = useState(false);
     const [secondShown, setSecondShown] = useState(false);
     const [showFirstEyeInput, setShowFirstEyeInput] = useState(false);
@@ -32,6 +32,7 @@ const Step4 = () => {
         } else {
             setShowSecondEyeInput(false);
         }
+        props.handleTexttChange(second_text);
     }
 
     return (

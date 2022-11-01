@@ -13,23 +13,13 @@ function SignUp(props) {
     const [disable, setDisable] = useState(true);
 
     const handleStepsUp = () => {
-        props.incrementStep()
+        props.incrementStep();
+        setDisable(!disable);
     }
-
-    const disableBtn = () => {
-        setDisable(!disable)
-    }
-
-    const sumStepUpAndDisableBtn = () => {
-        handleStepsUp();
-        disableBtn();
-    }
-
-    console.log(props.signUpPhoneNum);
 
     const enterPhoneNum = (value) => {
         props.enterPhoneNum(value);
-        if(props.signUpPhoneNum !== ''){
+        if(value !== ''){
             setDisable(false);
         } else{
             setDisable(true);
@@ -38,7 +28,7 @@ function SignUp(props) {
 
     const enterName = (value) => {
         props.enterName(value);
-        if(props.signUpName !== ''){
+        if(value !== ''){
             setDisable(false);
         } else {
             setDisable(true);
@@ -47,7 +37,7 @@ function SignUp(props) {
 
     const enterEmail = (value) => {
         props.enterEmail(value);
-        if(props.signUpEmail !== ''){
+        if(value !== ''){
             setDisable(false);
         } else {
             setDisable(true);
@@ -56,7 +46,7 @@ function SignUp(props) {
 
     const enterPassword = (value) => {
         props.enterPassword(value);
-        if(props.signUpPassword !== ''){
+        if(value !== ''){
             setDisable(false);
         } else {
             setDisable(true);
@@ -78,7 +68,7 @@ function SignUp(props) {
                 <Button color={'btnBlue'}
                         name='Продолжить'
                         disable={disable}
-                        sumStepUpAndDisableBtn={sumStepUpAndDisableBtn}/>
+                        sumStepUpAndDisableBtn={handleStepsUp}/>
                 <Button color={'btnNoColor'}
                         name='Вернуться в витрину'
                         class={'btn'}/>
@@ -92,7 +82,7 @@ const mapStateToProps = (state) => ({
     signUpPhoneNum: state.signup.values.phoneNum,
     signUpName: state.signup.values.name,
     signUpEmail: state.signup.values.email,
-    signUpPassword: state.signup.values.password
+    signUpPassword: state.signup.values.password,
 })
 
 const mapDispatchToProps = (dispatch) => ({
