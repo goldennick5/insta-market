@@ -2,15 +2,8 @@ import React from 'react';
 import o from './OrderItem.module.scss';
 import arrivedIcon from '../../../assets/images/arrivedIcon.svg';
 import arrowDown from '../../../assets/images/arrowDown.svg';
-// import DataOrder from './orders.json';
 
 function OrderItem(props) {
-  //   setTimeout(() => {
-  //     {
-  //       props.uploadData([DataOrder]);
-  //     }
-  //   }, 3000);
-
   return (
     <div className={o.order__item}>
       <div className={o.item__description}>

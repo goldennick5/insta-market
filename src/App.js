@@ -10,7 +10,6 @@ import data from '../src/data/orders.json';
 import { connect } from 'react-redux';
 
 function RequireAuth({ children }) {
-  // if (!auth.user) return <Navigate to="/signin" state={{ from: location }} replace />
   return children;
 }
 
