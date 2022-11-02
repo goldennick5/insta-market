@@ -24,6 +24,7 @@ const Step4 = (props) => {
         } else {
             setShowFirstEyeInput(false);
         }
+        props.handleTexttChange(first_text);
     }
 
     const handleSecondChange = (second_text) => {

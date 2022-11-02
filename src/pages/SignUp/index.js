@@ -5,30 +5,39 @@ import Step1 from "./steps/Step1";
 import Step2 from "./steps/Step2";
 import Step3 from "./steps/Step3";
 import Step4 from "./steps/Step4";
+import WelcomeWrapper from "../../components/UI/Wrapper/WelcomeWrapper";
 import Button from "../../components/UI/button/Button";
+import loading from "../../assets/images/Loading/Frame.svg";
 import {connect} from "react-redux";
-import {enterPhoneNum,enterEmail, enterName, enterPassword, incrementStep} from "../../store/reducers/signUpReducer";
+import {enterPhoneNum, enterEmail, enterName, enterPassword, incrementStep} from "../../store/reducers/signUpReducer";
+import Step5 from "./steps/Step5";
 
 function SignUp(props) {
     const [disable, setDisable] = useState(true);
+    const [finish, setFinish] = useState(false);
 
     const handleStepsUp = () => {
         props.incrementStep();
         setDisable(!disable);
     }
 
+    const toggleFinish = () => {
+        setFinish(true);
+    }
+
     const enterPhoneNum = (value) => {
         props.enterPhoneNum(value);
-        if(value !== ''){
+        if (value !== '') {
             setDisable(false);
-        } else{
+        } else {
             setDisable(true);
         }
+        console.log(value);
     }
 
     const enterName = (value) => {
         props.enterName(value);
-        if(value !== ''){
+        if (value !== '') {
             setDisable(false);
         } else {
             setDisable(true);
@@ -37,7 +46,7 @@ function SignUp(props) {
 
     const enterEmail = (value) => {
         props.enterEmail(value);
-        if(value !== ''){
+        if (value !== '') {
             setDisable(false);
         } else {
             setDisable(true);
@@ -46,7 +55,7 @@ function SignUp(props) {
 
     const enterPassword = (value) => {
         props.enterPassword(value);
-        if(value !== ''){
+        if (value !== '') {
             setDisable(false);
         } else {
             setDisable(true);
@@ -64,19 +73,29 @@ function SignUp(props) {
                     {props.signUpData === 4 && <Step4 handleTexttChange={enterPassword}/>}
                 </div>
             </Wrapper>
+
             <div className={s.btn__container}>
-                <Button color={'btnBlue'}
-                        name='Продолжить'
-                        disable={disable}
-                        sumStepUpAndDisableBtn={handleStepsUp}/>
+                {props.signUpData === 4 ?
+                    <Button color={'btnBlue'}
+                            finishedColor={'btnGrey'}
+                            name='Завершить регистрацию'
+                            sumStepUpAndDisableBtn={toggleFinish}
+                            finish={finish}
+                            loading={loading}
+                            disable={disable}/>
+                    :
+                    <Button color={'btnBlue'}
+                            name='Продолжить'
+                            disable={disable}
+                            sumStepUpAndDisableBtn={handleStepsUp}/>}
                 <Button color={'btnNoColor'}
                         name='Вернуться в витрину'
                         class={'btn'}/>
             </div>
         </div>
+
     );
 }
-
 const mapStateToProps = (state) => ({
     signUpData: state.signup.step,
     signUpPhoneNum: state.signup.values.phoneNum,
