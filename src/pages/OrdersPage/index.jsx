@@ -18,7 +18,6 @@ const OrdersPage = (props) => {
     <>
       <div className={o.order}>
         <OrderHeader
-          // color={props.color}
           status={props.status}
           current={props.current}
           finish={props.finish}
