@@ -1,0 +1,26 @@
+.additionalInfo__itemsWrapper {
+    display: flex;
+  }
+  .items__name {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 140%;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.2px;
+    color: #15151a;
+  }
+  .items__count {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 140%;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.2px;
+    color: #9e9ea8;
+  }
+  
