@@ -5,7 +5,7 @@ const OrderList = (props) => {
   console.log(props);
 
   const o = props.orders.map((order) => (
-    <OrderItem order={order} id={order.id} />
+    <OrderItem active={props.active} doFilter={props.doFilter} order={order} id={order.id} />
   ));
   return <div>{o}</div>;
 };

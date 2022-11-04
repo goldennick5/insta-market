@@ -6,7 +6,9 @@ import NoOrder from './NoOrder/index.jsx';
 import { useState, useEffect } from 'react';
 
 const OrdersPage = (props) => {
-  const [filteredArr, setFilteredArr] = useState([]);
+  const [filteredArr, setFilteredArr] = useState();
+  const [active, setActive] = useState(true);
+
   useEffect(() => {
     filter();
   }, [props.orders]);
@@ -14,6 +16,13 @@ const OrdersPage = (props) => {
     const array = props.orders.filter((i) => i.status === status);
     setFilteredArr(array);
   };
+
+  // const [show, setShow] = useState(false);
+
+  const changeStyle = () => {
+    setActive(!active);
+  };
+  
   return (
     <>
       <div className={o.order}>
@@ -22,11 +31,13 @@ const OrdersPage = (props) => {
           current={props.current}
           finish={props.finish}
           doFilter={filter}
+          active={active}
+          changeStyle={changeStyle}
         />
         {!props.orders.length ? (
           <NoOrder />
         ) : (
-          <OrderList orders={filteredArr} />
+          <OrderList active={active} orders={filteredArr} />
         )}
       </div>
     </>

@@ -1,25 +1,33 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import o from './OrderItem.module.scss';
 import arrivedIcon from '../../../assets/images/arrivedIcon.svg';
 import arrowDown from '../../../assets/images/arrowDown.svg';
 import arrowUp from '../../../assets/images/arrowUp.svg';
 import OrderAdditional from '../OrderAdditional';
 
-function OrderItem({
-  order: {
-    name,
-    date,
-    additionalInfo,
-    additionalInfo: {
-      address: { city, street, house },
-      paymentType,
+function OrderItem(
+  {
+    order: {
+      name,
+      date,
+      additionalInfo,
+      additionalInfo: {
+        address: { city, street, house },
+        paymentType,
+        deliveryPrice,
+      },
+      price,
+      deliveryStatus,
+      account,
     },
-    price,
-    deliveryStatus,
-    account,
   },
-}) {
+  props
+) {
   const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    setShow(false);
+  }, [props.active]);
 
   const toggleShow = () => {
     setShow(!show);
@@ -40,13 +48,16 @@ function OrderItem({
           <div className={o.item__deliveryIcon}>
             <img src={arrivedIcon} alt="" />
           </div>
-          <div className={o.item__price}>{price}</div>
+          <div className={o.item__price}>{price} ₸</div>
 
           <span onClick={toggleShow} className={o.item__iconNext}>
             <img src={show ? arrowUp : arrowDown} alt="" />
           </span>
         </div>
       </div>
+
+      {props.active && show}
+
       {show && (
         <OrderAdditional
           name={name}
@@ -58,6 +69,7 @@ function OrderItem({
           street={street}
           house={house}
           paymentType={paymentType}
+          deliveryPrice={deliveryPrice}
         />
       )}
     </div>

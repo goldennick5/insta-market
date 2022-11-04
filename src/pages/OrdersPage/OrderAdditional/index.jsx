@@ -68,7 +68,7 @@ function OrderAdditional(props) {
               </div>
             </div>
           </div>
-          <div className={o.items__price}>999 ₸</div>
+          <div className={o.items__price}>{props.deliveryPrice} ₸</div>
         </div>
       </div>
     </div>
