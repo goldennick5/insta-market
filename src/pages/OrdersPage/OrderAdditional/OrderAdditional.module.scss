@@ -44,7 +44,6 @@ hr {
     font-size: 14px;
   }
 }
-
 .additionalInfo__items {
   padding-top: 16px;
   padding-bottom: 16px;
@@ -54,3 +53,47 @@ hr {
   padding-bottom: 16px;
 }
 
+.additionalInfo__itemsWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.additionalInfo__leftSide {
+  display: flex;
+  align-items: center;
+}
+.additionalInfo__img {
+  margin-right: 16px;
+}
+.items__price {
+  float: right;
+  color: #15151a;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+}
+.items__name {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 140%;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.2px;
+  color: #15151a;
+  margin-bottom: 6px;
+}
+.items__count {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 140%;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.2px;
+  color: #9e9ea8;
+}

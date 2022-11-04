@@ -6,14 +6,24 @@ import arrowUp from '../../../assets/images/arrowUp.svg';
 import OrderAdditional from '../OrderAdditional';
 
 function OrderItem({
-  order: { name, date, additionalInfo, price, deliveryStatus, account },
+  order: {
+    name,
+    date,
+    additionalInfo,
+    additionalInfo: {
+      address: { city, street, house },
+      paymentType,
+    },
+    price,
+    deliveryStatus,
+    account,
+  },
 }) {
   const [show, setShow] = useState(false);
 
   const toggleShow = () => {
     setShow(!show);
   };
-
 
   return (
     <div className={o.order__container}>
@@ -37,7 +47,19 @@ function OrderItem({
           </span>
         </div>
       </div>
-      {show && <OrderAdditional additionalInfo={additionalInfo} />}
+      {show && (
+        <OrderAdditional
+          name={name}
+          date={date}
+          account={account}
+          price={price}
+          additionalInfo={additionalInfo}
+          city={city}
+          street={street}
+          house={house}
+          paymentType={paymentType}
+        />
+      )}
     </div>
   );
 }

@@ -32,19 +32,23 @@ function OrderAdditional(props) {
       <div className={o.additionalInfo__address}>
         <div className={o.additionalInfo__addressWrapper}>
           <p>Продавец:</p>
-          <p>{/* {title} {account} */}</p>
+          <p>
+            {props.name} ({props.account})
+          </p>
         </div>
         <div className={o.additionalInfo__addressWrapper}>
           <p>Время покупки:</p>
-          {/* <p>{date}</p> */}
+          <p>{props.date}</p>
         </div>
         <div className={o.additionalInfo__addressWrapper}>
           <p>Адрес доставки:</p>
-          <p>{/* {street} {house} */}</p>
+          <p>
+            {props.street} {props.house}
+          </p>
         </div>
         <div className={o.additionalInfo__addressWrapper}>
           <p>Метод оплаты:</p>
-          {/* <p>{props.order.paymentType}</p> */}
+          <p>{props.paymentType}</p>
         </div>
       </div>
       <hr></hr>
@@ -53,7 +57,19 @@ function OrderAdditional(props) {
       ))}
       <hr></hr>
       <div className={o.additionalInfo__delivery}>
-        <img src={delivery} alt="" />
+        <div className={o.additionalInfo__itemsWrapper}>
+          <div className={o.additionalInfo__leftSide}>
+            <img className={o.additionalInfo__img} src={delivery} alt="" />
+            <div className={o.items__content}>
+              <div className={o.items__name}>Доставка</div>
+              <div className={o.items__count}>
+                Адресная доставка: город: {props.city}, {props.street}{' '}
+                {props.house}
+              </div>
+            </div>
+          </div>
+          <div className={o.items__price}>999 ₸</div>
+        </div>
       </div>
     </div>
   );
