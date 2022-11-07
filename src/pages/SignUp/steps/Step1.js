@@ -15,7 +15,8 @@ const Step1 = (props) => {
             </div>
             <Input label__focus="Номер телефона"
                    label="Введите номер телефона"
-                   handleTexttChange={handleTextOne}/>
+                   handleTexttChange={handleTextOne}
+                    value={props.value}/>
         </div>
     )
 }

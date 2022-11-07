@@ -36,12 +36,23 @@ function SignUp(props) {
     }
 
     const enterPhoneNum = (value) => {
-        props.enterPhoneNum(value);
+        props.enterPhoneNum(formatPhoneNumber(value));
         if (value !== '') {
             setDisable(false);
         } else {
             setDisable(true);
         }
+    }
+
+    const formatPhoneNumber = (value) => {
+        if(!value) return value;
+        const phoneNumber = value.replace(/[^\d]/g, "");
+        const phoneNumberLength = value.length;
+        if(phoneNumberLength  < 4) return phoneNumber;
+        if(phoneNumberLength  < 7) {
+            return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`;
+        }
+        return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6, 10)}`;
     }
 
     const enterName = (value) => {
@@ -70,9 +81,6 @@ function SignUp(props) {
             setDisable(true);
         }
     }
-
-    console.log(props.signUpData)
-    console.log(props)
 
     return (
 
@@ -114,10 +122,10 @@ function SignUp(props) {
                 <Header handleStepsBack={handleStepsBack} signUpData={props.signUpData}/>
                 <Wrapper>
                     <div className={s.subform}>
-                        {props.signUpData === 1 && <Step1 handleTexttChange={enterPhoneNum}/>}
-                        {props.signUpData === 2 && <Step2 handleTexttChange={enterName}/>}
-                        {props.signUpData === 3 && <Step3 handleTexttChange={enterEmail}/>}
-                        {props.signUpData === 4 && <Step4 handleTexttChange={enterPassword}/>}
+                        {props.signUpData === 1 && <Step1 value={props.signUpPhoneNum} handleTexttChange={enterPhoneNum}/>}
+                        {props.signUpData === 2 && <Step2 value={props.signUpName} handleTexttChange={enterName} />}
+                        {props.signUpData === 3 && <Step3 value={props.signUpEmail} handleTexttChange={enterEmail}/>}
+                        {props.signUpData === 4 && <Step4 value={props.signUpPassword} handleTexttChange={enterPassword}/>}
                     </div>
                 </Wrapper>
                 <div className={s.btn__container}>
