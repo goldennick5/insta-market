@@ -3,16 +3,16 @@ import './Input.scss';
 
 const Input = (props) => {
     const [isLabel, setIsLabel] = useState(false);
-    const [value, setValue] = useState('');
+    const [value, setValue] = useState( '');
 
-    function handleTextChange(text) {
-        setValue(text);
-        if(text !== ''){
+    const handleTextChange = (e) => {
+        setValue(props.value);
+        if(e.target.value !== ''){
             setIsLabel(true);
         } else {
             setIsLabel(false);
         }
-        props.handleTexttChange(text);
+        props.handleTexttChange(e.target.value);
     }
 
     return (
@@ -21,8 +21,7 @@ const Input = (props) => {
                 <input type="text" {...props}
                        value={value}
                        name="input" required
-                       onChange={(e) => handleTextChange(e.target.value)}
-                       />
+                       onChange={handleTextChange}/>
                 <label htmlFor="input">{isLabel ? props.label__focus : props.label}</label>
             </div>
         </form>

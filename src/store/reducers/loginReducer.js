@@ -8,7 +8,7 @@ const initState = {
     msg: "!!!!"
 }
 
-const authReducer = (state = initState, action) => {
+const loginReducer = (state = initState, action) => {
     switch (action.type) {
         case SHOW_INFO:
             return {...state, showInfo: true}
@@ -32,4 +32,4 @@ export const changeMsg = (msg) => (
     }
 )
 
-export default authReducer;
+export default loginReducer;
