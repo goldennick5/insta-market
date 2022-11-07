@@ -1,14 +1,12 @@
 .order {
   width: 688px;
-  min-height: 610px;
   padding-top: 24px;
-  padding-bottom: 24px;
   padding-right: 18px;
   padding-left: 24px;
   background: #ffffff;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
   border-radius: 4px;
-  // margin-bottom: 32px;
+  margin-bottom: 32px;
 }
 .order__item {
   display: flex;
@@ -35,18 +33,20 @@
 }
 .status__Btn1 {
   display: flex;
-  color: #ffffff;
-  background: #458cf5;
+  // color: #ffffff;
+  // background: #458cf5;
   border-radius: 16px;
+  border-color: transparent;
   padding: 8px 10px;
   align-items: center;
   margin-right: 5px;
 }
 .status__Btn2 {
   display: flex;
-  color: #415273;
-  background: #fafafa;
+  // color: #415273;
+  // background: #fafafa;
   border-radius: 20px;
+  border-color: transparent;
   padding: 8px 10px;
   align-items: center;
 }
@@ -54,16 +54,16 @@
   margin-right: 5px;
 }
 .status__number1 {
-  background: #ffffff;
+//   background: #ffffff;
   border-radius: 8px;
   padding: 3px 5px;
-  color: #458cf5;
+//   color: #458cf5;
 }
 .status__number2 {
-  background: #f2f2f5;
+//   background: #f2f2f5;
   border-radius: 8px;
   padding: 3px 5px;
-  color: #415273;
+//   color: #415273;
 }
 
 //order__item

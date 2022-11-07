@@ -1,11 +1,12 @@
 import { combineReducers, createStore } from "redux";
 import loginReducer from "./reducers/loginReducer";
 import signUpReducer from "./reducers/signUpReducer";
+import orderReducer from './reducers/orderReducer';
 
 let rootReducers = combineReducers({
     login: loginReducer,
     signup: signUpReducer,
-    orders: {},
+    orders: orderReducer,
     cards: {},
     addresses: {}
 })
