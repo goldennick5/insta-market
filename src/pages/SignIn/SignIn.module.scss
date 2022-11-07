@@ -4,9 +4,9 @@
   align-items: center;
   justify-content: center;
 
-  .subform {
-    margin-top: 50px;
-  }
+  margin: 0 auto;
+  flex-direction: column;
+
 
   .title {
     font-family: 'Inter', sans-serif;
@@ -35,5 +35,3 @@
     margin-top: 8px;
   }
 }
-
-
