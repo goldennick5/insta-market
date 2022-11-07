@@ -1,6 +1,6 @@
 import Input from "../../../components/UI/Input/Input";
 import s from "./steps.module.scss";
-import React, {useState} from 'react';
+import React from 'react';
 
 const Step1 = (props) => {
 

@@ -10,7 +10,7 @@ const Step2 = (props) => {
         setTimeout(() => {
             if(text.length < 4) {
                 setNameError(true);
-            } else if(text.length == 0) {
+            } else if(text.length === 0) {
                 setNameError(false);
             } else {
                 setNameError(false);

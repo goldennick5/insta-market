@@ -12,7 +12,8 @@ import WelcomeWrapper from "../../components/UI/Wrapper/WelcomeWrapper";
 import Button from "../../components/UI/button/Button";
 import loadingImg from "../../assets/images/Loading/Frame.svg";
 import {connect} from "react-redux";
-import {enterValues, incrementStep} from "../../store/reducers/signUpReducer";
+import {enterValues, incrementStep, decrementStep} from "../../store/reducers/signUpReducer";
+import Header from "../../components/UI/header/Header";
 
 function SignUp(props) {
     const [disable, setDisable] = useState(true);
@@ -22,6 +23,10 @@ function SignUp(props) {
     const handleStepsUp = () => {
         props.incrementStep();
         setDisable(!disable);
+    }
+
+    const handleStepsBack = () => {
+        props.decrementStep();
     }
 
     const toggleFinish = () => {
@@ -74,6 +79,7 @@ function SignUp(props) {
         <>{finish ?
 
             <div className={s.finish__form}>
+                <Header/>
                 <WelcomeWrapper>
                     <div>
                         {props.signUpData === 5 && <Step5 signUpName={props.signUpName}/>}
@@ -105,6 +111,7 @@ function SignUp(props) {
             </div>
             :
             <div className={s.form}>
+                <Header handleStepsBack={handleStepsBack} signUpData={props.signUpData}/>
                 <Wrapper>
                     <div className={s.subform}>
                         {props.signUpData === 1 && <Step1 handleTexttChange={enterPhoneNum}/>}
@@ -148,6 +155,9 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
     incrementStep: () => {
         dispatch(incrementStep())
+    },
+    decrementStep: () => {
+        dispatch(decrementStep())
     },
     enterPhoneNum: (value) => {
         dispatch(enterValues({

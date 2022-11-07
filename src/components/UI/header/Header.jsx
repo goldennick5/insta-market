@@ -4,7 +4,7 @@ import exit from '../../../assets/images/exit.svg';
 import logo from '../../../assets/images/logo.svg';
 import { useLocation } from 'react-router-dom';
 
-function Header() {
+function Header(props) {
   let location = useLocation();
 
   return (
@@ -22,6 +22,16 @@ function Header() {
           </button>
         </div>
       )}
+        {props.signUpData === 2 || props.signUpData === 3 || props.signUpData === 4 ? (
+            <div className={s.header__back}>
+                <button className={s.back__btn} onClick={props.handleStepsBack}>
+                    <img src={exit} alt="" className={s.back__img} />
+                    <div className={s.back__text}>Назад</div>
+                </button>
+            </div>
+        ) : (
+            ''
+        )}
     </div>
   );
 }
