@@ -7,9 +7,7 @@ import { useState, useEffect } from 'react';
 
 const OrdersPage = (props) => {
   const [filteredArr, setFilteredArr] = useState();
-  // const [active, setActive] = useState(true);
   const [toggle, setToggle] = useState(true);
-  // const [toggle2, setToggle2] = useState(true);
 
   useEffect(() => {
     filter();

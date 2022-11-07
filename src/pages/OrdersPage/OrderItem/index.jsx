@@ -37,7 +37,10 @@ function OrderItem({
         <div className={o.item__description}>
           <div className={o.item__img}></div>
           <div className={o.item__content}>
-            <div className={o.item__name}>{name}</div>
+            <div className={o.item__name}>
+              {name}&nbsp;
+              <p>({account})</p>
+            </div>
             <div className={o.item__details}>{date}</div>
           </div>
         </div>
