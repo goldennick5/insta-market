@@ -6,7 +6,7 @@ const Input = (props) => {
     const [value, setValue] = useState( '');
 
     const handleTextChange = (e) => {
-        setValue(e.target.value);
+        setValue(props.value);
         if(e.target.value !== ''){
             setIsLabel(true);
         } else {

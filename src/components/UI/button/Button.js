@@ -12,7 +12,7 @@ function Button(props) {
                 onClick={() => {handleStepsUp()}}
                 disabled={props.disable}>
             {props.name}
-            {props.finish && <img className={s.btnGreyImg} src={props.loading} alt="loading"/>}
+            {props.finish && <img className={s.btnGreyImg} src={props.loadingImg} alt="loading"/>}
         </button>
     );
 }

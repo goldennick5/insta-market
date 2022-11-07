@@ -5,16 +5,19 @@ import Step1 from "./steps/Step1";
 import Step2 from "./steps/Step2";
 import Step3 from "./steps/Step3";
 import Step4 from "./steps/Step4";
+import Step5 from "./steps/Step5";
+import Step6 from "./steps/Step6";
+import Step7 from "./steps/Step7";
 import WelcomeWrapper from "../../components/UI/Wrapper/WelcomeWrapper";
 import Button from "../../components/UI/button/Button";
-import loading from "../../assets/images/Loading/Frame.svg";
+import loadingImg from "../../assets/images/Loading/Frame.svg";
 import {connect} from "react-redux";
-import {enterPhoneNum, enterEmail, enterName, enterPassword, incrementStep} from "../../store/reducers/signUpReducer";
-import Step5 from "./steps/Step5";
+import {enterValues, incrementStep} from "../../store/reducers/signUpReducer";
 
 function SignUp(props) {
     const [disable, setDisable] = useState(true);
     const [finish, setFinish] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     const handleStepsUp = () => {
         props.incrementStep();
@@ -22,7 +25,9 @@ function SignUp(props) {
     }
 
     const toggleFinish = () => {
+        props.incrementStep();
         setFinish(true);
+        setLoading(true);
     }
 
     const enterPhoneNum = (value) => {
@@ -32,7 +37,6 @@ function SignUp(props) {
         } else {
             setDisable(true);
         }
-        console.log(value);
     }
 
     const enterName = (value) => {
@@ -62,40 +66,77 @@ function SignUp(props) {
         }
     }
 
+    console.log(props.signUpData)
+    console.log(props)
 
     return (
-        <div className={s.form}>
-            <Wrapper>
-                <div className={s.subform}>
-                    {props.signUpData === 1 && <Step1 handleTexttChange={enterPhoneNum}/>}
-                    {props.signUpData === 2 && <Step2 handleTexttChange={enterName}/>}
-                    {props.signUpData === 3 && <Step3 handleTexttChange={enterEmail}/>}
-                    {props.signUpData === 4 && <Step4 handleTexttChange={enterPassword}/>}
-                </div>
-            </Wrapper>
 
-            <div className={s.btn__container}>
-                {props.signUpData === 4 ?
-                    <Button color={'btnBlue'}
-                            finishedColor={'btnGrey'}
-                            name='Завершить регистрацию'
-                            sumStepUpAndDisableBtn={toggleFinish}
-                            finish={finish}
-                            loading={loading}
-                            disable={disable}/>
-                    :
-                    <Button color={'btnBlue'}
-                            name='Продолжить'
-                            disable={disable}
-                            sumStepUpAndDisableBtn={handleStepsUp}/>}
-                <Button color={'btnNoColor'}
-                        name='Вернуться в витрину'
-                        class={'btn'}/>
+        <>{finish ?
+
+            <div className={s.finish__form}>
+                <WelcomeWrapper>
+                    <div>
+                        {props.signUpData === 5 && <Step5 signUpName={props.signUpName}/>}
+                        {props.signUpData === 6 && <Step6/>}
+                        {props.signUpData === 7 && <Step7/>}
+                    </div>
+                </WelcomeWrapper>
+                <div className={s.btn__container}>
+                    {props.signUpData === 6 || props.signUpData === 7 ?
+                        <>
+                            <Button color={'btnBlue'}
+                                    name='Продолжить'
+                                    disable={disable}
+                                    sumStepUpAndDisableBtn={toggleFinish}/>
+                            <Button color={'btnNoColor'}
+                                    name='Пропустить'
+                                    class={'btn'}/>
+                        </> :
+                        <>
+                            <Button color={'btnBlue'}
+                                    name='Продолжить'
+                                    disable={disable}
+                                    sumStepUpAndDisableBtn={toggleFinish}/>
+                            <Button color={'btnNoColor'}
+                                    name='Вернуться на ветрину'
+                                    class={'btn'}/>
+                        </>}
+                </div>
             </div>
-        </div>
+            :
+            <div className={s.form}>
+                <Wrapper>
+                    <div className={s.subform}>
+                        {props.signUpData === 1 && <Step1 handleTexttChange={enterPhoneNum}/>}
+                        {props.signUpData === 2 && <Step2 handleTexttChange={enterName}/>}
+                        {props.signUpData === 3 && <Step3 handleTexttChange={enterEmail}/>}
+                        {props.signUpData === 4 && <Step4 handleTexttChange={enterPassword}/>}
+                    </div>
+                </Wrapper>
+                <div className={s.btn__container}>
+                    {props.signUpData === 4 ?
+                        <Button color={'btnBlue'}
+                                finishedColor={'btnGrey'}
+                                name='Завершить регистрацию'
+                                sumStepUpAndDisableBtn={toggleFinish}
+                                finish={finish}
+                                loadingImg={loadingImg}
+                                disable={disable}/>
+                        :
+                        <Button color={'btnBlue'}
+                                name='Продолжить'
+                                disable={disable}
+                                sumStepUpAndDisableBtn={handleStepsUp}/>}
+                    <Button color={'btnNoColor'}
+                            name='Вернуться в витрину'
+                            class={'btn'}/>
+                </div>
+            </div>
+        }</>
 
     );
 }
+
 const mapStateToProps = (state) => ({
     signUpData: state.signup.step,
     signUpPhoneNum: state.signup.values.phoneNum,
@@ -109,16 +150,24 @@ const mapDispatchToProps = (dispatch) => ({
         dispatch(incrementStep())
     },
     enterPhoneNum: (value) => {
-        dispatch(enterPhoneNum(value))
+        dispatch(enterValues({
+            phoneNum: value
+        }))
     },
     enterName: (value) => {
-        dispatch(enterName(value))
+        dispatch(enterValues({
+            name: value
+        }))
     },
     enterEmail: (value) => {
-        dispatch(enterEmail(value))
+        dispatch(enterValues({
+            email: value
+        }))
     },
     enterPassword: (value) => {
-        dispatch(enterPassword(value))
+        dispatch(enterValues({
+            password: value
+        }))
     }
 })
 

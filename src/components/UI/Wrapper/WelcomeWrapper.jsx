@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import wrapper from "./WelcomeWrapper.module.scss"
 
 const WelcomeWrapper = (props) => {
