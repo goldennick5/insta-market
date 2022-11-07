@@ -1,37 +1,35 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import o from './OrderItem.module.scss';
 import arrivedIcon from '../../../assets/images/arrivedIcon.svg';
 import arrowDown from '../../../assets/images/arrowDown.svg';
 import arrowUp from '../../../assets/images/arrowUp.svg';
 import OrderAdditional from '../OrderAdditional';
 
-function OrderItem(
-  {
-    order: {
-      name,
-      date,
-      additionalInfo,
-      additionalInfo: {
-        address: { city, street, house },
-        paymentType,
-        deliveryPrice,
-      },
-      price,
-      deliveryStatus,
-      account,
+function OrderItem({
+  order: {
+    name,
+    date,
+    additionalInfo,
+    additionalInfo: {
+      address: { city, street, house },
+      paymentType,
+      deliveryPrice,
     },
+    price,
+    deliveryStatus,
+    account,
   },
-  props
-) {
+  toggle,
+}) {
   const [show, setShow] = useState(false);
-
-  useEffect(() => {
-    setShow(false);
-  }, [props.active]);
 
   const toggleShow = () => {
     setShow(!show);
   };
+
+  useEffect(() => {
+    setShow(false);
+  }, [toggle]);
 
   return (
     <div className={o.order__container}>
@@ -55,8 +53,6 @@ function OrderItem(
           </span>
         </div>
       </div>
-
-      {props.active && show}
 
       {show && (
         <OrderAdditional
