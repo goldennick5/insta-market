@@ -4,10 +4,12 @@ import arrivedIcon from '../../../assets/images/arrivedIcon.svg';
 import arrowDown from '../../../assets/images/arrowDown.svg';
 import arrowUp from '../../../assets/images/arrowUp.svg';
 import OrderAdditional from '../OrderAdditional';
+import Modal from '../Modal';
 
-function OrderItem({
+const OrderItem = ({
   order: {
     name,
+    image,
     date,
     additionalInfo,
     additionalInfo: {
@@ -20,7 +22,7 @@ function OrderItem({
     account,
   },
   toggle,
-}) {
+}) => {
   const [show, setShow] = useState(false);
 
   const toggleShow = () => {
@@ -35,7 +37,9 @@ function OrderItem({
     <div className={o.order__container}>
       <div className={o.order__item}>
         <div className={o.item__description}>
-          <div className={o.item__img}></div>
+          <div className={o.item__img}>
+            <img className={o.item__img} src={image} alt="" />
+          </div>
           <div className={o.item__content}>
             <div className={o.item__name}>
               {name}&nbsp;
@@ -54,12 +58,15 @@ function OrderItem({
           <span onClick={toggleShow} className={o.item__iconNext}>
             <img src={show ? arrowUp : arrowDown} alt="" />
           </span>
+          <Modal></Modal>
+       
         </div>
       </div>
 
       {show && (
         <OrderAdditional
           name={name}
+          image={image}
           date={date}
           account={account}
           price={price}
@@ -73,6 +80,6 @@ function OrderItem({
       )}
     </div>
   );
-}
+};
 
 export default OrderItem;

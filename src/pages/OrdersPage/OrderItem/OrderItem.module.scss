@@ -1,3 +1,6 @@
+.order__container {
+  margin-bottom: 12px;
+}
 .order {
   width: 688px;
   padding-top: 24px;
@@ -11,6 +14,7 @@
 .order__item {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .order__header {
   display: flex;
@@ -122,5 +126,11 @@
   margin-right: 16px;
 }
 p {
-	font-weight: bold;
+  font-weight: bold;
+}
+.item__img {
+  width: 48px;
+  height: 48px;
+  max-width: 100%;
+  border-radius: 45px;
 }
