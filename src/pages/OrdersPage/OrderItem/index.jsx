@@ -4,7 +4,7 @@ import arrivedIcon from '../../../assets/images/arrivedIcon.svg';
 import arrowDown from '../../../assets/images/arrowDown.svg';
 import arrowUp from '../../../assets/images/arrowUp.svg';
 import OrderAdditional from '../OrderAdditional';
-import Modal from '../Modal';
+import Modal from '../../../components/UI/Modal';
 
 const OrderItem = ({
   order: {

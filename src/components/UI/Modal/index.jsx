@@ -1,13 +1,14 @@
 import React from 'react';
+import closeIcon from '../../../assets/images/Modal/closeIcon.svg';
 import './Modal.scss';
 
 const Modal = () => {
   return (
     <div id="modal-block">
       <a class="close-block" href="#close-block">
-        X
+          <img src={closeIcon} alt=""/>
       </a>
-      <h3>Заказ #654881 Доставка</h3>
+      <h3>{}</h3>
     </div>
   );
 };
