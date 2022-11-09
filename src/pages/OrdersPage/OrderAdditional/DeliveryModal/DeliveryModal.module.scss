@@ -1,0 +1,28 @@
+.modal__container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 108vw;
+    height: 100vh;
+    transform: translateX(100%);
+    transition: all ease-in-out 0.8s;
+    backdrop-filter: blur(2px);
+    &.active {
+      transform: translateX(0);
+    }
+  
+    .modal__container__content {
+      color: #000000;
+      width: 50%;
+      height: 100vh;
+      background-color: #ffffff;
+      display: flex;
+      position: absolute;
+      flex-direction: column;
+      top: 0;
+      right: 0;
+    }
+}
+.modal__exit{
+    
+}
