@@ -1,0 +1,57 @@
+.btnBlue {
+  width: 410px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  padding: 8px 10px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.1px;
+  background-color: #458bf5;
+  color: #ffffff;
+}
+.btnGrey {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 410px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  padding: 8px 10px;
+  background-color: grey;
+  color: #ffffff;
+}
+.btnGreyImg {
+  margin-left: 3px;
+  animation: rotation 2s infinite linear;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+.btnNoColor {
+  width: 410px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  padding: 8px 10px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.1px;
+  color: #9B9B9B;
+  background-color: transparent;
+}
+.btn {
+  margin-top: 9px;
+}

@@ -1,0 +1,19 @@
+.noOrderContainer {
+  display: flex;
+  flex-direction: column;
+
+  margin: auto;
+}
+.noOrderContainer img {
+  margin: auto;
+  max-width: 300px;
+}
+.noOrderText {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  text-align: center;
+  color: #9e9ea8;
+}

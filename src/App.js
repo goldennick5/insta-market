@@ -1,25 +1,49 @@
-import logo from './logo.svg';
 import './App.css';
+import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import DefaultLayout from './layouts/DefaultLayout';
+import Cabinet from './views/Cabinet';
+import { useEffect } from 'react';
+import { uploadData } from '../src/store/reducers/orderReducer';
+import data from '../src/data/orders.json';
+import { connect } from 'react-redux';
 
-function App() {
+function RequireAuth({ children }) {
+  return children;
+}
+
+function App(props) {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      props.uploadData(data.orders);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Routes>
+          <Route path="/">
+            <Route index element={<Navigate to="/signin" replace />} />
+            <Route path="/signin" element={<SignIn />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route element={<DefaultLayout />}>
+              <Route
+                path="cabinet/*"
+                element={
+                  <RequireAuth>
+                    <Cabinet />
+                  </RequireAuth>
+                }
+              />
+            </Route>
+          </Route>
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
-export default App;
+export default connect(null, { uploadData })(App);

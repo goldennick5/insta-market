@@ -1,0 +1,124 @@
+.order {
+  width: 688px;
+  padding-top: 24px;
+  padding-right: 18px;
+  padding-left: 24px;
+  background: #ffffff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  margin-bottom: 32px;
+}
+.order__item {
+  display: flex;
+  justify-content: space-between;
+}
+.order__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+.order__btn {
+  display: flex;
+}
+.order__text {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 140%;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.2px;
+  color: #15151a;
+}
+.status__Btn1 {
+  display: flex;
+  color: #ffffff;
+  background: #458cf5;
+  border-radius: 16px;
+  padding: 8px 10px;
+  align-items: center;
+  margin-right: 5px;
+}
+.status__Btn2 {
+  display: flex;
+  color: #415273;
+  background: #fafafa;
+  border-radius: 20px;
+  padding: 8px 10px;
+  align-items: center;
+}
+.status__text {
+  margin-right: 5px;
+}
+.status__number1 {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 3px 5px;
+  color: #458cf5;
+}
+.status__number2 {
+  background: #f2f2f5;
+  border-radius: 8px;
+  padding: 3px 5px;
+  color: #415273;
+}
+
+//order__item
+.item__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.item__description {
+  display: flex;
+}
+.item__name {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 140%;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.2px;
+  color: #15151a;
+}
+.item__details {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 140%;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.2px;
+  color: #9e9ea8;
+}
+.item__img {
+  margin-right: 10px;
+}
+.item__delivery {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: -0.2px;
+  color: #7b7b84;
+  margin-right: 10px;
+}
+.item__deliveryIcon {
+  margin-right: 16px;
+}
+.item__price {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: -0.2px;
+  color: #15151a;
+  margin-right: 16px;
+}
+

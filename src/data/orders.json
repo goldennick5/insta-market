@@ -1,0 +1,106 @@
+{
+  "orders": [
+    {
+      "id": 6548841,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Leucanthemum_vulgare_%27Filigran%27_Flower_2200px.jpg/1126px-Leucanthemum_vulgare_%27Filigran%27_Flower_2200px.jpg",
+      "name": "Красные розы",
+      "account": "@red_roses",
+      "date": "2022-05-16T16:35:02.000000Z",
+      "status": 1,
+      "deliveryStatus": "Принята курьером",
+      "price": 9800,
+      "additionalInfo": {
+        "address": {
+          "city": "Каир",
+          "street": "Пирамидная",
+          "house": "35б",
+          "flat": "98"
+        },
+        "paymentType": "Банковская карта (**** 5468)",
+        "items": [
+          {
+            "id": 1,
+            "name": "Голландский сорт Астрамерии",
+            "count": 3,
+            "price": 1400
+          },
+          {
+            "id": 2,
+            "name": "Турецкие тюльпаны Лалели",
+            "count": 1,
+            "price": 2000
+          },
+          {
+            "id": 3,
+            "name": "Пионы",
+            "count": 2,
+            "price": 3500
+          }
+        ],
+        "deliveryPrice": 700
+      }
+    },
+    {
+      "id": 253184,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd2_3PLA0Jae2BBJ9y7F6dpBjFrOy1mCXxcA&usqp=CAU",
+      "name": "Букет роз",
+      "account": "@flowers.kz",
+      "date": "2022-05-16T16:35:02.000000Z",
+      "status": 1,
+      "deliveryStatus": "Посылка получена",
+      "price": 11000,
+      "additionalInfo": {
+        "address": {
+          "city": "Астана",
+          "street": "Сарыарка",
+          "house": "4а",
+          "flat": "110"
+        },
+        "paymentType": "Банковская карта (**** 5468)",
+        "items": [
+          {
+            "id": 1,
+            "name": "Голландский сорт Астрамерии",
+            "count": 1,
+            "price": 1400
+          }
+        ],
+        "deliveryPrice": 700
+      }
+    },
+    {
+      "id": 112446,
+      "image": "https://www.easylinedrawing.com/wp-content/uploads/2020/10/flower_drawing.png",
+      "name": "Мои цветы",
+      "account": "@cvety.ala",
+      "date": "2022-05-16T16:35:02.000000Z",
+      "status": 0,
+      "deliveryStatus": "Прибыло в сортировочный центр",
+      "price": 4500,
+      "additionalInfo": {
+        "address": {
+          "city": "Алматы",
+          "street": "Ауэзова",
+          "house": "1",
+          "flat": "12"
+        },
+        "paymentType": "Банковская карта (**** 5468)",
+        "items": [
+          {
+            "id": 1,
+            "name": "Голландский сорт Астрамерии",
+            "count": 5,
+            "price": 1400
+          },
+          {
+            "id": 3,
+            "name": "Пионы",
+            "count": 1,
+            "price": 3500
+          }
+        ],
+        "deliveryPrice": 700
+      }
+    }
+  ]
+}

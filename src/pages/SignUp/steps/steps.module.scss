@@ -1,0 +1,248 @@
+.title_step1 {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 45px;
+  line-height: 24px;
+}
+
+.title_step2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 45px;
+  line-height: 24px;
+}
+
+.warning_step2 {
+  color: #FF0000;
+  font-size: 12px;
+
+}
+
+.title_step3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.paragraph_step3 {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 140%;
+  letter-spacing: -0.2px;
+  color: #7E7E7E;
+  margin: 30px 0px;
+}
+
+.step4_container{
+  display: flex;
+  flex-direction: column;
+}
+
+.title_step4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  margin-bottom: 40px;
+}
+
+.btn__first {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: 7px;
+  background: transparent;
+  border: none;
+}
+
+.btn__second {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: 60px;
+  background: transparent;
+  border: none;
+}
+
+.password__container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.step5_container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+
+  .step5__title {
+    margin-left: 32px;
+    color: #000000;
+    font-size: 20px;
+
+    .step5__name {
+      font-weight: bold;
+    }
+  }
+
+  .step5__img {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .step5__points {
+    display: flex;
+    justify-content: center;
+    margin-top: 7px;
+
+    .span__one {
+      height: 6px;
+      width: 6px;
+      margin-right: 7px;
+      background-color: #458BF5;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .span__two {
+      height: 6px;
+      width: 6px;
+      margin-right: 7px;
+      background-color: #D7D7D7;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .span__three {
+      height: 6px;
+      width: 6px;
+      margin-right: 7px;
+      background-color: #D7D7D7;
+      border-radius: 50%;
+      display: inline-block;
+    }
+  }
+}
+
+.step6_container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+
+  .step6__title {
+    margin-left: 32px;
+    color: #000000;
+    font-size: 20px;
+    font-weight: 700;
+
+    .step6__name {
+      font-weight: bold;
+    }
+  }
+
+  .step6__paragraph {
+    margin-top: 64px;
+    margin-left: 32px;
+    top: 60px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #7C818B
+  }
+
+  .step6__img {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 35px;
+  }
+
+  .step6__points {
+    display: flex;
+    justify-content: center;
+    margin-top: 7px;
+
+    .span__one {
+      height: 6px;
+      width: 6px;
+      margin-right: 7px;
+      background-color: #D7D7D7;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .span__two {
+      height: 6px;
+      width: 6px;
+      margin-right: 7px;
+      background-color: #458BF5;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .span__three {
+      height: 6px;
+      width: 6px;
+      margin-right: 7px;
+      background-color: #D7D7D7;
+      border-radius: 50%;
+      display: inline-block;
+    }
+  }
+}
+
+.step7_container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+
+  .step7__title {
+    margin-left: 32px;
+    color: #000000;
+    font-size: 20px;
+    font-weight: 700;
+    position: absolute;
+
+    .step7__name {
+      font-weight: bold;
+    }
+  }
+
+  .step7__img {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 22px;
+  }
+
+  .step7__points {
+    display: flex;
+    justify-content: center;
+    margin-top: 7px;
+
+    .span__one {
+      height: 6px;
+      width: 6px;
+      margin-right: 7px;
+      background-color: #D7D7D7;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .span__two {
+      height: 6px;
+      width: 6px;
+      margin-right: 7px;
+      background-color: #D7D7D7;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .span__three {
+      height: 6px;
+      width: 6px;
+      margin-right: 7px;
+      background-color: #458BF5;
+      border-radius: 50%;
+      display: inline-block;
+    }
+  }
+}
+
+

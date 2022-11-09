@@ -1,0 +1,59 @@
+.cards__page__container {
+  display: flex;
+  flex-direction: column;
+
+  .cards__title__container {
+    margin-bottom: 88px;
+
+    .cards__title {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 140%;
+      color: #15151A;
+    }
+  }
+
+  .cards__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .cards__paragraph__container {
+      margin-top: 24px;
+
+      .cards__paragraph {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        color: #9E9EA8;
+        text-align: center;
+      }
+    }
+
+    .cards__btn__container {
+      width: 206px;
+      height: 118px;
+      margin-top: 28px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      color: #CACFE0;
+      border: dashed 2px #CACFE0;
+      cursor: pointer;
+
+      .cards__btn__text {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 18px;
+      }
+    }
+  }
+}
