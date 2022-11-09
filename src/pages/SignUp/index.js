@@ -12,16 +12,31 @@ import WelcomeWrapper from "../../components/UI/Wrapper/WelcomeWrapper";
 import Button from "../../components/UI/button/Button";
 import loadingImg from "../../assets/images/Loading/Frame.svg";
 import {connect} from "react-redux";
-import {enterValues, incrementStep} from "../../store/reducers/signUpReducer";
+import {enterValues, incrementStep, decrementStep} from "../../store/reducers/signUpReducer";
+import Header from "../../components/UI/header/Header";
+import {useNavigate, Navigate, useLocation} from "react-router-dom";
 
 function SignUp(props) {
     const [disable, setDisable] = useState(true);
     const [finish, setFinish] = useState(false);
     const [loading, setLoading] = useState(false);
 
+    let navigate = useNavigate();
+    let location = useLocation();
+
+    const handleRedirect = () => {
+        navigate('/cabinet/orders');
+    }
+
+    console.log(location.pathname)
+
     const handleStepsUp = () => {
         props.incrementStep();
         setDisable(!disable);
+    }
+
+    const handleStepsBack = () => {
+        props.decrementStep();
     }
 
     const toggleFinish = () => {
@@ -31,12 +46,23 @@ function SignUp(props) {
     }
 
     const enterPhoneNum = (value) => {
-        props.enterPhoneNum(value);
+        props.enterPhoneNum(formatPhoneNumber(value));
         if (value !== '') {
             setDisable(false);
         } else {
             setDisable(true);
         }
+    }
+
+    const formatPhoneNumber = (value) => {
+        if (!value) return value;
+        const phoneNumber = value.replace(/[^\d]/g, "");
+        const phoneNumberLength = value.length;
+        if (phoneNumberLength < 4) return phoneNumber;
+        if (phoneNumberLength < 7) {
+            return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`;
+        }
+        return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6, 10)}`;
     }
 
     const enterName = (value) => {
@@ -66,14 +92,12 @@ function SignUp(props) {
         }
     }
 
-    console.log(props.signUpData)
-    console.log(props)
-
     return (
 
         <>{finish ?
 
             <div className={s.finish__form}>
+                <Header/>
                 <WelcomeWrapper>
                     <div>
                         {props.signUpData === 5 && <Step5 signUpName={props.signUpName}/>}
@@ -82,16 +106,7 @@ function SignUp(props) {
                     </div>
                 </WelcomeWrapper>
                 <div className={s.btn__container}>
-                    {props.signUpData === 6 || props.signUpData === 7 ?
-                        <>
-                            <Button color={'btnBlue'}
-                                    name='Продолжить'
-                                    disable={disable}
-                                    sumStepUpAndDisableBtn={toggleFinish}/>
-                            <Button color={'btnNoColor'}
-                                    name='Пропустить'
-                                    class={'btn'}/>
-                        </> :
+                    {props.signUpData === 5 &&
                         <>
                             <Button color={'btnBlue'}
                                     name='Продолжить'
@@ -101,16 +116,39 @@ function SignUp(props) {
                                     name='Вернуться на ветрину'
                                     class={'btn'}/>
                         </>}
+                    {props.signUpData === 6 && //|| props.signUpData === 7
+                        <>
+                            <Button color={'btnBlue'}
+                                    name='Продолжить'
+                                    disable={disable}
+                                    sumStepUpAndDisableBtn={toggleFinish}/>
+                            <Button color={'btnNoColor'}
+                                    name='Пропустить'
+                                    class={'btn'}/>
+                        </>}
+                    {props.signUpData === 7 &&
+                        <>
+                            <Button color={'btnBlue'}
+                                    name='Продолжить'
+                                    disable={disable}
+                                    sumStepUpAndDisableBtn={handleRedirect}/>
+                            <Button color={'btnNoColor'}
+                                    name='Пропустить'
+                                    class={'btn'}/>
+                        </>}
                 </div>
             </div>
             :
             <div className={s.form}>
+                <Header handleStepsBack={handleStepsBack} signUpData={props.signUpData}/>
                 <Wrapper>
                     <div className={s.subform}>
-                        {props.signUpData === 1 && <Step1 handleTexttChange={enterPhoneNum}/>}
-                        {props.signUpData === 2 && <Step2 handleTexttChange={enterName}/>}
-                        {props.signUpData === 3 && <Step3 handleTexttChange={enterEmail}/>}
-                        {props.signUpData === 4 && <Step4 handleTexttChange={enterPassword}/>}
+                        {props.signUpData === 1 &&
+                            <Step1 value={props.signUpPhoneNum} handleTexttChange={enterPhoneNum}/>}
+                        {props.signUpData === 2 && <Step2 value={props.signUpName} handleTexttChange={enterName}/>}
+                        {props.signUpData === 3 && <Step3 value={props.signUpEmail} handleTexttChange={enterEmail}/>}
+                        {props.signUpData === 4 &&
+                            <Step4 value={props.signUpPassword} handleTexttChange={enterPassword}/>}
                     </div>
                 </Wrapper>
                 <div className={s.btn__container}>
@@ -148,6 +186,9 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
     incrementStep: () => {
         dispatch(incrementStep())
+    },
+    decrementStep: () => {
+        dispatch(decrementStep())
     },
     enterPhoneNum: (value) => {
         dispatch(enterValues({

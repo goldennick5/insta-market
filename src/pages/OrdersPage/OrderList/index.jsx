@@ -3,8 +3,7 @@ import OrderItem from '../OrderItem';
 
 const OrderList = (props) => {
   console.log(props, 'hi');
-
-  const o = props.orders.map((order) => (
+  const o = props.orders && props.orders.map((order) => (
     <OrderItem
       toggle={props.toggle}
       setdoFilter={props.doFilter}

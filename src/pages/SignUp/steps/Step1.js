@@ -1,6 +1,6 @@
 import Input from "../../../components/UI/Input/Input";
 import s from "./steps.module.scss";
-import React, {useState} from 'react';
+import React from 'react';
 
 const Step1 = (props) => {
 
@@ -15,7 +15,8 @@ const Step1 = (props) => {
             </div>
             <Input label__focus="Номер телефона"
                    label="Введите номер телефона"
-                   handleTexttChange={handleTextOne}/>
+                   handleTexttChange={handleTextOne}
+                    value={props.value}/>
         </div>
     )
 }

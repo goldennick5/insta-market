@@ -16,7 +16,8 @@ const Step3 = (props) => {
             </div>
             <Input label__focus="Email"
                    label="Введите e-mail"
-                   handleTexttChange={handleTextThree}/>
+                   handleTexttChange={handleTextThree}
+                   value={props.value}/>
         </div>
     )
 }

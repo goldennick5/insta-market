@@ -2,6 +2,7 @@ import OrderHeader from './OrderHeader/index.jsx';
 import OrderList from './OrderList/index.jsx';
 import o from './OrdersPage.module.scss';
 import { connect } from 'react-redux';
+import OutletWrapper from "../../components/UI/Wrapper/OutletWrapper/OutletWrapper";
 import NoOrder from './NoOrder/index.jsx';
 import { useState, useEffect } from 'react';
 
@@ -22,7 +23,7 @@ const OrdersPage = (props) => {
 
   return (
     <>
-      <div className={o.order}>
+      <OutletWrapper>
         <OrderHeader
           status={props.status}
           current={props.current}
@@ -36,7 +37,7 @@ const OrdersPage = (props) => {
         ) : (
           <OrderList toggle={toggle} orders={filteredArr} />
         )}
-      </div>
+      </OutletWrapper>
     </>
   );
 };

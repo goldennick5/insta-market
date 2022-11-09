@@ -47,7 +47,7 @@ const Step4 = (props) => {
                        label="Введите пароль"
                        handleTexttChange={handleFirstChange}/>
                 {showFirstEyeInput ? <button className={s.btn__first} onClick={toggleFirstPassword}>
-                    {firstShown ? <img src={showeye}/> : <img src={unshoweye}/>}
+                    {firstShown ? <img alt="showeye" src={showeye}/> : <img alt="showeye" src={unshoweye}/>}
                 </button> : ''}
 
                 <Input type={secondShown ? 'text' : 'password'}
@@ -55,7 +55,7 @@ const Step4 = (props) => {
                        label="Повторите пароль"
                        handleTexttChange={handleSecondChange}/>
                 {showSecondEyeInput ? <button className={s.btn__second} onClick={toggleSecondPassword}>
-                    {secondShown ? <img src={showeye}/> : <img src={unshoweye}/>}
+                    {secondShown ? <img alt="showeye" src={showeye}/> : <img alt="showeye" src={unshoweye}/>}
                 </button> : ''}
             </div>
         </div>

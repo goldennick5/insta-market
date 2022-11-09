@@ -1,42 +1,50 @@
 .input-form {
-    position: relative;
-    font-family: 'Inter', sans-serif;
+  position: relative;
+  font-family: 'Inter', sans-serif;
 
-    input {
-      background: transparent;
-      border: none;
-      border-bottom: 1px solid #9E9EA8;
-      width: 230px;
-      margin-bottom: 1.5rem;
-      font-size: 16px;
-      padding: 3px;
-      color: #000;
-      font-weight: 600;
-      line-height: 22.5px;
-      outline: none;
-    }
-    label {
-      position: absolute;
-      top: 0;
-      left: 0;
-      color: #9E9EA8;
-      transition: all 0.2s ease;
-      pointer-events: none;
-    }
-    input:valid ~ label,
-    input:focus ~ label {
-      top: -15px;
-      left: 0;
-      font-size: 13px;
-      outline: none;
-    }
-    input:focus {
-      border-bottom: 2px solid #458CF5;
-    }
-    .input__danger {
-      border-bottom: 2px solid #FF0000;
-    }
+  input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #9E9EA8;
+    width: 230px;
+    margin-bottom: 1.5rem;
+    font-size: 16px;
+    padding: 3px;
+    color: #000;
+    font-weight: 600;
+    line-height: 22.5px;
+    outline: none;
   }
+
+  label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #9E9EA8;
+    transition: all 0.2s ease;
+    pointer-events: none;
+  }
+
+  input:valid ~ label,
+  input:focus ~ label {
+    top: -15px;
+    left: 0;
+    font-size: 13px;
+    outline: none;
+  }
+
+  input:focus {
+    border-bottom: 2px solid #458CF5;
+  }
+
+  span {
+    font-size: 12px;
+    padding: 3px;
+    color: red;
+    display: none;
+  }
+}
+
 
 
 

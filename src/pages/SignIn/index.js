@@ -7,6 +7,7 @@ import unshoweye from '../icons/unshoweye.svg';
 import {connect} from "react-redux";
 import {changeMsg, showInfo} from "../../store/reducers/loginReducer";
 import Button from "../../components/UI/button/Button";
+import Header from "../../components/UI/header/Header";
 
 function SignIn(props) {
     const [shown, setShown] = useState(false);
@@ -26,6 +27,7 @@ function SignIn(props) {
 
     return (
         <div className={s.form}>
+            <Header/>
             <Wrapper>
                 <div className={s.subform}>
                     <div>
