@@ -37,7 +37,24 @@
             "price": 3500
           }
         ],
-        "deliveryPrice": 700
+        "deliveryPrice": 700,
+        "trackingData": [
+          {
+            "date": "2022-05-16T16:35:02.000000Z",
+            "operationPostTypeName": "Регистрация заказа",
+            "townName": "Алматы"
+          },
+          {
+            "date": "2022-06-02T11:07:02.000000Z",
+            "operationPostTypeName": "Отправка заказа",
+            "townName": "Алматы"
+          },
+          {
+            "date": "2022-06-22T22:15:02.000000Z",
+            "operationPostTypeName": "Получение заказа",
+            "townName": "Астана"
+          }
+        ]
       }
     },
     {
@@ -65,7 +82,24 @@
             "price": 1400
           }
         ],
-        "deliveryPrice": 700
+        "deliveryPrice": 700,
+        "trackingData": [
+          {
+            "date": "2022-05-16T16:35:02.000000Z",
+            "operationPostTypeName": "Регистрация заказа",
+            "townName": "Алматы"
+          },
+          {
+            "date": "2022-06-02T11:07:02.000000Z",
+            "operationPostTypeName": "Отправка заказа",
+            "townName": "Алматы"
+          },
+          {
+            "date": "2022-06-22T22:15:02.000000Z",
+            "operationPostTypeName": "Получение заказа",
+            "townName": "Астана"
+          }
+        ]
       }
     },
     {
@@ -99,7 +133,24 @@
             "price": 3500
           }
         ],
-        "deliveryPrice": 700
+        "deliveryPrice": 700,
+        "trackingData": [
+          {
+            "date": "2022-05-16T16:35:02.000000Z",
+            "operationPostTypeName": "Регистрация заказа",
+            "townName": "Алматы"
+          },
+          {
+            "date": "2022-06-02T11:07:02.000000Z",
+            "operationPostTypeName": "Отправка заказа",
+            "townName": "Алматы"
+          },
+          {
+            "date": "2022-06-22T22:15:02.000000Z",
+            "operationPostTypeName": "Получение заказа",
+            "townName": "Астана"
+          }
+        ]
       }
     }
   ]

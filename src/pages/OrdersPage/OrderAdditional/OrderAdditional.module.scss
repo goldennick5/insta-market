@@ -97,3 +97,27 @@ hr {
   letter-spacing: -0.2px;
   color: #9e9ea8;
 }
+.blur {
+  backdrop-filter: blur(5px);
+}
+
+/* Модальное окно */
+#modal-block {
+  background-color: #527c82;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  right: -100vw;
+  width: 70vw;
+  height: 100vh;
+  transition: all 0.5s;
+  font-family: 'Raleway', sans-serif;
+  z-index: 9;
+}
+#modal-block:target {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  right: 0;
+}

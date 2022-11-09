@@ -19,10 +19,10 @@ function OrderAdditional(props) {
           <img className={o.tab__img} src={send} alt="" />
           <div>Отправить чек</div>
         </span>
-        <span className={o.tab__btn}>
+        <a className={o.tab__btn} href="#modal-block">
           <img className={o.tab__img} src={status} alt="" />
           <div>Статус доставки</div>
-        </span>
+        </a>
         <span className={o.tab__btn}>
           <img className={o.tab__img} src={cancel} alt="" />
           <div>Отменить заказ</div>
