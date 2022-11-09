@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 
 const OrdersPage = (props) => {
   const [filteredArr, setFilteredArr] = useState();
-  const [active, setActive] = useState(true);
+  const [toggle, setToggle] = useState(true);
 
   useEffect(() => {
     filter();
@@ -16,13 +16,10 @@ const OrdersPage = (props) => {
     const array = props.orders.filter((i) => i.status === status);
     setFilteredArr(array);
   };
-
-  // const [show, setShow] = useState(false);
-
-  const changeStyle = () => {
-    setActive(!active);
+  const togler = (boolean) => {
+    setToggle(boolean);
   };
-  
+
   return (
     <>
       <div className={o.order}>
@@ -31,13 +28,13 @@ const OrdersPage = (props) => {
           current={props.current}
           finish={props.finish}
           doFilter={filter}
-          active={active}
-          changeStyle={changeStyle}
+          togler={togler}
+          toggle={toggle}
         />
         {!props.orders.length ? (
           <NoOrder />
         ) : (
-          <OrderList active={active} orders={filteredArr} />
+          <OrderList toggle={toggle} orders={filteredArr} />
         )}
       </div>
     </>
