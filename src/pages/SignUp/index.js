@@ -14,11 +14,21 @@ import loadingImg from "../../assets/images/Loading/Frame.svg";
 import {connect} from "react-redux";
 import {enterValues, incrementStep, decrementStep} from "../../store/reducers/signUpReducer";
 import Header from "../../components/UI/header/Header";
+import {useNavigate, Navigate, useLocation} from "react-router-dom";
 
 function SignUp(props) {
     const [disable, setDisable] = useState(true);
     const [finish, setFinish] = useState(false);
     const [loading, setLoading] = useState(false);
+
+    let navigate = useNavigate();
+    let location = useLocation();
+
+    const handleRedirect = () => {
+        navigate('/cabinet/orders');
+    }
+
+    console.log(location.pathname)
 
     const handleStepsUp = () => {
         props.incrementStep();
@@ -45,11 +55,11 @@ function SignUp(props) {
     }
 
     const formatPhoneNumber = (value) => {
-        if(!value) return value;
+        if (!value) return value;
         const phoneNumber = value.replace(/[^\d]/g, "");
         const phoneNumberLength = value.length;
-        if(phoneNumberLength  < 4) return phoneNumber;
-        if(phoneNumberLength  < 7) {
+        if (phoneNumberLength < 4) return phoneNumber;
+        if (phoneNumberLength < 7) {
             return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`;
         }
         return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6, 10)}`;
@@ -96,16 +106,7 @@ function SignUp(props) {
                     </div>
                 </WelcomeWrapper>
                 <div className={s.btn__container}>
-                    {props.signUpData === 6 || props.signUpData === 7 ?
-                        <>
-                            <Button color={'btnBlue'}
-                                    name='Продолжить'
-                                    disable={disable}
-                                    sumStepUpAndDisableBtn={toggleFinish}/>
-                            <Button color={'btnNoColor'}
-                                    name='Пропустить'
-                                    class={'btn'}/>
-                        </> :
+                    {props.signUpData === 5 &&
                         <>
                             <Button color={'btnBlue'}
                                     name='Продолжить'
@@ -115,6 +116,26 @@ function SignUp(props) {
                                     name='Вернуться на ветрину'
                                     class={'btn'}/>
                         </>}
+                    {props.signUpData === 6 && //|| props.signUpData === 7
+                        <>
+                            <Button color={'btnBlue'}
+                                    name='Продолжить'
+                                    disable={disable}
+                                    sumStepUpAndDisableBtn={toggleFinish}/>
+                            <Button color={'btnNoColor'}
+                                    name='Пропустить'
+                                    class={'btn'}/>
+                        </>}
+                    {props.signUpData === 7 &&
+                        <>
+                            <Button color={'btnBlue'}
+                                    name='Продолжить'
+                                    disable={disable}
+                                    sumStepUpAndDisableBtn={handleRedirect}/>
+                            <Button color={'btnNoColor'}
+                                    name='Пропустить'
+                                    class={'btn'}/>
+                        </>}
                 </div>
             </div>
             :
@@ -122,10 +143,12 @@ function SignUp(props) {
                 <Header handleStepsBack={handleStepsBack} signUpData={props.signUpData}/>
                 <Wrapper>
                     <div className={s.subform}>
-                        {props.signUpData === 1 && <Step1 value={props.signUpPhoneNum} handleTexttChange={enterPhoneNum}/>}
-                        {props.signUpData === 2 && <Step2 value={props.signUpName} handleTexttChange={enterName} />}
+                        {props.signUpData === 1 &&
+                            <Step1 value={props.signUpPhoneNum} handleTexttChange={enterPhoneNum}/>}
+                        {props.signUpData === 2 && <Step2 value={props.signUpName} handleTexttChange={enterName}/>}
                         {props.signUpData === 3 && <Step3 value={props.signUpEmail} handleTexttChange={enterEmail}/>}
-                        {props.signUpData === 4 && <Step4 value={props.signUpPassword} handleTexttChange={enterPassword}/>}
+                        {props.signUpData === 4 &&
+                            <Step4 value={props.signUpPassword} handleTexttChange={enterPassword}/>}
                     </div>
                 </Wrapper>
                 <div className={s.btn__container}>
