@@ -82,6 +82,7 @@ function OrderAdditional(props) {
         showModal={showModal}
         onClick={handleModal}
         closeModal={() => setShowModal(false)}
+        props={props}
       />
     </div>
   );

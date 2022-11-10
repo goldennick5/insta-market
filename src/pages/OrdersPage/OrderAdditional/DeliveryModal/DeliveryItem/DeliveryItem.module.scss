@@ -1,0 +1,38 @@
+.tracking {
+  display: flex;
+  position: relative;
+  //   margin-bottom: 20px;
+}
+.tracking__title {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: -0.2px;
+  color: #15151a;
+}
+.tracking__subtitle {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 140%;
+  letter-spacing: -0.2px;
+  color: #5d5d66;
+}
+.tracking__left {
+  margin-right: 50px;
+  width: 100px;
+}
+.tracking__steps {
+//   position: absolute;
+  align-items: center;
+  margin-right: 50px;
+//   top: 0px;
+//   right: 110px;
+}
+.vl {
+  border-left: 1px solid #458bf5;
+  height: 10px;
+}

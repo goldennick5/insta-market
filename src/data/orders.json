@@ -40,17 +40,20 @@
         "deliveryPrice": 700,
         "trackingData": [
           {
-            "date": "2022-05-16T16:35:02.000000Z",
+            "date": "2022-05-16",
+            "time": "16:10:01",
             "operationPostTypeName": "Регистрация заказа",
             "townName": "Алматы"
           },
           {
-            "date": "2022-06-02T11:07:02.000000Z",
+            "date": "2022-06-02",
+            "time": "13:07:02",
             "operationPostTypeName": "Отправка заказа",
             "townName": "Алматы"
           },
           {
-            "date": "2022-06-22T22:15:02.000000Z",
+            "date": "2022-06-22",
+            "time": "14:15:02",
             "operationPostTypeName": "Получение заказа",
             "townName": "Астана"
           }
@@ -85,17 +88,20 @@
         "deliveryPrice": 700,
         "trackingData": [
           {
-            "date": "2022-05-16T16:35:02.000000Z",
+            "date": "2022-05-16",
+            "time": "16:20:02",
             "operationPostTypeName": "Регистрация заказа",
             "townName": "Алматы"
           },
           {
-            "date": "2022-06-02T11:07:02.000000Z",
+            "date": "2022-06-02",
+            "time": "10:20:02",
             "operationPostTypeName": "Отправка заказа",
             "townName": "Алматы"
           },
           {
-            "date": "2022-06-22T22:15:02.000000Z",
+            "date": "2022-06-22",
+            "time": "18:20:02",
             "operationPostTypeName": "Получение заказа",
             "townName": "Астана"
           }
@@ -136,17 +142,20 @@
         "deliveryPrice": 700,
         "trackingData": [
           {
-            "date": "2022-05-16T16:35:02.000000Z",
+            "date": "2022-05-16",
+            "time": "16:35:02",
             "operationPostTypeName": "Регистрация заказа",
             "townName": "Алматы"
           },
           {
-            "date": "2022-06-02T11:07:02.000000Z",
+            "date": "2022-06-02",
+            "time": "11:07:02",
             "operationPostTypeName": "Отправка заказа",
             "townName": "Алматы"
           },
           {
-            "date": "2022-06-22T22:15:02.000000Z",
+            "date": "2022-06-22",
+            "time": "22:15:02",
             "operationPostTypeName": "Получение заказа",
             "townName": "Астана"
           }
