@@ -4,6 +4,10 @@ import exit from '../../../../assets/images/OrdersPage/exitModal.svg';
 import qr from '../../../../assets/images/OrdersPage/qr.jpg';
 import link from '../../../../assets/images/OrdersPage/link.svg';
 import DeliveryItem from './DeliveryItem';
+import { connect } from 'react-redux';
+import ellipse from '../../../../assets/images/OrdersPage/ellipse.svg';
+import noColorEllipse from '../../../../assets/images/OrdersPage/noColorEllipse.svg';
+
 const DeliveryModal = ({ showModal, closeModal, props }) => {
   return (
     <div
@@ -76,22 +80,36 @@ const DeliveryModal = ({ showModal, closeModal, props }) => {
               Отслеживание посылки: MP123456789012345
             </div>
             <div className={s.modal__tracking}>
-              <div className={s.information__address}>
-                {props.city}, {}
-                ул. {props.street}, {}
-                дом {props.house}, {}
-                офис {props.flat}
-              </div>
-              <div className={s.modal__fromName}>
-                {props.name} ({props.account})
+              <div className={s.modal__trackingFinish}>
+                <div className={s.modal__end}>
+                  <div className={s.modal__fromName}>
+                    {props.name} ({props.account})
+                  </div>
+                  <div className={s.information__address}>
+                    {props.city}, {}
+                    ул. {props.street}, {}
+                    дом {props.house}
+                  </div>
+                </div>
+                <img src={ellipse} className={s.ellipse} alt=""></img>
               </div>
               {props.additionalInfo.trackingData.map((track) => (
                 <DeliveryItem track={track} />
               ))}
-              <div className={s.information__address}>
-                Алматы, ул. 12, Офис 7
+              <div className={s.modal__trackingFinish}>
+                <div className={s.modal__end}>
+                  <div className={s.information__address}>
+                    <div className={s.modal__fromName}>Jane Doe</div>
+                    Алматы, ул. 12, Офис 7
+                  </div>
+                </div>
+                <img
+                  src={noColorEllipse}
+                  className={s.noColorEllipse}
+                  alt=""
+                ></img>
+                <div className={s.dashedLine}></div>
               </div>
-              <div className={s.modal__fromName}>Jane Doe</div>
             </div>
           </div>
         </div>
@@ -100,4 +118,8 @@ const DeliveryModal = ({ showModal, closeModal, props }) => {
   );
 };
 
-export default DeliveryModal;
+const mapStateToProps = (state) => ({
+  orders: state.orders.orders,
+});
+
+export default connect(mapStateToProps)(DeliveryModal);

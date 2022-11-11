@@ -161,5 +161,49 @@
   flex-direction: column-reverse;
 }
 .modal__fromName {
-  float: right;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: -0.2px;
+  color: #15151a;
+}
+.information__address {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 140%;
+  letter-spacing: -0.2px;
+  color: #5d5d66;
+  margin-bottom: 20px;
+}
+.ellipse {
+  position: absolute;
+  right: 59%;
+  top: 50%;
+  width: 24px;
+  height: 24px;
+}
+.noColorEllipse {
+  position: absolute;
+  right: 59%;
+  top: 3%;
+  width: 24px;
+  height: 24px;
+}
+.modal__trackingFinish {
+  display: flex;
+  position: relative;
+}
+.dashedLine {
+  content: ' ';
+  position: absolute;
+  display: block;
+  top: 20px;
+  bottom: -8px;
+  left: 38%;
+  height: 81%;
+  border: 1px dashed #a0a0a0;
 }
