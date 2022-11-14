@@ -23,16 +23,19 @@
   color: #5d5d66;
 }
 .tracking__left {
-  margin-right: 50px;
-  width: 100px;
+  width: 33%;
 }
 .tracking__steps {
-  margin-right: 50px;
+  width: 33%;
 }
-
+.tracking__right {
+  width: 33%;
+}
 .circle {
-  background: #458bf5;
-  position: relative;
+  position: absolute;
+  left: 36%;
+  top: 30%;
+  background: #a0a0a0;
   width: 16px;
   height: 16px;
   line-height: 1.5em;
@@ -43,6 +46,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
+}
+.circleBlue {
+  position: absolute;
+  left: 36%;
+  top: 30%;
+  background: #458bf5;
+  width: 16px;
+  height: 16px;
+  line-height: 1.5em;
+  border-radius: 100%;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 0 0 3px #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
 }
 .arrow {
   z-index: 2;
@@ -55,7 +76,7 @@
   top: 24px;
   bottom: 13px;
   left: 38%;
-  height: 170%;
+  height: 118%;
   width: 2px;
   background-color: #458bf5;
 }

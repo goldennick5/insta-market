@@ -52,8 +52,8 @@
             "townName": "Алматы"
           },
           {
-            "date": "2022-06-22",
-            "time": "14:15:02",
+            "date": "",
+            "time": "",
             "operationPostTypeName": "Получение заказа",
             "townName": "Астана"
           }
@@ -100,8 +100,8 @@
             "townName": "Алматы"
           },
           {
-            "date": "2022-06-22",
-            "time": "18:20:02",
+            "date": "",
+            "time": "",
             "operationPostTypeName": "Получение заказа",
             "townName": "Астана"
           }
@@ -154,8 +154,8 @@
             "townName": "Алматы"
           },
           {
-            "date": "2022-06-22",
-            "time": "22:15:02",
+            "date": "",
+            "time": "",
             "operationPostTypeName": "Получение заказа",
             "townName": "Астана"
           }

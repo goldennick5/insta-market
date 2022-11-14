@@ -182,28 +182,34 @@
 .ellipse {
   position: absolute;
   right: 59%;
-  top: 50%;
+  top: 14%;
   width: 24px;
   height: 24px;
 }
 .noColorEllipse {
   position: absolute;
   right: 59%;
-  top: 3%;
+  top: 15%;
   width: 24px;
   height: 24px;
 }
 .modal__trackingFinish {
   display: flex;
   position: relative;
+  justify-content: flex-end;
 }
 .dashedLine {
   content: ' ';
   position: absolute;
   display: block;
-  top: 20px;
-  bottom: -8px;
+  top: 36px;
   left: 38%;
-  height: 81%;
+  height: 46%;
   border: 1px dashed #a0a0a0;
+}
+.modal__end {
+  padding-left: 120px;
+}
+.modal__begin {
+  padding-left: 144px;
 }

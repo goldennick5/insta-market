@@ -91,24 +91,28 @@ const DeliveryModal = ({ showModal, closeModal, props }) => {
                     дом {props.house}
                   </div>
                 </div>
+                <div className={s.modal__endImg}>
                 <img src={ellipse} className={s.ellipse} alt=""></img>
+                </div>
               </div>
               {props.additionalInfo.trackingData.map((track) => (
                 <DeliveryItem track={track} />
               ))}
               <div className={s.modal__trackingFinish}>
-                <div className={s.modal__end}>
+                <div className={s.modal__begin}>
                   <div className={s.information__address}>
                     <div className={s.modal__fromName}>Jane Doe</div>
                     Алматы, ул. 12, Офис 7
                   </div>
                 </div>
-                <img
-                  src={noColorEllipse}
-                  className={s.noColorEllipse}
-                  alt=""
-                ></img>
-                <div className={s.dashedLine}></div>
+                <div className={s.modal__beginImg}>
+                  <img
+                    src={noColorEllipse}
+                    className={s.noColorEllipse}
+                    alt=""
+                  ></img>
+                  <div className={s.dashedLine}></div>
+                </div>
               </div>
             </div>
           </div>

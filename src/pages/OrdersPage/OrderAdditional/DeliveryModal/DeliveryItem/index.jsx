@@ -10,7 +10,7 @@ const DeliveryItem = (props) => {
       </div>
       <div className={s.tracking__steps}>
         {/* <div className={s.line}></div> */}
-        <div className={s.circle}>
+        <div className={props.track.date ? s.circleBlue : s.circle}>
           <img className={s.arrow} src={arrowDelivery} alt="arrow"></img>
         </div>
         <div className={s.line}></div>
