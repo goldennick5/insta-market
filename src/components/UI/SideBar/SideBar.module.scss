@@ -43,15 +43,16 @@
   letter-spacing: -0.2px;
   color: #15151a;
 }
-.services-content {
+.services__content {
   display: flex;
   padding-top: 13px;
   padding-bottom: 13px;
   padding-left: 30px;
   cursor: pointer;
-}
-.services-content:hover {
-  border-left: 4px solid #387FEA;
+  &.active {
+    border-left: 4px solid #387fea;
+    padding-left: 26px;
+  }
 }
 .services__icon {
   margin-right: 12px;
