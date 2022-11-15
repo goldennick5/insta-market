@@ -81,6 +81,7 @@ const DeliveryModal = ({ showModal, closeModal, props }) => {
             </div>
             <div className={s.modal__tracking}>
               <div className={s.modal__trackingFinish}>
+                <div className={s.modal__endImg}>
                 <div className={s.modal__end}>
                   <div className={s.modal__fromName}>
                     {props.name} ({props.account})
@@ -91,7 +92,6 @@ const DeliveryModal = ({ showModal, closeModal, props }) => {
                     дом {props.house}
                   </div>
                 </div>
-                <div className={s.modal__endImg}>
                 <img src={ellipse} className={s.ellipse} alt=""></img>
                 </div>
               </div>
