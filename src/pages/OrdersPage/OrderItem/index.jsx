@@ -4,7 +4,6 @@ import arrivedIcon from '../../../assets/images/arrivedIcon.svg';
 import arrowDown from '../../../assets/images/arrowDown.svg';
 import arrowUp from '../../../assets/images/arrowUp.svg';
 import OrderAdditional from '../OrderAdditional';
-import Modal from '../Modal';
 
 const OrderItem = ({
   order: {
@@ -13,8 +12,9 @@ const OrderItem = ({
     date,
     additionalInfo,
     additionalInfo: {
-      address: { city, street, house },
+      address: { city, street, house, flat },
       paymentType,
+      trackingData: { time, operationPostTypeName, townName },
       deliveryPrice,
     },
     price,
@@ -58,8 +58,6 @@ const OrderItem = ({
           <span onClick={toggleShow} className={o.item__iconNext}>
             <img src={show ? arrowUp : arrowDown} alt="" />
           </span>
-          <Modal></Modal>
-       
         </div>
       </div>
 
@@ -74,8 +72,12 @@ const OrderItem = ({
           city={city}
           street={street}
           house={house}
+          flat={flat}
           paymentType={paymentType}
           deliveryPrice={deliveryPrice}
+          time={time}
+          operationPostTypeName={operationPostTypeName}
+          townName={townName}
         />
       )}
     </div>

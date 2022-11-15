@@ -2,6 +2,8 @@ import React from 'react';
 import o from './OrderHeader.module.scss';
 
 function OrderHeader(props) {
+  // const [show, setShow] = useState(false);
+
   return (
     <div className={o.order__header}>
       <div className={o.order__text}>Мои заказы</div>

@@ -10,7 +10,7 @@ function Header(props) {
   return (
     <div className={s.header}>
       <div className={s.header__logo}>
-        <img src={logo} alt="" className="logo" />
+        <img src={logo} alt="" className={s.logo} />
       </div>
       {location.pathname === '/signin' || location.pathname === '/signup' ? (
         ''
