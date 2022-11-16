@@ -1,6 +1,6 @@
 .card {
   width: 206px;
-  height: 118px;
+  height: 125px;
   filter: drop-shadow(0px 4px 20px rgba(12, 107, 250, 0.25));
   border-radius: 8px;
   color: #ffffff;
@@ -12,6 +12,12 @@
   background-position: center;
   margin-right: 6px;
   margin-top: 6px;
+
+  img {
+    position: absolute;
+    right: 8px;
+    margin-top: 7px;
+  }
 
   h3 {
     margin: 50px 0 0 7px;

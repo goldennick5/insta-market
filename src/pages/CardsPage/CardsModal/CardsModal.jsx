@@ -94,7 +94,7 @@ const mapDispatchToProps = (dispatch) => ({
     },
     addCard: () => {
         dispatch(addCard())
-    }
+    },
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(CardsModal);

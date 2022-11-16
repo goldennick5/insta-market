@@ -40,7 +40,7 @@ const CardsPage = (props) => {
                         <div className={s.card__list__container}>
                             <p>Привязка карты упростит процесс оплаты. Вы можете добавлять и удалять <br/> неограниченное количество карт.</p>
                             <div className={s.card__list}>
-                                {props.cards.cards.map((card) => <CardItem card={card}/>)}
+                                {props.cards.cards.map((card) => <CardItem key={card.id} card={card}/>)}
                                 <div className={s.cards__btn__container} onClick={() => handleModal(true)}>
                                     <span></span>
                                     <h3 className={s.cards__btn__text}>Добавить карту</h3>
