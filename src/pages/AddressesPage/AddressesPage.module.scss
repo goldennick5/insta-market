@@ -101,5 +101,50 @@
       }
     }
   }
+
+  .address__list__container {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+
+    p {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 140%;
+      color: #9E9EA8;
+      margin-top: 16px;
+      margin-bottom: 25px;
+    }
+
+    .address__list {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      flex-wrap: wrap;
+
+      .address__btn__container {
+        width: 206px;
+        height: 118px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        color: #CACFE0;
+        border: dashed 2px #CACFE0;
+        cursor: pointer;
+        margin-top: 5px;
+
+        .address__btn__text {
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 18px;
+        }
+      }
+    }
+  }
 }
 

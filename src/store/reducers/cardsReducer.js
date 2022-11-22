@@ -14,7 +14,7 @@ const initState = {
     newCardNumber: '',
     newValidityPeriod: '',
     newCvCode: ''
-}
+};
 
 const cardsReducer = (state = initState, action) => {
     switch (action.type) {
@@ -37,7 +37,7 @@ const cardsReducer = (state = initState, action) => {
             return newState;
         case DELETE__CARD:
             const cardId = action.index;
-            return {...state, cards: state.cards.filter((val) => val.id !== cardId)}
+            return {...state, cards: state.cards.filter((val) => val.id !== cardId)};
         default: {
             return state;
         }

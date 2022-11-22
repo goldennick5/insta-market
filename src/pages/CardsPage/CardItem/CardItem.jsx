@@ -20,12 +20,12 @@ const CardItem = (props) => {
 
 const mapStateToProps = (state) => ({
     cards: state.cards
-})
+});
 
 const mapDispatchToProps = (dispatch) => ({
     deleteCard: (id) => {
-        dispatch(deleteCard(id))
+        dispatch(deleteCard(id));
     }
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(CardItem);
