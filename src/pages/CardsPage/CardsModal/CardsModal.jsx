@@ -1,14 +1,16 @@
 import React from 'react';
 import {connect} from "react-redux";
 import ButtonModal from "../../../components/UI/button/ButtonModal";
-import closeIcon from '../../../assets/images/Modal/closeIcon.svg';
-import s from './CardsModal.module.scss';
 import {addCard, enterCardValues} from "../../../store/reducers/cardsReducer";
+import closeIcon from '../../../assets/images/Modal/closeIcon.svg';
+import questionIcon from '../../../assets/images/CardsPage/icons/question_icon.svg';
+import s from './CardsModal.module.scss';
 
 const CardsModal = (props) => {
 
     const enterCardNumber = (value) => {
-        props.enterCardNumber(value);
+        let newNum = value.match(/.{4}/g).join(' ');
+        props.enterCardNumber(newNum);
     }
 
     const enterValidityPeriod = (value) => {
@@ -31,7 +33,7 @@ const CardsModal = (props) => {
             <div className={s.modal__container__content}>
                 <div className={s.modal__container__content__body}>
                     <div className={s.modal__title__container}>
-                        <h2 className={s.modal__title}>Добавьте карту</h2>
+                        <h2 className={s.modal__title}>Добавить карту</h2>
                         <img className={s.modal__img} onClick={() => props.handleModal(false)} src={closeIcon} alt=""/>
                     </div>
                     <div>
@@ -43,25 +45,37 @@ const CardsModal = (props) => {
                             <input className={s.modal__first__input}
                                    placeholder="0000 0000 0000 0000"
                                    type="text"
-                                    onChange={(e) => {enterCardNumber(e.target.value)}}/>
+                                   onChange={(e) => {
+                                       enterCardNumber(e.target.value)
+                                   }}/>
                         </div>
                         <div className={s.modal__second__input__container}>
                             <div className={s.second__input}>
                                 <label htmlFor="">Срок дейсвия</label>
                                 <input placeholder="00/00"
                                        type="text"
-                                        onChange={(e) => {enterValidityPeriod(e.target.value)}}/>
+                                       onChange={(e) => {
+                                           enterValidityPeriod(e.target.value)
+                                       }}/>
                             </div>
                             <div className={s.third__input}>
-                                <label htmlFor="">CVV-код</label>
+                                <div style={{display: "flex"}}>
+                                    <label htmlFor="">CVV-код</label>
+                                    <img src={questionIcon} alt=""/>
+                                </div>
                                 <input placeholder="•••"
                                        type="password"
-                                        onChange={(e) => {enterCvCode(e.target.value)}}/>
+                                       onChange={(e) => {
+                                           enterCvCode(e.target.value)
+                                       }}/>
                             </div>
                         </div>
                     </div>
                     <div>
-                        <ButtonModal color={'btnBlue'} name="Добавить" addCard={addCard} handleModal={props.handleModal}/>
+                        <ButtonModal color={'btnBlue'}
+                                     name="Добавить"
+                                     addCard={addCard}
+                                     handleModal={props.handleModal}/>
                     </div>
                 </div>
             </div>

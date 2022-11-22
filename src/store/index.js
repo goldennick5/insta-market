@@ -9,9 +9,9 @@ let rootReducers = combineReducers({
     signup: signUpReducer,
     orders: orderReducer,
     cards: cardsReducer,
-    addresses: {}
-})
+    addresses: {},
+});
 
-const store = createStore(rootReducers)
+const store = createStore(rootReducers);
 
 export default store;

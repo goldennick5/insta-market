@@ -24,7 +24,7 @@
     right: 0;
 
     .modal__container__content__body {
-      padding: 56px 115px 0px 160px;
+      padding: 60px 115px 0px 200px;
 
       .modal__title__container {
         display: flex;
@@ -73,6 +73,16 @@
             color: #000000;
           }
 
+          label {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 140%;
+            color: #8A8E9A;
+            margin-right: 4px;
+          }
+
           .modal__first__input:focus {
             border-bottom: 2px solid #458CF5;
           }
@@ -109,6 +119,16 @@
               color: #000000;
             }
 
+            label {
+              font-family: 'Inter';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 140%;
+              color: #8A8E9A;
+              margin-right: 4px;
+            }
+
             input:focus {
               border-bottom: 2px solid #458CF5;
             }
@@ -137,6 +157,16 @@
               line-height: 22px;
               letter-spacing: 0.5px;
               color: #000000;
+            }
+
+            label {
+              font-family: 'Inter';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 140%;
+              color: #8A8E9A;
+              margin-right: 4px;
             }
 
             input:focus {
