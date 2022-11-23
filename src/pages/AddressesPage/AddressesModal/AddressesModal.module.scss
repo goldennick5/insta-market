@@ -108,7 +108,7 @@
           font-family: 'Inter';
           font-style: normal;
           font-weight: 400;
-          font-size: 16px;
+          font-size: 17px;
           line-height: 140%;
           color: #9E9EA8;
         }
@@ -118,20 +118,23 @@
         margin-top: 40px;
 
         .addresses__input {
+          font-family: 'Inter';
           background: transparent;
           border: none;
           border-bottom: 1px solid #9E9EA8;
           width: 305px;
           margin-bottom: 1.5rem;
-          font-size: 16px;
           padding: 3px;
           color: #000;
-          font-weight: 600;
-          line-height: 22.5px;
           outline: none;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 22px;
         }
 
         .addresses__home {
+          font-family: 'Inter';
           background: transparent;
           border: none;
           border-bottom: 1px solid #9E9EA8;
@@ -159,6 +162,23 @@
           line-height: 22.5px;
           outline: none;
         }
+      }
+
+      .btnBlue {
+        width: 312px;
+        height: 40px;
+        margin-top: 5px;
+        background: #458CF5;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 4px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #ffffff;
       }
     }
   }

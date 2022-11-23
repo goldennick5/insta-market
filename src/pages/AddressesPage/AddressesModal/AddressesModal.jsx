@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import ButtonModal from "../../../components/UI/button/ButtonModal";
 import Input from "../../../components/UI/Input/Input";
-import {enterAddressesValues, addAddress} from "../../../store/reducers/addressesReducer";
+import {enterAddressesValues, addAddress, clearInput} from "../../../store/reducers/addressesReducer";
 import {connect} from "react-redux";
 import s from "./AddressesModal.module.scss";
 import closeIcon from "../../../assets/images/Modal/closeIcon.svg";
@@ -68,31 +68,38 @@ const AddressesModal = (props) => {
                         <p className={s.modal__paragraph}>Введите адрес для доставки</p>
                     </div>
                     <div className={s.addresses__input__container}>
-                        <div style={{marginTop: "15px"}}>
+                        <div style={{marginTop: "15px", fontSize: "18px", fontWeight: 500}}>
                             <Input className={s.addresses__input} label__focus="Название адреса" label="Название адреса"
-                                   handleTexttChange={enterAddressName}/>
+                                   handleTexttChange={enterAddressName}
+                                   value={props.addressName}/>
                         </div>
-                        <div style={{marginTop: "15px"}}>
+                        <div style={{marginTop: "15px", fontSize: "18px", fontWeight: 500}}>
                             <Input className={s.addresses__input} label__focus="Город" label="Ваш город"
-                                   handleTexttChange={enterCity}/>
+                                   handleTexttChange={enterCity}
+                                   value={props.city}/>
                         </div>
-                        <div style={{marginTop: "15px"}}>
+                        <div style={{marginTop: "15px", fontSize: "18px", fontWeight: 500}}>
                             <Input className={s.addresses__input} label__focus="Улица" label="Улица"
-                                   handleTexttChange={enterStreet}/>
+                                   handleTexttChange={enterStreet}
+                                   value={props.street}/>
                         </div>
-                        <div style={{display: "flex", marginTop: "15px"}}>
+                        <div style={{display: "flex", marginTop: "15px", fontSize: "18px", fontWeight: 500}}>
                             <Input className={s.addresses__home} label__focus="Дом" label="Номер дома"
-                                   handleTexttChange={enterHomeNum}/>
+                                   handleTexttChange={enterHomeNum}
+                                   value={props.homeNum}/>
                             <Input className={s.addresses__office} label__focus="Квартира / Офис" label="Номер офиса"
-                                   handleTexttChange={enterOfficeNum}/>
+                                   handleTexttChange={enterOfficeNum}
+                                   value={props.officeNum}/>
                         </div>
-                        <div style={{marginTop: "15px"}}>
+                        <div style={{marginTop: "15px", fontSize: "18px", fontWeight: 500}}>
                             <Input className={s.addresses__input} label__focus="Комментарий"
-                                   label="Комментарий к доставке" handleTexttChange={enterComment}/>
+                                   label="Комментарий к доставке" handleTexttChange={enterComment}
+                                   value={props.comment}/>
                         </div>
                     </div>
                     <div>
-                        <button onClick={() => addAddress() || props.handleModal(false)}>Добавить</button>
+                        <button onClick={() => addAddress() || props.handleModal(false)}
+                                className={s.btnBlue}>Добавить</button>
                     </div>
                 </div>
             </div>
@@ -144,6 +151,9 @@ const mapDispatchToProps = (dispatch) => ({
     addAddress: () => {
         dispatch(addAddress())
     },
+    clearInput: () => {
+        dispatch(clearInput())
+    }
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddressesModal);

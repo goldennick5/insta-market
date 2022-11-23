@@ -13,6 +13,8 @@ const AddressesPage = (props) => {
         setShowModal(param);
     }
 
+
+
     return (
         <>
             <OutletWrapper>
@@ -40,7 +42,9 @@ const AddressesPage = (props) => {
                             <div className={s.address__list__container}>
                                 <p>Добавление адреса упростит процесс оформления доставки. Вы можете <br/> добавлять и удалять неограниченное количество адресов.</p>
                                 <div className={s.address__list}>
-                                    {props.addresses.addresses.map((address) => <AddressItem key={address.id} address={address}/>)}
+                                    {props.addresses.addresses.map((address) => <AddressItem key={address.id}
+                                                                                             address={address}
+                                                                                             handleModal={handleModal}/>)}
                                     <div className={s.address__btn__container} onClick={() => handleModal(true)}>
                                         <span></span>
                                         <h3 className={s.address__btn__text}>Добавить адрес</h3>
