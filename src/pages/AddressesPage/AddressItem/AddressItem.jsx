@@ -13,6 +13,7 @@ const AddressItem = (props) => {
     const updateAddress = (index) => {
         props.handleModal(true)
         props.updateAddress(index);
+        console.log(props.updateAddress(index));
     }
     
     return (
@@ -20,7 +21,7 @@ const AddressItem = (props) => {
             <div className={s.card__title}>
                 <div><h3>{props.address.addressName}</h3></div>
                 <div>
-                    <img className={s.img__one} src={edit} onClick={updateAddress} alt="edit"/>
+                    <img className={s.img__one} src={edit} onClick={() => updateAddress(props.address.id)} alt="edit"/>
                     <img className={s.img__two} src={del} onClick={() => deleteAddress(props.address.id)} alt="delete"/>
                 </div>
             </div>

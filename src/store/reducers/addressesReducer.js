@@ -1,10 +1,7 @@
-import {clear} from "@testing-library/user-event/dist/clear";
-
 const ENTER__ADDRESS__VALUES = "ENTER__ADDRESS__VALUES";
 const ADD__ADDRESS = "ADD__ADDRESS";
 const DELETE__ADDRESS = "DELETE__ADDRESS";
 const UPDATE__ADDRESS = "UPDATE__ADDRESS";
-const CLEAR__INPUT = "CLEAR__INPUT";
 
 const initState = {
     addresses: [],
@@ -50,18 +47,19 @@ const addressesReducer = (state = initState, action) => {
             }
             newState.addresses = [...state.addresses];
             newState.addresses.push(address);
+            newState.values.addressName = '';
+            newState.values.city = '';
+            newState.values.street = '';
+            newState.values.homeNum = '';
+            newState.values.officeNum = '';
+            newState.values.comment = '';
             return newState;
         case DELETE__ADDRESS:
             const addressId = action.index;
             return {...state, addresses: state.addresses.filter((val) => val.id !== addressId)};
         case UPDATE__ADDRESS:
-            const filtered = state.filter((post) => post.id !== action.post.id);
-            return [...filtered, action.post];//не работает
-        case CLEAR__INPUT:
-            let clearedInputs = {...state};
-            Object.keys(clearedInputs.values).forEach((key, index) => {
-                clearedInputs.values[key] = "";
-            })
+            const updatedAddressId = action.index;
+            return {...state, addresses: state.addresses.filter((val) => val.id === updatedAddressId)};
         default:
             return state;
     }
@@ -83,13 +81,9 @@ export const deleteAddress = (index) => ({
     index
 })
 
-export const updateAddress = (address) => ({
+export const updateAddress = (index) => ({
     type: UPDATE__ADDRESS,
-    address
-})
-
-export const clearInput = () => ({
-    type: CLEAR__INPUT
+    index
 })
 
 export default addressesReducer;

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import ButtonModal from "../../../components/UI/button/ButtonModal";
 import Input from "../../../components/UI/Input/Input";
-import {enterAddressesValues, addAddress, clearInput} from "../../../store/reducers/addressesReducer";
+import {enterAddressesValues, addAddress} from "../../../store/reducers/addressesReducer";
 import {connect} from "react-redux";
 import s from "./AddressesModal.module.scss";
 import closeIcon from "../../../assets/images/Modal/closeIcon.svg";
@@ -151,9 +151,6 @@ const mapDispatchToProps = (dispatch) => ({
     addAddress: () => {
         dispatch(addAddress())
     },
-    clearInput: () => {
-        dispatch(clearInput())
-    }
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddressesModal);

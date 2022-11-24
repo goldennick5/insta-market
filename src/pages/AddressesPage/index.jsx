@@ -53,7 +53,8 @@ const AddressesPage = (props) => {
                             </div>
                     }
                 </div>
-                <AddressesModal showModal={showModal} handleModal={handleModal}/>
+                <AddressesModal showModal={showModal}
+                                handleModal={handleModal}/>
             </OutletWrapper>
         </>
     );
