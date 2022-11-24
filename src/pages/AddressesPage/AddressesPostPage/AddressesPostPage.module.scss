@@ -96,45 +96,6 @@
             color: #9E9EA8;
           }
         }
-
-        .switch__delivery__two{
-          width: 165px;
-          height: 36px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border-radius: 20px;
-          cursor: pointer;
-
-          .paragraph__delivery__two{
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 500;
-            font-size: 14px;
-            line-height: 20px;
-            color: #9E9EA8;
-          }
-        }
-
-        .switch__post__two{
-          width: 165px;
-          height: 36px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border-radius: 20px;
-          cursor: pointer;
-          background: #458CF5;
-
-          .paragraph__post__two{
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 500;
-            font-size: 14px;
-            line-height: 20px;
-            color: #fff;
-          }
-        }
       }
 
       //Стиль для адресной доставки

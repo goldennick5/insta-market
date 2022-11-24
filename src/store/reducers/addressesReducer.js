@@ -12,7 +12,7 @@ const initState = {
         street: '',
         homeNum: '',
         officeNum: '',
-        comment: ''
+        comment: '',
     },
     newId: 0,
     newAddressName: '',
@@ -58,8 +58,13 @@ const addressesReducer = (state = initState, action) => {
             const addressId = action.index;
             return {...state, addresses: state.addresses.filter((val) => val.id !== addressId)};
         case UPDATE__ADDRESS:
-            const updatedAddressId = action.index;
-            return {...state, addresses: state.addresses.filter((val) => val.id === updatedAddressId)};
+            const updatedAddressId = state.addresses.findIndex(address => address.id === action.address.id);
+            const updatedAddress = {...action.index, addresses: state[updatedAddressId].addresses}
+            return [
+                ...state.slice(0, updatedAddressId),
+                updatedAddress,
+                ...state.slice(updatedAddressId + 1)
+            ]
         default:
             return state;
     }

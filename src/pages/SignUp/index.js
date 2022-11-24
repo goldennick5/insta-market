@@ -28,8 +28,6 @@ function SignUp(props) {
         navigate('/cabinet/orders');
     }
 
-    console.log(location.pathname)
-
     const handleStepsUp = () => {
         props.incrementStep();
         setDisable(!disable);

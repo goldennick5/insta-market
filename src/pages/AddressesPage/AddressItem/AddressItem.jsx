@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {deleteAddress, updateAddress} from "../../../store/reducers/addressesReducer";
 import {connect} from "react-redux";
 import s from "./AddressItem.module.scss";
@@ -6,13 +6,14 @@ import del from "../../../assets/images/AddressesPage/icons/delete.svg";
 import edit from "../../../assets/images/AddressesPage/icons/Edit.svg";
 
 const AddressItem = (props) => {
+
     const deleteAddress = (index) => {
         props.deleteAddress(index);
     }
 
     const updateAddress = (index) => {
-        props.handleModal(true)
         props.updateAddress(index);
+        props.handleModal(true)
         console.log(props.updateAddress(index));
     }
     

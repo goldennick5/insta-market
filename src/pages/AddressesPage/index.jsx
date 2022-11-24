@@ -13,8 +13,6 @@ const AddressesPage = (props) => {
         setShowModal(param);
     }
 
-
-
     return (
         <>
             <OutletWrapper>
@@ -40,7 +38,8 @@ const AddressesPage = (props) => {
                             </div>
                             :
                             <div className={s.address__list__container}>
-                                <p>Добавление адреса упростит процесс оформления доставки. Вы можете <br/> добавлять и удалять неограниченное количество адресов.</p>
+                                <p>Добавление адреса упростит процесс оформления доставки. Вы можете <br/> добавлять и
+                                    удалять неограниченное количество адресов.</p>
                                 <div className={s.address__list}>
                                     {props.addresses.addresses.map((address) => <AddressItem key={address.id}
                                                                                              address={address}
@@ -54,7 +53,8 @@ const AddressesPage = (props) => {
                     }
                 </div>
                 <AddressesModal showModal={showModal}
-                                handleModal={handleModal}/>
+                                handleModal={handleModal}
+                                />
             </OutletWrapper>
         </>
     );
@@ -62,6 +62,7 @@ const AddressesPage = (props) => {
 
 const mapStateToProps = (state) => ({
     addresses: state.addresses,
+    addressName: state.addresses.values.addressName
 });
 
 export default connect(mapStateToProps, {})(AddressesPage);
