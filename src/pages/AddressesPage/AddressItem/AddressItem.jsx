@@ -12,9 +12,8 @@ const AddressItem = (props) => {
     }
 
     const updateAddress = (index) => {
+        props.handleModal(true);
         props.updateAddress(index);
-        props.handleModal(true)
-        console.log(props.updateAddress(index));
     }
     
     return (
@@ -34,7 +33,8 @@ const AddressItem = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-    addresses: state.addresses
+    addresses: state.addresses,
+    id: state.addresses.values.id,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -43,7 +43,7 @@ const mapDispatchToProps = (dispatch) => ({
     },
     updateAddress: (address) => {
         dispatch(updateAddress(address));
-    }
+    },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddressItem);

@@ -29,7 +29,7 @@ const addressesReducer = (state = initState, action) => {
             return {...state, values: {...state.values, ...action.payload}};
         case ADD__ADDRESS:
             let newState = {...state};
-            let id = newState.newId++;
+            let id = ++newState.newId;
             newState.newAddressName = newState.values.addressName;
             newState.newCity = newState.values.city;
             newState.newStreet = newState.values.street;
@@ -58,13 +58,31 @@ const addressesReducer = (state = initState, action) => {
             const addressId = action.index;
             return {...state, addresses: state.addresses.filter((val) => val.id !== addressId)};
         case UPDATE__ADDRESS:
-            const updatedAddressId = state.addresses.findIndex(address => address.id === action.address.id);
-            const updatedAddress = {...action.index, addresses: state[updatedAddressId].addresses}
-            return [
-                ...state.slice(0, updatedAddressId),
-                updatedAddress,
-                ...state.slice(updatedAddressId + 1)
-            ]
+            let newUpdatedState = {...state, addresses: state.addresses.map((i) => ({...i}))};
+            newUpdatedState.addresses.forEach((address) => {
+                if(address.id === action.payload){
+                    newUpdatedState.values.addressName = address.addressName;
+                    newUpdatedState.values.city = address.city;
+                    newUpdatedState.values.street = address.street;
+                    newUpdatedState.values.homeNum = address.homeNum;
+                    newUpdatedState.values.officeNum = address.officeNum;
+                    newUpdatedState.values.comment = address.comment;
+                }
+            })
+
+            let newAddressObject = {
+                addressName: newUpdatedState.values.addressName,
+                city: newUpdatedState.values.city,
+                street: newUpdatedState.values.street,
+                homeNum: newUpdatedState.values.homeNum,
+                officeNum: newUpdatedState.values.officeNum,
+                comment: newUpdatedState.values.comment
+            }
+
+            newUpdatedState.addresses.splice(action.index, 1, newAddressObject);
+
+            return newUpdatedState;
+
         default:
             return state;
     }
@@ -88,7 +106,7 @@ export const deleteAddress = (index) => ({
 
 export const updateAddress = (index) => ({
     type: UPDATE__ADDRESS,
-    index
+    payload: index
 })
 
 export default addressesReducer;

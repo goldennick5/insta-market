@@ -1,7 +1,11 @@
-import React, {useEffect, useState} from 'react';
-import ButtonModal from "../../../components/UI/button/ButtonModal";
+import React, {useState} from 'react';
 import Input from "../../../components/UI/Input/Input";
-import {enterAddressesValues, addAddress} from "../../../store/reducers/addressesReducer";
+import {
+    enterAddressesValues,
+    addAddress,
+    updateAddressId,
+    updateAddress
+} from "../../../store/reducers/addressesReducer";
 import {connect} from "react-redux";
 import s from "./AddressesModal.module.scss";
 import closeIcon from "../../../assets/images/Modal/closeIcon.svg";
@@ -51,7 +55,11 @@ const AddressesModal = (props) => {
         props.addAddress();
     }
 
-
+    const updateAddress = (index) => {
+        console.log();
+        props.handleModal(false);
+        props.updateAddress(index);
+    }
 
     return (
         <div className={props.showModal ? `${s.modal__container} ${s.active}` : s.modal__container}>
@@ -64,11 +72,11 @@ const AddressesModal = (props) => {
 
                     <div className={s.switch}>
                         <div  onClick={() => toggleBtn(true)}
-                             className={isSwitched && `${s.switch__delivery} ${s.switch__post}`}>
+                             className={isSwitched ? `${s.switch__delivery} ${s.switch__post} ${s.switch__post__two}` : ""}>
                             <p className={s.paragraph__delivery}>Адресная доставка</p>
                         </div>
                         <div  onClick={() => toggleBtn(false)}
-                             className={isSwitched ? `${s.switch__post}` : `${s.switch__delivery__two} ${s.switch__post__two}`}>
+                             className={!isSwitched ? `${s.switch__delivery__two} ${s.switch__post__two}` : ""}>
                             <p className={s.paragraph__post}>Постомат</p>
                         </div>
                     </div>
@@ -118,6 +126,7 @@ const AddressesModal = (props) => {
                         <button onClick={() => addAddress() || props.handleModal(false)}
                                 className={s.btnBlue}>Добавить
                         </button>
+                        <button onClick={() => updateAddress(props.id)}>REMAKE</button>
                     </div>
                 </div>
             </div>
@@ -127,6 +136,7 @@ const AddressesModal = (props) => {
 
 const mapStateToProps = (state) => (console.log(state),{
     addresses: state.addresses,
+    id: state.addresses.values.id,
     addressName: state.addresses.values.addressName,
     city: state.addresses.values.city,
     street: state.addresses.values.street,
@@ -168,6 +178,9 @@ const mapDispatchToProps = (dispatch) => ({
     },
     addAddress: () => {
         dispatch(addAddress())
+    },
+    updateAddress: (id) => {
+        dispatch(updateAddress(id));
     },
 })
 
