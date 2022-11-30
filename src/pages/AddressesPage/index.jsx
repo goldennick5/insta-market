@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import OutletWrapper from "../../components/UI/Wrapper/OutletWrapper/OutletWrapper";
 import AddressesModal from "./AddressesModal/AddressesModal";
 import AddressItem from "./AddressItem/AddressItem";
@@ -11,6 +11,10 @@ const AddressesPage = (props) => {
 
     const handleModal = (param) => {
         setShowModal(param);
+    }
+
+    if(props.addresses.addresses.length == 0){
+        props.addresses.addresses = [];
     }
 
     return (

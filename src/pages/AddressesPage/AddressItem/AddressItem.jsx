@@ -12,6 +12,7 @@ const AddressItem = (props) => {
     }
 
     const updateAddress = (index) => {
+        console.log(index);
         props.handleModal(true);
         props.updateAddress(index);
     }

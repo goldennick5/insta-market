@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Input from "../../../components/UI/Input/Input";
 import {
     enterAddressesValues,
     addAddress,
     updateAddressId,
-    updateAddress
+    updateAddress, editAddress
 } from "../../../store/reducers/addressesReducer";
 import {connect} from "react-redux";
 import s from "./AddressesModal.module.scss";
@@ -14,6 +14,7 @@ import AddressesPostPage from "../AddressesPostPage/AddressesPostPage";
 const AddressesModal = (props) => {
     const [isSwitched, setIsSwitched] = useState(true);
     const [isLabel, setIsLabel] = useState(false);
+    const [isIndex, setIsIndex] = useState();
 
     const handleChange = (event) => {
         if (event.target.value !== '') {
@@ -56,9 +57,15 @@ const AddressesModal = (props) => {
     }
 
     const updateAddress = (index) => {
-        console.log();
+        console.log(index);
         props.handleModal(false);
         props.updateAddress(index);
+    }
+
+    const editAddress = (id) => {
+        console.log(id);
+        props.editAddress(id);
+        props.handleModal(false);
     }
 
     return (
@@ -126,7 +133,7 @@ const AddressesModal = (props) => {
                         <button onClick={() => addAddress() || props.handleModal(false)}
                                 className={s.btnBlue}>Добавить
                         </button>
-                        <button onClick={() => updateAddress(props.id)}>REMAKE</button>
+                        <button onClick={() => editAddress(props.currentId)}>REMAKE</button>
                     </div>
                 </div>
             </div>
@@ -137,6 +144,7 @@ const AddressesModal = (props) => {
 const mapStateToProps = (state) => (console.log(state),{
     addresses: state.addresses,
     id: state.addresses.values.id,
+    currentId: state.addresses.currentId,
     addressName: state.addresses.values.addressName,
     city: state.addresses.values.city,
     street: state.addresses.values.street,
@@ -182,6 +190,9 @@ const mapDispatchToProps = (dispatch) => ({
     updateAddress: (id) => {
         dispatch(updateAddress(id));
     },
+    editAddress: (index) => {
+        dispatch(editAddress(index));
+    }
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddressesModal);
