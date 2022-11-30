@@ -7,23 +7,36 @@ import Orders from '../../../assets/images/orders.svg';
 import FAQ from '../../../assets/images/faq.svg';
 import image from '../../../assets/images/ellipse.svg';
 import shopBg from '../../../assets/images/shop-bg.svg';
-import edit from '../../../assets/images/edit.svg';
+import editImg from '../../../assets/images/edit.svg';
 import { useState } from 'react';
 import s from './SideBar.module.scss';
-function SideBar(props) {
+import EditProfile from './EditProfile';
+const SideBar = (props) => {
   const [category, setCategory] = useState('orders');
   const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(false);
 
   const nav = (path) => {
     navigate(`cabinet/${path}`);
     setCategory(path);
   };
+  const handleModal = (param) => {
+    setShowModal(param);
+  };
 
   return (
     <div className={s.sidebar}>
-      <button className={s.edit}>
-        <img src={edit} alt="edit" />
-      </button>
+      <div className={s.sidebar__buton}>
+        <button
+          className={s.edit}
+          onClick={() => {
+            handleModal(true);
+          }}
+        >
+          <img src={editImg} alt="edit" />
+        </button>
+      </div>
+
       <div className={s.sidebar__profile}>
         <div
           className={s.profile__image}
@@ -110,8 +123,9 @@ function SideBar(props) {
           </div>
         </div>
       </div>
+      <EditProfile showModal={showModal} handleModal={handleModal} />
     </div>
   );
-}
+};
 
 export default SideBar;

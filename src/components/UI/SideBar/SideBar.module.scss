@@ -5,17 +5,25 @@
   background: #ffffff;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
   border-radius: 4px;
-  position: relative;
+  // position: relative;
   margin-right: 16px;
+  // display: flex;
+  // flex-direction: column;
+}
+.sidebar__buton {
+  position: relative;
 }
 .edit {
   border: 1px solid #dbdfeb;
   border-radius: 8px;
   padding: 7px;
   background: #ffffff;
-  position: absolute;
+  // position: absolute;
   top: 16px;
-  right: 16px;
+  left: 16px;
+  // width: 16px;
+  // height: 16px;
+  text-align: right;
 }
 .sidebar__profile {
   margin: auto;

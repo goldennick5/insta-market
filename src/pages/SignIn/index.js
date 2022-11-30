@@ -69,14 +69,5 @@ const mapDispatchToProps = (dispatch) => ({
      }
  })
 
-
 export default connect(mapStateToProps, mapDispatchToProps)(SignIn)
 
-// function connect(mapStateToProps, mapDispatchToProps) {
-//     state
-//     return (SignIn) => {
-//         <Wrapper>
-//             <SignIn props={state.signInData}/>
-//         </Wrapper>
-//     }
-// }
