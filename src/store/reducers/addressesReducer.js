@@ -72,10 +72,12 @@ const addressesReducer = (state = initState, action) => {
                 }
             })
             newUpdatedState.currentId = action.payload;
+            console.log(newUpdatedState.currentId);
             return newUpdatedState;
         case EDIT__ADDRESS:
             let newEditState = {...state, addresses: state.addresses.map((i) => ({...i}))}
             let newAddressObject = {
+                //id: newEditState.values.currentId,
                 addressName: newEditState.values.addressName,
                 city: newEditState.values.city,
                 street: newEditState.values.street,
@@ -84,12 +86,14 @@ const addressesReducer = (state = initState, action) => {
                 comment: newEditState.values.comment
             }
             newEditState.addresses.splice(action.index - 1, 1, newAddressObject);
+            newAddressObject.id = newEditState.currentId;
             newEditState.values.addressName = '';
             newEditState.values.city = '';
             newEditState.values.street = '';
             newEditState.values.homeNum = '';
             newEditState.values.officeNum = '';
             newEditState.values.comment = '';
+            console.log(newEditState.currentId);
             return newEditState;
         default:
             return state;

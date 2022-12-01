@@ -56,12 +56,6 @@ const AddressesModal = (props) => {
         props.addAddress();
     }
 
-    const updateAddress = (index) => {
-        console.log(index);
-        props.handleModal(false);
-        props.updateAddress(index);
-    }
-
     const editAddress = (id) => {
         console.log(id);
         props.editAddress(id);
