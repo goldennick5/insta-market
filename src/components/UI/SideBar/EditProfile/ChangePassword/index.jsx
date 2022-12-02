@@ -4,11 +4,15 @@ import exit from '../../../../../assets/images/OrdersPage/exitModal.svg';
 import Input from '../../../Input/Input';
 import showeye from '../../../../../pages/icons/showeye.svg';
 import unshoweye from '../../../../../pages/icons/unshoweye.svg';
-const ChangePassword = (props, password, setPassword) => {
+import { connect } from 'react-redux';
+import { updateValues } from '../../../../../store/reducers/signUpReducer';
+const ChangePassword = (props) => {
   const [firstShown, setFirstShown] = useState(false);
   const [secondShown, setSecondShown] = useState(false);
   const [showFirstEyeInput, setShowFirstEyeInput] = useState(false);
   const [showSecondEyeInput, setShowSecondEyeInput] = useState(false);
+  const [password, setPassword] = useState(props.signUpPassword || '');
+  const [newPassword, setNewPassword] = useState('');
 
   function toggleFirstPassword() {
     setFirstShown(!firstShown);
@@ -33,8 +37,17 @@ const ChangePassword = (props, password, setPassword) => {
     } else {
       setShowSecondEyeInput(false);
     }
+    setNewPassword(second_text);
     props.handleTexttChange(second_text);
   };
+
+  const finishPasswordEdit = () => {
+    props.updateValues({
+      password: newPassword,
+    });
+    console.log(props.signUpPassword);
+  };
+
   return (
     <div className={s.modal__header}>
       <div className={s.modal__title}>
@@ -56,9 +69,8 @@ const ChangePassword = (props, password, setPassword) => {
           type={firstShown ? 'text' : 'password'}
           label__focus="Действующий пароль"
           label="Действующий пароль"
-          handleTexttChange={handleFirstChange} 
-          //   value={password}
-          //   handleTexttChange={setPassword}
+          value={password}
+          handleTexttChange={handleFirstChange}
         />
         {showFirstEyeInput ? (
           <button className={s.btn__first} onClick={toggleFirstPassword}>
@@ -71,11 +83,11 @@ const ChangePassword = (props, password, setPassword) => {
         ) : (
           ''
         )}
-
         <Input
           type={secondShown ? 'text' : 'password'}
           label__focus="Введите новый пароль"
           label="Введите новый пароль"
+          value={newPassword}
           handleTexttChange={handleSecondChange}
         />
         {showSecondEyeInput ? (
@@ -90,8 +102,13 @@ const ChangePassword = (props, password, setPassword) => {
           ''
         )}
       </div>
+      <button className={s.btn__finish} onClick={finishPasswordEdit}>
+        Готово
+      </button>
     </div>
   );
 };
-
-export default ChangePassword;
+const mapStateToProps = (state) => ({
+  signUpPassword: state.signup.values.password,
+});
+export default connect(mapStateToProps, { updateValues })(ChangePassword);

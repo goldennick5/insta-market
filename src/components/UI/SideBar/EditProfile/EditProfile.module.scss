@@ -66,3 +66,34 @@
   background-position-x: center;
   vertical-align: middle;
 }
+.btn__container {
+  display: flex;
+  flex-direction: column;
+}
+.btn__changePaswword {
+  width: 312px;
+  height: 40px;
+  background: #f2f4fa;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  color: #15151a;
+  margin-bottom: 16px;
+}
+.btn__finish {
+  width: 312px;
+  height: 40px;
+  background: #458cf5;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  color: #ffffff;
+}

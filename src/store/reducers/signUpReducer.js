@@ -10,7 +10,7 @@ const initState = {
     phoneNum: '',
     name: '',
     email: '',
-    password: '',
+    password: '666',
   },
 };
 
@@ -45,11 +45,9 @@ export const enterValues = (value) => ({
   payload: value,
 });
 
-export const updateValues = (value) => (
-  {
-    type: UPDATE__VALUES,
-    payload: value,
-  }
-);
+export const updateValues = (value) => ({
+  type: UPDATE__VALUES,
+  payload: value,
+});
 
 export default signUpReducer;

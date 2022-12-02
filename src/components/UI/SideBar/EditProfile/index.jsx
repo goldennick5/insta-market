@@ -13,7 +13,7 @@ const EditProfile = (props) => {
   const [name, setName] = useState(props.signUpName || '');
   const [phoneNum, setPhoneNum] = useState(props.signUpPhoneNum || '');
   const [email, setEmail] = useState(props.signUpEmail || '');
-  const [password, setPassword] = useState(props.signUpPassword || '');
+  // const [password, setPassword] = useState(props.signUpPassword || '');
   const [active, setActive] = useState(true);
 
   const changeContent = () => {
@@ -25,7 +25,6 @@ const EditProfile = (props) => {
       name,
       phoneNum,
       email,
-      password,
     });
 
   return (
@@ -81,21 +80,15 @@ const EditProfile = (props) => {
                 handleTexttChange={setEmail}
               />
               <div className={s.btn__container}>
-                {/* <Button
-                color={'btnBlueGrey'}
-                name="Изменить пароль"
-                onClick={() => {
-                  openModal(true);
-                }}
-                className={'mb-16'}
-              />
-              <Button
-                color={'btnBlueEdit'}
-                name="Готово"
-                onClick={finishEdit}
-              /> */}
-                <button onClick={changeContent}>Изменить пароль</button>
-                <button onClick={finishEdit}>Готово</button>
+                <button
+                  className={s.btn__changePaswword}
+                  onClick={changeContent}
+                >
+                  Изменить пароль
+                </button>
+                <button className={s.btn__finish} onClick={finishEdit}>
+                  Готово
+                </button>
               </div>
             </div>
           </div>
@@ -104,8 +97,8 @@ const EditProfile = (props) => {
         <div>
           <div className={s.modal__container__content}>
             <ChangePassword
-              value={password}
-              handleTexttChange={setPassword}
+              // password={password}
+              // setPassword={setPassword}
               handleModal={props.handleModal}
             />
           </div>
@@ -119,7 +112,6 @@ const mapStateToProps = (state) => ({
   signUpPhoneNum: state.signup.values.phoneNum,
   signUpName: state.signup.values.name,
   signUpEmail: state.signup.values.email,
-  signUpPassword: state.signup.values.password,
 });
 
 export default connect(mapStateToProps, { updateValues })(EditProfile);
