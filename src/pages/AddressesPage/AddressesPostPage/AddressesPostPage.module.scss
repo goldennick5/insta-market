@@ -108,7 +108,7 @@
           font-family: 'Inter';
           font-style: normal;
           font-weight: 400;
-          font-size: 17px;
+          font-size: 16px;
           line-height: 140%;
           color: #9E9EA8;
         }
@@ -128,7 +128,7 @@
           color: #000;
           outline: none;
           font-style: normal;
-          font-weight: 500;
+          font-weight: 400;
           font-size: 18px;
           line-height: 22px;
         }
@@ -181,5 +181,18 @@
         color: #ffffff;
       }
     }
+  }
+}
+
+.modal__paragraph__container{
+  margin-top: 35px;
+
+  .modal__paragraph {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 140%;
+    color: #9E9EA8;
   }
 }

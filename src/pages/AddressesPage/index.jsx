@@ -13,10 +13,6 @@ const AddressesPage = (props) => {
         setShowModal(param);
     }
 
-    if(props.addresses.addresses.length == 0){
-        props.addresses.addresses = [];
-    }
-
     return (
         <>
             <OutletWrapper>
@@ -45,7 +41,7 @@ const AddressesPage = (props) => {
                                 <p>Добавление адреса упростит процесс оформления доставки. Вы можете <br/> добавлять и
                                     удалять неограниченное количество адресов.</p>
                                 <div className={s.address__list}>
-                                    {props.addresses.addresses.map((address) => <AddressItem key={address.id}
+                                    {props.addresses.addresses.map((address, index) => <AddressItem key={index}
                                                                                              address={address}
                                                                                              handleModal={handleModal}/>)}
                                     <div className={s.address__btn__container} onClick={() => handleModal(true)}>
@@ -66,7 +62,8 @@ const AddressesPage = (props) => {
 
 const mapStateToProps = (state) => ({
     addresses: state.addresses,
-    addressName: state.addresses.values.addressName
+    addressName: state.addresses.values.addressName,
+    currentId: state.addresses.currentId,
 });
 
 export default connect(mapStateToProps, {})(AddressesPage);

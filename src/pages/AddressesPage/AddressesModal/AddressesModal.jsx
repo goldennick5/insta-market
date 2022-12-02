@@ -1,28 +1,17 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import Input from "../../../components/UI/Input/Input";
+import AddressesPostPage from "../AddressesPostPage/AddressesPostPage";
+import {connect} from "react-redux";
 import {
     enterAddressesValues,
     addAddress,
-    updateAddressId,
-    updateAddress, editAddress
+    editAddress, clearInputs, detailsAddress
 } from "../../../store/reducers/addressesReducer";
-import {connect} from "react-redux";
 import s from "./AddressesModal.module.scss";
 import closeIcon from "../../../assets/images/Modal/closeIcon.svg";
-import AddressesPostPage from "../AddressesPostPage/AddressesPostPage";
 
 const AddressesModal = (props) => {
     const [isSwitched, setIsSwitched] = useState(true);
-    const [isLabel, setIsLabel] = useState(false);
-    const [isIndex, setIsIndex] = useState();
-
-    const handleChange = (event) => {
-        if (event.target.value !== '') {
-            setIsLabel(true);
-        } else {
-            setIsLabel(false);
-        }
-    };
 
     const toggleBtn = (param) => {
         setIsSwitched(param);
@@ -57,9 +46,12 @@ const AddressesModal = (props) => {
     }
 
     const editAddress = (id) => {
-        console.log(id);
         props.editAddress(id);
         props.handleModal(false);
+    }
+
+    const clearInputs = () => {
+        props.clearInputs();
     }
 
     return (
@@ -68,17 +60,17 @@ const AddressesModal = (props) => {
                 <div className={s.modal__container__content__body}>
                     <div className={s.modal__title__container}>
                         <h2 className={s.modal__title}>Добавить адрес</h2>
-                        <img className={s.modal__img} onClick={() => props.handleModal(false)} src={closeIcon} alt=""/>
+                        <img className={s.modal__img} onClick={() => props.handleModal(false) || clearInputs()} src={closeIcon} alt=""/>
                     </div>
 
                     <div className={s.switch}>
-                        <div  onClick={() => toggleBtn(true)}
-                             className={isSwitched ? `${s.switch__delivery} ${s.switch__post} ${s.switch__post__two}` : ""}>
-                            <p className={s.paragraph__delivery}>Адресная доставка</p>
+                        <div onClick={() => toggleBtn(true)}
+                             className={isSwitched ? `${s.switch__delivery} ${s.switch__post}` : `${s.switch__delivery__two} ${s.switch__post__two}`}>
+                            <p>Адресная доставка</p>
                         </div>
-                        <div  onClick={() => toggleBtn(false)}
-                             className={!isSwitched ? `${s.switch__delivery__two} ${s.switch__post__two}` : ""}>
-                            <p className={s.paragraph__post}>Постомат</p>
+                        <div onClick={() => toggleBtn(false)}
+                             className={isSwitched ? `${s.switch__delivery__two} ${s.switch__post__two}` : `${s.switch__delivery} ${s.switch__post}` }>
+                            <p>Постомат</p>
                         </div>
                     </div>
 
@@ -88,22 +80,22 @@ const AddressesModal = (props) => {
                                 <p className={s.modal__paragraph}>Введите адрес для доставки</p>
                             </div>
                             <div className={s.addresses__input__container}>
-                                <div style={{marginTop: "15px", fontSize: "18px", fontWeight: 500}}>
+                                <div className={s.addresses__input__box}>
                                     <Input className={s.addresses__input} label__focus="Название адреса" label="Название адреса"
                                            handleTexttChange={enterAddressName}
                                            value={props.addressName}/>
                                 </div>
-                                <div style={{marginTop: "15px", fontSize: "18px", fontWeight: 500}}>
+                                <div className={s.addresses__input__box}>
                                     <Input className={s.addresses__input} label__focus="Город" label="Ваш город"
                                            handleTexttChange={enterCity}
                                            value={props.city}/>
                                 </div>
-                                <div style={{marginTop: "15px", fontSize: "18px", fontWeight: 500}}>
+                                <div className={s.addresses__input__box}>
                                     <Input className={s.addresses__input} label__focus="Улица" label="Улица"
                                            handleTexttChange={enterStreet}
                                            value={props.street}/>
                                 </div>
-                                <div style={{display: "flex", marginTop: "15px", fontSize: "18px", fontWeight: 500}}>
+                                <div className={s.home__office}>
                                     <Input className={s.addresses__home} label__focus="Дом" label="Номер дома"
                                            handleTexttChange={enterHomeNum}
                                            value={props.homeNum}/>
@@ -111,7 +103,7 @@ const AddressesModal = (props) => {
                                            handleTexttChange={enterOfficeNum}
                                            value={props.officeNum}/>
                                 </div>
-                                <div style={{marginTop: "15px", fontSize: "18px", fontWeight: 500}}>
+                                <div className={s.addresses__input__box}>
                                     <Input className={s.addresses__input} label__focus="Комментарий"
                                            label="Комментарий к доставке" handleTexttChange={enterComment}
                                            value={props.comment}/>
@@ -127,7 +119,7 @@ const AddressesModal = (props) => {
                         <button onClick={() => addAddress() || props.handleModal(false)}
                                 className={s.btnBlue}>Добавить
                         </button>
-                        <button onClick={() => editAddress(props.currentId)}>REMAKE</button>
+                        <button onClick={() => editAddress(props.currentId)} className={s.btnGray}>Изменить</button>
                     </div>
                 </div>
             </div>
@@ -181,11 +173,11 @@ const mapDispatchToProps = (dispatch) => ({
     addAddress: () => {
         dispatch(addAddress())
     },
-    updateAddress: (id) => {
-        dispatch(updateAddress(id));
+    editAddress: (id) => {
+        dispatch(editAddress(id));
     },
-    editAddress: (index) => {
-        dispatch(editAddress(index));
+    clearInputs: () => {
+        dispatch(clearInputs());
     }
 })
 

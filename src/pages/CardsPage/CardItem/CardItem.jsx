@@ -1,10 +1,11 @@
 import React from 'react';
 import {connect} from "react-redux";
+import {deleteCard} from "../../../store/reducers/cardsReducer";
 import bin from "../../../assets/images/CardsPage/icons/delete.svg";
 import s from "./CardItem.module.scss";
-import {deleteCard} from "../../../store/reducers/cardsReducer";
 
 const CardItem = (props) => {
+
     const deleteCard = (index) => {
         props.deleteCard(index);
     }

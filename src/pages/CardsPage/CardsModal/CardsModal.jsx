@@ -9,8 +9,7 @@ import s from './CardsModal.module.scss';
 const CardsModal = (props) => {
 
     const enterCardNumber = (value) => {
-        let newNum = value.match(/.{4}/g).join(' ');
-        props.enterCardNumber(newNum);
+        props.enterCardNumber(value);
     }
 
     const enterValidityPeriod = (value) => {
@@ -24,9 +23,6 @@ const CardsModal = (props) => {
     const addCard = () => {
         props.addCard();
     }
-
-    console.log(props.cards);
-    console.log(props.cards.cards.length);
 
     return (
         <div className={props.showModal ? `${s.modal__container} ${s.active}` : s.modal__container}>

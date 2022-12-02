@@ -1,9 +1,9 @@
 import React, {useState} from "react";
 import CardsModal from "./CardsModal/CardsModal";
+import CardItem from "./CardItem/CardItem";
 import OutletWrapper from "../../components/UI/Wrapper/OutletWrapper/OutletWrapper";
 import s from "./CardsPage.module.scss";
 import cardsPageLogo from "../../assets/images/CardsPage/cardsPageSvg.svg";
-import CardItem from "./CardItem/CardItem";
 import {connect} from "react-redux";
 
 const CardsPage = (props) => {

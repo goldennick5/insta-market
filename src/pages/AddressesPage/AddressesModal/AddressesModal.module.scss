@@ -46,17 +46,15 @@
         }
       }
 
-      //Стиль для адресной доставки
       .switch{
         display: flex;
         align-items: center;
-        justify-content: center;
-        justify-content: space-around;
         width: 330px;
         height: 36px;
         background: #F7F7F7;
         border-radius: 20px;
         margin-top: 36px;
+        padding: 3px 0;
 
         .switch__delivery{
           width: 165px;
@@ -65,17 +63,9 @@
           justify-content: center;
           align-items: center;
           border-radius: 20px;
-          background: #458CF5;
+          background: #ffffff;
+          color: #ffffff;
           cursor: pointer;
-
-          .paragraph__delivery{
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 500;
-            font-size: 14px;
-            line-height: 20px;
-            color: #fff;
-          }
         }
 
         .switch__post{
@@ -85,36 +75,23 @@
           justify-content: center;
           align-items: center;
           border-radius: 20px;
+          background: #458CF5;
+          font-size: 14px;
+          font-weight: 400;
+          padding: 3px 0;
+          color: #ffffff;
           cursor: pointer;
-
-          .paragraph__post{
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 500;
-            font-size: 14px;
-            line-height: 20px;
-            color: #9E9EA8;
-          }
         }
 
         .switch__delivery__two{
           width: 165px;
           height: 36px;
           display: flex;
-          justify-content: center;
           align-items: center;
           border-radius: 20px;
           cursor: pointer;
+          background: #ffffff;
           color: #ffffff;
-
-          .paragraph__delivery__two{
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 500;
-            font-size: 14px;
-            line-height: 20px;
-            color: #ffffff;
-          }
         }
 
         .switch__post__two{
@@ -125,21 +102,12 @@
           align-items: center;
           border-radius: 20px;
           cursor: pointer;
-          background: #458CF5;
-
-          .paragraph__post__two{
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 500;
-            font-size: 14px;
-            line-height: 20px;
-            color: #fff;
-          }
+          background: #F7F7F7;
+          font-size: 14px;
+          font-weight: 500;
+          color: #9E9EA8;
         }
       }
-
-      //Стиль для адресной доставки
-      //...
 
       .modal__paragraph__container{
         margin-top: 35px;
@@ -157,6 +125,12 @@
       .addresses__input__container {
         margin-top: 40px;
 
+        .addresses__input__box {
+          margin-top: 15px;
+          font-size: 18px;
+          font-weight: 500;
+        }
+
         .addresses__input {
           font-family: 'Inter';
           background: transparent;
@@ -173,35 +147,43 @@
           line-height: 22px;
         }
 
-        .addresses__home {
-          font-family: 'Inter';
-          background: transparent;
-          border: none;
-          border-bottom: 1px solid #9E9EA8;
-          width: 146px;
-          margin-bottom: 1.5rem;
-          margin-right: 6px;
-          font-size: 16px;
-          padding: 3px;
-          color: #000;
-          font-weight: 600;
-          line-height: 22.5px;
-          outline: none;
+        .home__office {
+          display: flex;
+          margin-top: 15px;
+          font-size: 18px;
+          font-weight: 500;
+
+          .addresses__home {
+            font-family: 'Inter';
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #9E9EA8;
+            width: 146px;
+            margin-bottom: 1.5rem;
+            margin-right: 6px;
+            font-size: 16px;
+            padding: 3px;
+            color: #000;
+            font-weight: 600;
+            line-height: 22.5px;
+            outline: none;
+          }
+
+          .addresses__office {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #9E9EA8;
+            width: 146px;
+            margin-bottom: 1.5rem;
+            font-size: 16px;
+            padding: 3px;
+            color: #000;
+            font-weight: 600;
+            line-height: 22.5px;
+            outline: none;
+          }
         }
 
-        .addresses__office {
-          background: transparent;
-          border: none;
-          border-bottom: 1px solid #9E9EA8;
-          width: 146px;
-          margin-bottom: 1.5rem;
-          font-size: 16px;
-          padding: 3px;
-          color: #000;
-          font-weight: 600;
-          line-height: 22.5px;
-          outline: none;
-        }
       }
 
       .btnBlue {
@@ -219,6 +201,23 @@
         justify-content: center;
         align-items: center;
         color: #ffffff;
+      }
+
+      .btnGray {
+        width: 312px;
+        height: 40px;
+        margin-top: 5px;
+        background: #F7F7F7;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 4px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #9E9EA8;
       }
     }
   }

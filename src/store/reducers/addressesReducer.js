@@ -1,8 +1,9 @@
 const ENTER__ADDRESS__VALUES = "ENTER__ADDRESS__VALUES";
 const ADD__ADDRESS = "ADD__ADDRESS";
 const DELETE__ADDRESS = "DELETE__ADDRESS";
-const UPDATE__ADDRESS = "UPDATE__ADDRESS";
+const DETAILS__ADDRESS = "DETAILS__ADDRESS";
 const EDIT__ADDRESS = "EDIT__ADDRESS";
+const CLEAR__INPUTS = "CLEAR__INPUTS";
 
 const initState = {
     addresses: [],
@@ -16,13 +17,13 @@ const initState = {
         comment: '',
     },
     newId: 0,
+    currentId: 0,
     newAddressName: '',
     newCity: '',
     newStreet: '',
     newHomeNum: '',
     newOfficeNum: '',
     newComment: '',
-    currentId: 0
 };
 
 const addressesReducer = (state = initState, action) => {
@@ -30,36 +31,49 @@ const addressesReducer = (state = initState, action) => {
         case ENTER__ADDRESS__VALUES:
             return {...state, values: {...state.values, ...action.payload}};
         case ADD__ADDRESS:
-            let newState = {...state};
-            let id = ++newState.newId;
-            newState.newAddressName = newState.values.addressName;
-            newState.newCity = newState.values.city;
-            newState.newStreet = newState.values.street;
-            newState.newHomeNum = newState.values.homeNum;
-            newState.newOfficeNum = newState.values.officeNum;
-            newState.newComment = newState.values.comment;
+            let newAddState = {...state};
+            let id = ++newAddState.newId;
+            newAddState.newAddressName = newAddState.values.addressName;
+            newAddState.newCity = newAddState.values.city;
+            newAddState.newStreet = newAddState.values.street;
+            newAddState.newHomeNum = newAddState.values.homeNum;
+            newAddState.newOfficeNum = newAddState.values.officeNum;
+            newAddState.newComment = newAddState.values.comment;
             const address = {
                 id,
-                addressName: newState.newAddressName,
-                city: newState.newCity,
-                street: newState.newStreet,
-                homeNum: newState.newHomeNum,
-                officeNum: newState.newOfficeNum,
-                comment: newState.newComment,
+                addressName: newAddState.newAddressName,
+                city: newAddState.newCity,
+                street: newAddState.newStreet,
+                homeNum: newAddState.newHomeNum,
+                officeNum: newAddState.newOfficeNum,
+                comment: newAddState.newComment,
             }
-            newState.addresses = [...state.addresses];
-            newState.addresses.push(address);
-            newState.values.addressName = '';
-            newState.values.city = '';
-            newState.values.street = '';
-            newState.values.homeNum = '';
-            newState.values.officeNum = '';
-            newState.values.comment = '';
-            return newState;
+            newAddState.addresses = [...state.addresses];
+            newAddState.addresses.push(address);
+            newAddState.values.addressName = '';
+            newAddState.values.city = '';
+            newAddState.values.street = '';
+            newAddState.values.homeNum = '';
+            newAddState.values.officeNum = '';
+            newAddState.values.comment = '';
+            return newAddState;
         case DELETE__ADDRESS:
-            const addressId = action.index;
-            return {...state, addresses: state.addresses.filter((val) => val.id !== addressId)};
-        case UPDATE__ADDRESS:
+            let newDeleteState = {...state};
+            const deleteAddress = action.index;
+            const newAddressState = {...newDeleteState, addresses: newDeleteState.addresses.filter((address) => address.id !== deleteAddress)};
+            if(newAddressState.addresses.length === 0){
+                newAddressState.newId = 0;
+                newAddressState.currentId = 0;
+                newAddressState.newAddressName = '';
+                newAddressState.newCity = '';
+                newAddressState.newStreet = '';
+                newAddressState.newHomeNum = '';
+                newAddressState.newOfficeNum = '';
+                newAddressState.newComment = '';
+            }
+            return newAddressState;
+
+        case DETAILS__ADDRESS:
             let newUpdatedState = {...state};
             newUpdatedState.addresses.forEach((address) => {
                 if(address.id === action.payload){
@@ -72,12 +86,10 @@ const addressesReducer = (state = initState, action) => {
                 }
             })
             newUpdatedState.currentId = action.payload;
-            console.log(newUpdatedState.currentId);
             return newUpdatedState;
         case EDIT__ADDRESS:
-            let newEditState = {...state, addresses: state.addresses.map((i) => ({...i}))}
+            let newEditState = {...state, addresses: state.addresses.map((address) => ({...address}))}
             let newAddressObject = {
-                //id: newEditState.values.currentId,
                 addressName: newEditState.values.addressName,
                 city: newEditState.values.city,
                 street: newEditState.values.street,
@@ -86,15 +98,22 @@ const addressesReducer = (state = initState, action) => {
                 comment: newEditState.values.comment
             }
             newEditState.addresses.splice(action.index - 1, 1, newAddressObject);
-            newAddressObject.id = newEditState.currentId;
+            newAddressObject.id = newEditState.currentId; //Присвоить id объекту текущий id, иначе undefined.
             newEditState.values.addressName = '';
             newEditState.values.city = '';
             newEditState.values.street = '';
             newEditState.values.homeNum = '';
             newEditState.values.officeNum = '';
             newEditState.values.comment = '';
-            console.log(newEditState.currentId);
             return newEditState;
+        case CLEAR__INPUTS:
+            let newClearState = {...state};
+            newClearState.values.addressName = '';
+            newClearState.values.city = '';
+            newClearState.values.street = '';
+            newClearState.values.homeNum = '';
+            newClearState.values.officeNum = '';
+            newClearState.values.comment = '';
         default:
             return state;
     }
@@ -116,14 +135,18 @@ export const deleteAddress = (index) => ({
     index
 })
 
-export const updateAddress = (index) => ({
-    type: UPDATE__ADDRESS,
+export const detailsAddress = (index) => ({
+    type: DETAILS__ADDRESS,
     payload: index
 })
 
 export const editAddress = (index) => ({
     type: EDIT__ADDRESS,
     index
+})
+
+export const clearInputs = () => ({
+    type: CLEAR__INPUTS
 })
 
 export default addressesReducer;
