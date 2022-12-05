@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import Wrapper from "../../components/UI/Wrapper/Wrapper";
 import s from "./SignUp.module.scss";
 import Step1 from "./steps/Step1";
