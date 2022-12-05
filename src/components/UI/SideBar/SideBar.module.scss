@@ -5,17 +5,23 @@
   background: #ffffff;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
   border-radius: 4px;
-  position: relative;
+  // position: relative;
   margin-right: 16px;
+  // display: flex;
+  // flex-direction: column;
+}
+.sidebar__buton {
+  position: relative;
+  display: flex;
+  justify-content: end;
 }
 .edit {
   border: 1px solid #dbdfeb;
   border-radius: 8px;
   padding: 7px;
   background: #ffffff;
-  position: absolute;
   top: 16px;
-  right: 16px;
+  left: 16px;
 }
 .sidebar__profile {
   margin: auto;
@@ -43,15 +49,16 @@
   letter-spacing: -0.2px;
   color: #15151a;
 }
-.services-content {
+.services__content {
   display: flex;
   padding-top: 13px;
   padding-bottom: 13px;
   padding-left: 30px;
   cursor: pointer;
-}
-.services-content:hover {
-  border-left: 4px solid #387FEA;
+  &.active {
+    border-left: 4px solid #387fea;
+    padding-left: 26px;
+  }
 }
 .services__icon {
   margin-right: 12px;
