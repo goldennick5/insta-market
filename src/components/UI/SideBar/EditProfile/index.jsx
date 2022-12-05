@@ -39,7 +39,6 @@ const EditProfile = (props) => {
         <div className={s.modal__container__content}>
           <div className={s.modal__header}>
             <div className={s.modal__title}>
-              <p> Редактирование профиля </p>
               <div
                 className={s.modal__exit}
                 onClick={() => {
@@ -48,6 +47,7 @@ const EditProfile = (props) => {
               >
                 <img src={exit} alt="exitBtn" />
               </div>
+              <p> Редактирование профиля </p>
             </div>
             <div className={s.modal__subtitle}>
               <p>Редактируйте свои персональные данные</p>

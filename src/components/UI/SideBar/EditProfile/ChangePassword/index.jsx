@@ -37,6 +37,7 @@ const ChangePassword = (props) => {
     } else {
       setShowSecondEyeInput(false);
     }
+    // console.log(second_text);
     setNewPassword(second_text);
     props.handleTexttChange(second_text);
   };
@@ -45,13 +46,13 @@ const ChangePassword = (props) => {
     props.updateValues({
       password: newPassword,
     });
-    console.log(props.signUpPassword);
+    props.handleModal(false);
+    // console.log(props.signUpPassword);
   };
 
   return (
     <div className={s.modal__header}>
       <div className={s.modal__title}>
-        <p> Изменить пароль </p>
         <div
           className={s.modal__exit}
           onClick={() => {
@@ -60,51 +61,54 @@ const ChangePassword = (props) => {
         >
           <img src={exit} alt="exitBtn" />
         </div>
+        <p> Изменить пароль </p>
+        <div />
+        {/* </div> */}
+        <div className={s.modal__subtitle}>
+          <p>Смена пароля</p>
+        </div>
+        <div className={s.password__container}>
+          <Input
+            type={firstShown ? 'text' : 'password'}
+            label__focus="Действующий пароль"
+            label="Действующий пароль"
+            value={password}
+            handleTexttChange={handleFirstChange}
+          />
+          {showFirstEyeInput ? (
+            <button className={s.btn__first} onClick={toggleFirstPassword}>
+              {firstShown ? (
+                <img alt="showeye" src={showeye} />
+              ) : (
+                <img alt="showeye" src={unshoweye} />
+              )}
+            </button>
+          ) : (
+            ''
+          )}
+          <Input
+            type={secondShown ? 'text' : 'password'}
+            label__focus="Введите новый пароль"
+            label="Введите новый пароль"
+            value={newPassword}
+            handleTexttChange={handleSecondChange}
+          />
+          {showSecondEyeInput ? (
+            <button className={s.btn__second} onClick={toggleSecondPassword}>
+              {secondShown ? (
+                <img alt="showeye" src={showeye} />
+              ) : (
+                <img alt="showeye" src={unshoweye} />
+              )}
+            </button>
+          ) : (
+            ''
+          )}
+        </div>
+        <button className={s.btn__finish} onClick={finishPasswordEdit}>
+          Готово
+        </button>
       </div>
-      <div className={s.modal__subtitle}>
-        <p>Смена пароля</p>
-      </div>
-      <div className={s.password__container}>
-        <Input
-          type={firstShown ? 'text' : 'password'}
-          label__focus="Действующий пароль"
-          label="Действующий пароль"
-          value={password}
-          handleTexttChange={handleFirstChange}
-        />
-        {showFirstEyeInput ? (
-          <button className={s.btn__first} onClick={toggleFirstPassword}>
-            {firstShown ? (
-              <img alt="showeye" src={showeye} />
-            ) : (
-              <img alt="showeye" src={unshoweye} />
-            )}
-          </button>
-        ) : (
-          ''
-        )}
-        <Input
-          type={secondShown ? 'text' : 'password'}
-          label__focus="Введите новый пароль"
-          label="Введите новый пароль"
-          value={newPassword}
-          handleTexttChange={handleSecondChange}
-        />
-        {showSecondEyeInput ? (
-          <button className={s.btn__second} onClick={toggleSecondPassword}>
-            {secondShown ? (
-              <img alt="showeye" src={showeye} />
-            ) : (
-              <img alt="showeye" src={unshoweye} />
-            )}
-          </button>
-        ) : (
-          ''
-        )}
-      </div>
-      <button className={s.btn__finish} onClick={finishPasswordEdit}>
-        Готово
-      </button>
     </div>
   );
 };
