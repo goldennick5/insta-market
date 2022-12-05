@@ -1,8 +1,7 @@
 const INCREMENT__STEPS = "INCREMENT__STEPS";
-const ENTER__VALUES = "ENTER__VALUES";
+const ENTER__SIGNUP__VALUES = "ENTER__SIGNUP__VALUES";
 const DECREMENT__STEPS = "DECREMENT__STEPS";
 
-//Initial state
 const initState = {
     step: 1,
     values: {
@@ -13,14 +12,13 @@ const initState = {
     }
 }
 
-//Reducer
 const signUpReducer = (state = initState, action) => {
     switch (action.type) {
         case INCREMENT__STEPS:
             return {...state, step: state.step + 1}
         case DECREMENT__STEPS:
             return {...state, step: state.step - 1}
-        case ENTER__VALUES:
+        case ENTER__SIGNUP__VALUES:
             return {...state, values : {...state.values,...action.payload}}
         default: {
             return {...state}
@@ -28,7 +26,6 @@ const signUpReducer = (state = initState, action) => {
     }
 }
 
-//Action creators
 export const incrementStep = () => (
     {
         type: INCREMENT__STEPS
@@ -43,7 +40,7 @@ export const decrementStep = () => (
 
 export const enterValues = (value) => (
     {
-        type: ENTER__VALUES,
+        type: ENTER__SIGNUP__VALUES,
         payload: value
     }
 )

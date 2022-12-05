@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
+import {connect} from "react-redux";
 import Wrapper from "../../components/UI/Wrapper/Wrapper";
 import Input from '../../components/UI/Input/Input';
+import {enterSignInValues} from "../../store/reducers/loginReducer";
+import Button from "../../components/UI/button/Button";
+import Header from "../../components/UI/header/Header";
 import s from './SignIn.module.scss';
 import showeye from '../icons/showeye.svg';
 import unshoweye from '../icons/unshoweye.svg';
-import {connect} from "react-redux";
-import {changeMsg, showInfo} from "../../store/reducers/loginReducer";
-import Button from "../../components/UI/button/Button";
-import Header from "../../components/UI/header/Header";
 
 function SignIn(props) {
     const [shown, setShown] = useState(false);
@@ -17,12 +17,17 @@ function SignIn(props) {
         setShown(!shown);
     }
 
-    const handleTexttChange = (text) => {
-        if (text !== '') {
+    const handlePhoneNum = (value) => {
+        props.enterPhoneNum(value);
+    }
+
+    const handlePassword = (value) => {
+        if (value !== '') {
             setShowEyeInput(true);
         } else {
             setShowEyeInput(false);
         }
+        props.enterPassword(value);
     }
 
     return (
@@ -33,14 +38,14 @@ function SignIn(props) {
                     <div>
                         <h2 className={s.title}>Привет!</h2>
                     </div>
-                    <Input label__focus="Номер телефона" label="Введите номер телефона"/>
+                    <Input handleTextChange={handlePhoneNum} label__focus="Номер телефона" label="Введите номер телефона"/>
                     <div className={s.password__container}>
                         <Input type={shown ? 'text' : 'password'}
                                label__focus="Пароль"
                                label="Введите пароль"
-                               handleTexttChange={handleTexttChange}/>
+                               handleTextChange={handlePassword}/>
                         {showEyeInput ? <button className={s.btn} onClick={togglePassword}>
-                            {shown ? <img alt=""src={showeye}/> : <img alt=""src={unshoweye}/>}
+                            {shown ? <img alt="" src={showeye}/> : <img alt="" src={unshoweye}/>}
                         </button> : ''}
                     </div>
                 </div>
@@ -57,26 +62,22 @@ function SignIn(props) {
 }
 
 const mapStateToProps = (state) => ({
-    signInData: state.login
+    phoneNumber: state.login.values.phoneNumber,
+    password: state.login.values.password,
 })
 
 const mapDispatchToProps = (dispatch) => ({
-     showInfo: () => {
-         dispatch(showInfo())
-     },
-     changeMsg: (msg) => {
-         dispatch(changeMsg(msg))
-     }
- })
+    enterPhoneNum: (value) => {
+        dispatch(enterSignInValues({
+            phoneNumber: value
+        }))
+    },
+    enterPassword: (value) => {
+        dispatch(enterSignInValues({
+            password: value
+        }))
+    }
+})
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignIn)
-
-// function connect(mapStateToProps, mapDispatchToProps) {
-//     state
-//     return (SignIn) => {
-//         <Wrapper>
-//             <SignIn props={state.signInData}/>
-//         </Wrapper>
-//     }
-// }

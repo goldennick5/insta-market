@@ -10,19 +10,19 @@ const CardsModal = (props) => {
 
     const enterCardNumber = (value) => {
         props.enterCardNumber(value);
-    }
+    };
 
     const enterValidityPeriod = (value) => {
         props.enterValidityPeriod(value);
-    }
+    };
 
     const enterCvCode = (value) => {
         props.enterCvCode(value);
-    }
+    };
 
     const addCard = () => {
         props.addCard();
-    }
+    };
 
     return (
         <div className={props.showModal ? `${s.modal__container} ${s.active}` : s.modal__container}>

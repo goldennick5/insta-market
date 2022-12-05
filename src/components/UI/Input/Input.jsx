@@ -10,7 +10,7 @@ const Input = (props) => {
         } else {
             setIsLabel(false);
         }
-        props.handleTexttChange(e.target.value);
+        props.handleTextChange(e.target.value);
     }
 
     return (

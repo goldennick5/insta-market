@@ -2,7 +2,7 @@ import React from 'react';
 import s from "./steps.module.scss";
 import stepSix from '../../../assets/images/WelcomePage/stepSix.svg';
 
-const Step6 = (props) => {
+const Step6 = () => {
     return (
         <div className={s.step6_container}>
             <div className={s.step6__title}>

@@ -82,30 +82,30 @@ const AddressesModal = (props) => {
                             <div className={s.addresses__input__container}>
                                 <div className={s.addresses__input__box}>
                                     <Input className={s.addresses__input} label__focus="Название адреса" label="Название адреса"
-                                           handleTexttChange={enterAddressName}
+                                           handleTextChange={enterAddressName}
                                            value={props.addressName}/>
                                 </div>
                                 <div className={s.addresses__input__box}>
                                     <Input className={s.addresses__input} label__focus="Город" label="Ваш город"
-                                           handleTexttChange={enterCity}
+                                           handleTextChange={enterCity}
                                            value={props.city}/>
                                 </div>
                                 <div className={s.addresses__input__box}>
                                     <Input className={s.addresses__input} label__focus="Улица" label="Улица"
-                                           handleTexttChange={enterStreet}
+                                           handleTextChange={enterStreet}
                                            value={props.street}/>
                                 </div>
                                 <div className={s.home__office}>
                                     <Input className={s.addresses__home} label__focus="Дом" label="Номер дома"
-                                           handleTexttChange={enterHomeNum}
+                                           handleTextChange={enterHomeNum}
                                            value={props.homeNum}/>
                                     <Input className={s.addresses__office} label__focus="Квартира / Офис" label="Номер офиса"
-                                           handleTexttChange={enterOfficeNum}
+                                           handleTextChange={enterOfficeNum}
                                            value={props.officeNum}/>
                                 </div>
                                 <div className={s.addresses__input__box}>
                                     <Input className={s.addresses__input} label__focus="Комментарий"
-                                           label="Комментарий к доставке" handleTexttChange={enterComment}
+                                           label="Комментарий к доставке" handleTextChange={enterComment}
                                            value={props.comment}/>
                                 </div>
                             </div>
