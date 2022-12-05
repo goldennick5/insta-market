@@ -5,7 +5,7 @@ import React from 'react';
 const Step1 = (props) => {
 
     const handleTextOne = (text) => {
-        props.handleTexttChange(text);
+        props.handleTextChange(text);
     }
 
     return (
@@ -15,7 +15,7 @@ const Step1 = (props) => {
             </div>
             <Input label__focus="Номер телефона"
                    label="Введите номер телефона"
-                   handleTexttChange={handleTextOne}
+                   handleTextChange={handleTextOne}
                     value={props.value}/>
         </div>
     )

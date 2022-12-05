@@ -10,11 +10,11 @@ import Step6 from "./steps/Step6";
 import Step7 from "./steps/Step7";
 import WelcomeWrapper from "../../components/UI/Wrapper/WelcomeWrapper";
 import Button from "../../components/UI/button/Button";
-import loadingImg from "../../assets/images/Loading/Frame.svg";
-import {connect} from "react-redux";
 import {enterValues, incrementStep, decrementStep} from "../../store/reducers/signUpReducer";
 import Header from "../../components/UI/header/Header";
-import {useNavigate, Navigate, useLocation} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
+import loadingImg from "../../assets/images/Loading/Frame.svg";
+import {connect} from "react-redux";
 
 function SignUp(props) {
     const [disable, setDisable] = useState(true);
@@ -22,13 +22,10 @@ function SignUp(props) {
     const [loading, setLoading] = useState(false);
 
     let navigate = useNavigate();
-    let location = useLocation();
 
     const handleRedirect = () => {
         navigate('/cabinet/orders');
     }
-
-    console.log(location.pathname)
 
     const handleStepsUp = () => {
         props.incrementStep();
@@ -116,7 +113,7 @@ function SignUp(props) {
                                     name='Вернуться на ветрину'
                                     class={'btn'}/>
                         </>}
-                    {props.signUpData === 6 && //|| props.signUpData === 7
+                    {props.signUpData === 6 &&
                         <>
                             <Button color={'btnBlue'}
                                     name='Продолжить'
@@ -144,11 +141,11 @@ function SignUp(props) {
                 <Wrapper>
                     <div className={s.subform}>
                         {props.signUpData === 1 &&
-                            <Step1 value={props.signUpPhoneNum} handleTexttChange={enterPhoneNum}/>}
-                        {props.signUpData === 2 && <Step2 value={props.signUpName} handleTexttChange={enterName}/>}
-                        {props.signUpData === 3 && <Step3 value={props.signUpEmail} handleTexttChange={enterEmail}/>}
+                            <Step1 value={props.signUpPhoneNum} handleTextChange={enterPhoneNum}/>}
+                        {props.signUpData === 2 && <Step2 value={props.signUpName} handleTextChange={enterName}/>}
+                        {props.signUpData === 3 && <Step3 value={props.signUpEmail} handleTextChange={enterEmail}/>}
                         {props.signUpData === 4 &&
-                            <Step4 value={props.signUpPassword} handleTexttChange={enterPassword}/>}
+                            <Step4 value={props.signUpPassword} handleTextChange={enterPassword}/>}
                     </div>
                 </Wrapper>
                 <div className={s.btn__container}>

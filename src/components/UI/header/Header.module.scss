@@ -16,25 +16,26 @@
   .header__exit {
     display: flex;
     position: absolute;
-  }
-  .exit__btn {
-    display: flex;
-    align-items: center;
-    padding: 8px 20px 8px 16px;
-    background: #ffffff;
-    border-radius: 4px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
-    border: none;
-  }
-  .exit__img {
-    margin-right: 8px;
-  }
-  .exit__text {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 140%;
+
+    .exit__btn {
+      display: flex;
+      align-items: center;
+      padding: 8px 20px 8px 16px;
+      background: #ffffff;
+      border-radius: 4px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+      border: none;
+    }
+    .exit__img {
+      margin-right: 8px;
+    }
+    .exit__text {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 140%;
+    }
   }
 
   .header__back {

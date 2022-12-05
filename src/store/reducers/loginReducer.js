@@ -1,34 +1,26 @@
-const SHOW_INFO = "SHOW_INFO"
-const CHANGE_MSG = "CHANGE_MSG"
+const ENTER__SIGNIN__VALUES = "ENTER__SIGNIN__VALUES";
 
 const initState = {
-    phoneNumber: '873',
-    password: '222111',
-    showInfo: false,
-    msg: "!!!!"
+    values: {
+        phoneNumber: '',
+        password: '',
+    }
 }
 
 const loginReducer = (state = initState, action) => {
     switch (action.type) {
-        case SHOW_INFO:
-            return {...state, showInfo: true}
-        case CHANGE_MSG:
-            return {...state, msg: action.msg}
+        case ENTER__SIGNIN__VALUES:
+            return {...state, values: {...state.values, ...action.payload}}
         default:
             return state
     }
 }
 
 
-export const showInfo = () => (
+export const enterSignInValues = (value) => (
     {
-        type: SHOW_INFO
-    }
-)
-export const changeMsg = (msg) => (
-    {
-        type: CHANGE_MSG,
-        msg
+        type: ENTER__SIGNIN__VALUES,
+        payload: value
     }
 )
 

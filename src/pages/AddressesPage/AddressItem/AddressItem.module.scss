@@ -1,0 +1,54 @@
+.card {
+  width: 206px;
+  height: 125px;
+  filter: drop-shadow(0px 4px 20px rgba(12, 107, 250, 0.25));
+  border-radius: 8px;
+  color: #ffffff;
+  background-image: url("../../../assets/images/AddressesPage/addressCard.svg");
+  background-size: cover;
+  background-color: #0C6BFA;
+  background-repeat: no-repeat;
+  background-size: 129%;
+  background-position: center;
+  margin-right: 6px;
+  margin-top: 6px;
+
+  .card__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+
+    .img__one {
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    .img__two {
+      margin-right: 3px;
+      cursor: pointer;
+    }
+  }
+
+  .card__body {
+    margin: 10px;
+    margin-top: 40px;
+  }
+
+  h3 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 18px;
+    color: #ffffff;
+  }
+
+  h5 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 140%;
+  }
+}
