@@ -1,0 +1,79 @@
+.tracking {
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.tracking__title {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: -0.2px;
+  color: #15151a;
+}
+.tracking__subtitle {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 140%;
+  letter-spacing: -0.2px;
+  color: #5d5d66;
+}
+.tracking__left {
+  width: 30%;
+}
+.tracking__steps {
+  width: 20%;
+}
+.circle {
+  position: absolute;
+  left: 36%;
+  top: 30%;
+  background: #a0a0a0;
+  width: 16px;
+  height: 16px;
+  line-height: 1.5em;
+  border-radius: 100%;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 0 0 3px #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.circleBlue {
+  position: absolute;
+  left: 36%;
+  top: 30%;
+  background: #458bf5;
+  width: 16px;
+  height: 16px;
+  line-height: 1.5em;
+  border-radius: 100%;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 0 0 3px #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.arrow {
+  z-index: 2;
+}
+/* Vertical Line */
+.line {
+  content: ' ';
+  position: absolute;
+  display: block;
+  top: 24px;
+  bottom: 13px;
+  left: 38%;
+  height: 118%;
+  width: 2px;
+  background-color: #458bf5;
+}

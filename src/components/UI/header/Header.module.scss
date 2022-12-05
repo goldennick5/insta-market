@@ -9,7 +9,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
+    width: 100px;
+    margin: auto;
   }
 
   .header__exit {
@@ -44,16 +45,15 @@
 
     .back__btn {
       display: flex;
-      //justify-content: end;
       align-items: center;
       padding: 6px 14px 6px 14px;
       background: transparent;
       border-radius: 4px;
-      border: 1px solid #A8B3C640;
+      border: 1px solid #a8b3c640;
 
       .back__img {
         margin-right: 8px;
-        color: #9E9EA8;
+        color: #9e9ea8;
       }
       .back__text {
         font-family: 'Inter';
@@ -62,10 +62,9 @@
         font-weight: 500;
         font-size: 12px;
         line-height: 140%;
-        color: #9E9EA8;
+        color: #9e9ea8;
       }
     }
   }
   margin-bottom: 16px;
 }
-
