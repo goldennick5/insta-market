@@ -261,7 +261,9 @@
 @media only screen and (max-width: 600px) {
   .step1_container {
     .title_step1{
-      font-size: 24px;
+      font-size: 29px;
+      line-height: 1.2;
+      margin-bottom: 100px;
     }
 
     input {
@@ -273,7 +275,8 @@
 
   .step2_container {
     .title_step2 {
-      font-size: 24px;
+      font-size: 29px;
+      line-height: 1.2;
     }
 
     input {
@@ -285,7 +288,13 @@
 
   .step3_container {
     .title_step3 {
-      font-size: 24px;
+      font-size: 29px;
+      line-height: 1.2;
+    }
+
+    .paragraph_step3 {
+      line-height: 1.6;
+      margin-bottom: 50px;
     }
 
     input {
@@ -300,6 +309,7 @@
 
     .title_step4 {
       font-size: 29px;
+      line-height: 1.2;
       margin-bottom: 100px;
     }
 
