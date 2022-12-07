@@ -8,7 +8,7 @@ const Step3 = (props) => {
     }
 
     return (
-        <div>
+        <div className={s.step3_container}>
             <div>
                 <h2 className={s.title_step3}>И ваш адрес<br/>электронной почты?</h2>
             </div>

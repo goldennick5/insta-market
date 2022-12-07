@@ -37,7 +37,7 @@ const Step4 = (props) => {
     }
 
     return (
-        <div>
+        <div className={s.step4_container}>
             <div>
                 <h2 className={s.title_step4}>Придумайте пароль</h2>
             </div>
@@ -49,7 +49,7 @@ const Step4 = (props) => {
                 {showFirstEyeInput ? <button className={s.btn__first} onClick={toggleFirstPassword}>
                     {firstShown ? <img alt="showeye" src={showeye}/> : <img alt="showeye" src={unshoweye}/>}
                 </button> : ''}
-
+                <div className={s.separator}></div>
                 <Input type={secondShown ? 'text' : 'password'}
                        label__focus="Повторите пароль"
                        label="Повторите пароль"

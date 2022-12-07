@@ -17,6 +17,10 @@
     display: flex;
     position: absolute;
 
+    .exit__btn__mobile{
+      display: none;
+    }
+
     .exit__btn {
       display: flex;
       align-items: center;
@@ -67,4 +71,16 @@
     }
   }
   margin-bottom: 16px;
+}
+
+@media only screen and (max-width: 600px) {
+  .header__exit {
+    .exit__btn {
+      display: none;
+    }
+
+    .exit__btn__mobile{
+      display: block;
+    }
+  }
 }

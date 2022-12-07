@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 256px;
+  width: 320px;
   height: 32px;
   padding: 4px 0px;
   border: none;
@@ -15,7 +15,7 @@
 
   .switch__signin {
     padding: 14px 0px;
-    width: 128px;
+    width: 160px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,7 +28,7 @@
 
   .switch__signup {
     padding: 14px 0px;
-    width: 128px;
+    width: 160px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,6 +36,31 @@
     cursor: pointer;
     .paragraph {
       font-size: 12px;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+
+  .switch {
+    width: 90.9vw;
+    height: 33px;
+    margin-top: 20px;
+
+    .switch__signin {
+      padding: 14px 15px;
+      width: 45vw;
+      .paragraph{
+        font-size: 14px;
+      }
+    }
+
+    .switch__signup {
+      padding: 14px 15px;
+      width: 45vw;
+      .paragraph{
+        font-size: 14px;
+      }
     }
   }
 }

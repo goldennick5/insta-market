@@ -83,3 +83,26 @@
 .btn {
   margin-top: 9px;
 }
+
+@media only screen and (max-width: 600px) {
+  .btnBlue {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-size: 15px;
+    font-weight: 600;
+    width: 100vw;
+    height: 8vh;
+    border-radius: 0px;
+  }
+  .btnNoColor {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-size: 15px;
+    font-weight: 500;
+    background: #ffffff;
+    width: 100vw;
+    height: 8vh;
+    margin: 0;
+    border-radius: 0px;
+  }
+}
