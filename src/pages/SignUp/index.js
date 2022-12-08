@@ -102,13 +102,13 @@ function SignUp(props) {
         <div className={s.finish__form}>
           <Header />
           <WelcomeWrapper>
-            <div>
+            
               {props.signUpData === 5 && (
                 <Step5 signUpName={props.signUpName} />
               )}
               {props.signUpData === 6 && <Step6 />}
               {props.signUpData === 7 && <Step7 />}
-            </div>
+            
           </WelcomeWrapper>
           <div className={s.btn__container}>
             {props.signUpData === 5 && (

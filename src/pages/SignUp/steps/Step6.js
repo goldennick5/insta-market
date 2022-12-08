@@ -10,11 +10,11 @@ const Step6 = () => {
             </div>
 
 
-            <div className={s.step6__paragraph} style={{position: "absolute"}}>
-                <p>Вы можете отслеживать активные <br/> заказы, а также видеть <br/> предыдущие</p>
+            <div className={s.step6__paragraph}>
+                <p>Вы можете отслеживать активные заказы, а также видеть предыдущие</p>
             </div>
 
-            <div className={s.step6__img} style={{position: "relative"}}>
+            <div className={s.step6__img}>
                 <img src={stepSix} alt="stepSix"/>
             </div>
 
