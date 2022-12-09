@@ -44,7 +44,7 @@ const OrderItem = ({
           <div className={o.item__content}>
             <div className={o.item__name}>
               {name}&nbsp;
-              <p>({account})</p>
+              <p className={o.p}>({account})</p>
             </div>
             <div className={o.item__details}>{date}</div>
           </div>

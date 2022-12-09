@@ -102,3 +102,22 @@
     }
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .cards__page__container {
+    display: flex;
+    flex-direction: column;
+  
+    .cards__title__container {
+  
+      .cards__title {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 140%;
+        color: #15151A;
+      }
+    }
+  }
+}

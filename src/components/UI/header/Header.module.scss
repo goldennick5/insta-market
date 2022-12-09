@@ -74,13 +74,8 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .header__exit {
-    .exit__btn {
-      display: none;
-    }
-
-    .exit__btn__mobile{
-      display: block;
-    }
+  
+  .header{
+    display: none;
   }
 }

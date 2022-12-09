@@ -349,12 +349,12 @@
     display: flex;
     flex-direction: column;
     margin-top: 32px;
-    height: 50vh;
+    height: 90%;
   
     .step5__title {
       margin-left: 32px;
       color: #000000;
-      font-size: 23px;
+      font-size: 24px;
       font-weight: 400;
   
       .step5__name {
@@ -365,16 +365,21 @@
     .step5__img {
       display: flex;
       justify-content: center;
-      margin-top: 100px;
+      margin-top: auto;
+      
+      img {
+        max-width: 100%;
+        min-width: 300px;
+        height: auto;
+      }
     }
   
     .step5__points {
       display: flex;
       justify-content: center;
-      align-items: end;
-      height: 10vh;
       
-  
+      margin-top: auto;
+      
       .span__one {
         height: 6px;
         width: 6px;
@@ -408,12 +413,13 @@
   display: flex;
   flex-direction: column;
   margin-top: 32px;
+  height: 92%;
 
   .step6__title {
     margin-left: 36px;
     margin-bottom: 18px;
     color: #000000;
-    font-size: 23px;
+    font-size: 24px;
     font-weight: 700;
 
     .step6__name {
@@ -422,24 +428,28 @@
   }
 
   .step6__paragraph {
-    font-weight: 400;
+    
     padding: 0 5px;
     font-size: 16px;
-    color: #7C818B
+    color: #7C818B;
   }
 
   .step6__img {
     display: flex;
     justify-content: center;
-    margin-top: 55px;
+    margin-top: auto;
+    
+      img {
+        max-width: 100%;
+        min-width: 300px;
+        height: auto;
+      }
   }
 
   .step6__points {
     display: flex;
     justify-content: center;
-    align-items: end;
-    height: 28vh;
-    margin-top: 7px;
+    margin-top: auto;
 
     .span__one {
       height: 6px;
@@ -464,6 +474,69 @@
       width: 6px;
       margin-right: 7px;
       background-color: #D7D7D7;
+      border-radius: 50%;
+      display: inline-block;
+    }
+  }
+}
+.step7_container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+  height: 92%;
+
+  .step7__title {
+    margin-left: 32px;
+    color: #000000;
+    font-size: 24px;
+    font-weight: 700;
+
+    .step7__name {
+      font-weight: bold;
+    }
+  }
+
+  .step7__img {
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+    
+      img {
+        max-width: 100%;
+        min-width: 300px;
+        height: auto;
+      }
+  }
+
+  .step7__points {
+    display: flex;
+    justify-content: center;
+    margin-top: 7px;
+    margin-top: auto;
+
+    .span__one {
+      height: 6px;
+      width: 6px;
+      margin-right: 7px;
+      background-color: #D7D7D7;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .span__two {
+      height: 6px;
+      width: 6px;
+      margin-right: 7px;
+      background-color: #D7D7D7;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .span__three {
+      height: 6px;
+      width: 6px;
+      margin-right: 7px;
+      background-color: #458BF5;
       border-radius: 50%;
       display: inline-block;
     }

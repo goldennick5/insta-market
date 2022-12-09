@@ -10,3 +10,10 @@
   border-radius: 4px;
   position: relative;
 }
+
+@media only screen and (max-width: 600px) {
+  .order{
+    width: 88.8vw;
+    height: 100vh;
+  }
+}
