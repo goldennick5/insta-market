@@ -1,6 +1,6 @@
 .order {
   width: 688px;
-  min-height: 610px;
+  min-height: 500px;
   padding-top: 24px;
   padding-bottom: 24px;
   padding-right: 18px;
@@ -15,5 +15,6 @@
   .order{
     width: 88.8vw;
     height: 100vh;
+    position: relative;
   }
 }

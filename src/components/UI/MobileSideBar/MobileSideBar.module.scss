@@ -5,7 +5,8 @@
 @media only screen and (max-width: 600px) {
   .sidebar{
     display: block;
-    width: 100vw;
+    width: auto;
+    position: relative;
 
     .services{
       display: flex;
@@ -13,6 +14,7 @@
       justify-content: space-between;
       align-items: center;
       background: #fff;
+      position: inherit;
 
       .services__content {
         display: flex;
@@ -20,10 +22,11 @@
         justify-content: center;
         align-items: center;
         cursor: pointer;
+        padding: 5px 15px;
       
         &.active {
           border-top: 4px solid #387fea;
-          padding: 10px 7px;
+          padding: 15px 15px 19px 15px;
         }
       }
     }

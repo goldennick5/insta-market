@@ -15,17 +15,14 @@ body {
     width: 100vw;
     height: 100vh;
     display: flex;
-    flex-direction: column;
     margin: 0;
     
     .body{
       margin-top: 0;
       display: flex;
       width: 100vw;
+      height: 100vh;
       flex-direction: column;
     }
-  }
-  body{
-    height: 100vh;
   }
 }

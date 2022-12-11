@@ -119,5 +119,27 @@
         color: #15151A;
       }
     }
+
+    .cards__body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 40px;
+  
+      .cards__paragraph__container {
+        margin-top: 24px;
+  
+        .cards__paragraph {
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 140%;
+          color: #9E9EA8;
+          text-align: center;
+        }
+      }
+    }
   }
 }
