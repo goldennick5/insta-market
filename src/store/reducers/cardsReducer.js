@@ -13,7 +13,7 @@ const initState = {
     newId: 0,
     newCardNumber: '',
     newValidityPeriod: '',
-    newCvCode: ''
+    newCvCode: '',
 };
 
 const cardsReducer = (state = initState, action) => {

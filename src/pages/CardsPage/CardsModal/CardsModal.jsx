@@ -67,7 +67,13 @@ const CardsModal = (props) => {
                             </div>
                         </div>
                     </div>
-                    <div>
+                    <div className={s.btn__desktop}>
+                        <ButtonModal color={'btnBlue'}
+                                     name="Добавить"
+                                     addCard={addCard}
+                                     handleModal={props.handleModal}/>
+                    </div>
+                    <div className={s.btn__mobile}>
                         <ButtonModal color={'btnBlue'}
                                      name="Добавить"
                                      addCard={addCard}
@@ -75,7 +81,8 @@ const CardsModal = (props) => {
                     </div>
                 </div>
             </div>
-        </div>
+            </div>
+        
     );
 };
 

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import CardsModal from "./CardsModal/CardsModal";
 import CardItem from "./CardItem/CardItem";
 import OutletWrapper from "../../components/UI/Wrapper/OutletWrapper/OutletWrapper";
@@ -49,7 +49,7 @@ const CardsPage = (props) => {
                         </div>
                     }
                 </div>
-                <CardsModal showModal={showModal} handleModal={handleModal}/>
+                <CardsModal showModal={showModal} handleModal={handleModal} />
             </OutletWrapper>
         </>
     )
