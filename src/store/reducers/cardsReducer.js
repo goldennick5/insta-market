@@ -1,6 +1,7 @@
 const ENTER__CARD__VALUES = "ENTER__CARD__VALUES";
 const ADD__CARD = "ADD__CARD";
 const DELETE__CARD = "DELETE__CARD";
+const CLEAR__INPUTS = "CLEAR__INPUTS";
 
 const initState = {
     cards: [],
@@ -34,10 +35,18 @@ const cardsReducer = (state = initState, action) => {
             }
             newState.cards = [...state.cards];
             newState.cards.push(card);
+            newState.values.cardNumber = '';
+            newState.values.validityPeriod = '';
+            newState.values.cvCode = '';
             return newState;
         case DELETE__CARD:
             const cardId = action.index;
-            return {...state, cards: state.cards.filter((val) => val.id !== cardId)};
+            return { ...state, cards: state.cards.filter((val) => val.id !== cardId) };
+        case CLEAR__INPUTS:
+            let newClearState = { ...state };
+            newClearState.values.cardNumber = '';
+            newClearState.values.validityPeriod = '';
+            newClearState.values.cvCode = '';
         default: {
             return state;
         }
@@ -58,6 +67,10 @@ export const addCard = () => ({
 export const deleteCard = (index) => ({
     type: DELETE__CARD,
     index
+})
+
+export const clearInputs = () => ({
+    type: CLEAR__INPUTS
 })
 
 export default cardsReducer;

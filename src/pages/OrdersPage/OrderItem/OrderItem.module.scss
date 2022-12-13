@@ -134,3 +134,18 @@
   max-width: 100%;
   border-radius: 45px;
 }
+
+
+@media only screen and (max-width: 600px) {
+  .order__container {
+    .order__item {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .item__description {
+        display: flex;
+        justify-content: flex-start;
+      }
+    }
+  }
+}

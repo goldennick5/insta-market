@@ -46,6 +46,10 @@
         }
       }
 
+      .modal__title__container__mobile {
+        display: none;
+      }
+
       .modal__input__container {
         display: flex;
         flex-direction: column;
@@ -227,13 +231,20 @@
       .modal__container__content__body {
           padding: 25px;
 
-          .modal__title__container{
+          .modal__title__container {
+            display: none;
+          }
+
+          .modal__title__container__mobile{
             display: flex;
+            align-items: center;
             flex-direction: row-reverse;
             justify-content: start;
 
             .modal__title {
               font-size: 23px;
+              font-weight: 600;
+              font-size: 25px;
             }
 
             .modal__img{

@@ -148,13 +148,22 @@
         }
       }
     }
+
+    .card__list__container {
+      .card__list{
+        .cards__btn__container{
+          width: 41vw;
+          height: calc(200px / 2);
+        }
+      }
+    }
   }
 
-     .cardsModal {
-       display: none;
-     }
-  
-     .mobileCardsModal {
-       display: block;
-     }
+  .cardsModal {
+    display: none;
+  }
+    
+  .mobileCardsModal {
+    display: block;
+  }
 }
