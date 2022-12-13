@@ -2,7 +2,6 @@ import React from 'react';
 import OrderItem from '../OrderItem';
 
 const OrderList = (props) => {
-  console.log(props, 'hi');
   const o =
     props.orders &&
     props.orders.map((order) => (
@@ -13,7 +12,7 @@ const OrderList = (props) => {
         id={order.id}
       />
     ));
-  return <div>{o}</div>;
+  return <div style={{ borderBottom: "1px solid #F6F7FD"}}>{o}</div>;
 };
 
 export default OrderList;

@@ -138,9 +138,12 @@
 
 @media only screen and (max-width: 600px) {
   .order__container {
+    padding: 7px 0;
+
     .order__item {
       flex-direction: column;
       align-items: flex-start;
+      padding: 0 7px;
 
       .item__description {
         display: flex;

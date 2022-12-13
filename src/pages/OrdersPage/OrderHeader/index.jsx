@@ -55,6 +55,7 @@ function OrderHeader(props) {
        </div>
       </div>
       
+      <div className={o.order__text__mobile}>Мои заказы</div>
       <div className={o.switch}>
         <div onClick={() => (toggleBtn(true), props.doFilter(0))}
             className={isSwitched ? `${o.switch__delivery} ${o.switch__post}` : `${o.switch__delivery__two} ${o.switch__post__two}`}>
