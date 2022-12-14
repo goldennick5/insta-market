@@ -61,7 +61,6 @@ const ChangePassword = (props) => {
         </div>
         <p> Изменить пароль </p>
         <div />
-        {/* </div> */}
         <div className={s.modal__subtitle}>
           <p>Смена пароля</p>
         </div>

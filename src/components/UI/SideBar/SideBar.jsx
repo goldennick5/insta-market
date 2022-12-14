@@ -11,15 +11,18 @@ import editImg from '../../../assets/images/edit.svg';
 import { useState } from 'react';
 import s from './SideBar.module.scss';
 import EditProfile from './EditProfile';
+import { connect } from 'react-redux';
+import { changeCategory } from '../../../store/reducers/categoryReducer';
+
 const SideBar = (props) => {
-  const [category, setCategory] = useState('orders');
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
 
   const nav = (path) => {
+    props.changeCategory(path);
     navigate(`cabinet/${path}`);
-    setCategory(path);
   };
+
   const handleModal = (param) => {
     setShowModal(param);
   };
@@ -42,14 +45,14 @@ const SideBar = (props) => {
           className={s.profile__image}
           style={{ backgroundImage: `url(${image})` }}
         >
-          <img src={Frame} alt="" />
+          <img src={props.picture} alt="pic" />
         </div>
         <div className={s.profile__name}>{props.signUpName}</div>
       </div>
       <div className={s.services}>
         <div
           className={
-            category === 'orders'
+            props.category === 'orders'
               ? `${s.services__content} ${s.active}`
               : s.services__content
           }
@@ -60,7 +63,7 @@ const SideBar = (props) => {
           </div>
           <div
             className={
-              s.services__text + (category === 'orders' ? 'active' : '')
+              s.services__text + (props.category === 'orders' ? 'active' : '')
             }
           >
             Мои заказы
@@ -68,7 +71,7 @@ const SideBar = (props) => {
         </div>
         <div
           className={
-            category === 'cards'
+            props.category === 'cards'
               ? `${s.services__content} ${s.active}`
               : s.services__content
           }
@@ -79,7 +82,7 @@ const SideBar = (props) => {
           </div>
           <div
             className={
-              s.services__text + (category === 'cards' ? 'active' : '')
+              s.services__text + (props.category === 'cards' ? 'active' : '')
             }
           >
             Мои карты
@@ -87,7 +90,7 @@ const SideBar = (props) => {
         </div>
         <div
           className={
-            category === 'addresses'
+            props.category === 'addresses'
               ? `${s.services__content} ${s.active}`
               : s.services__content
           }
@@ -98,7 +101,8 @@ const SideBar = (props) => {
           </div>
           <div
             className={
-              s.services__text + (category === 'addresses' ? 'active' : '')
+              s.services__text +
+              (props.category === 'addresses' ? 'active' : '')
             }
           >
             Адреса доставки
@@ -123,9 +127,20 @@ const SideBar = (props) => {
           </div>
         </div>
       </div>
-      <EditProfile showModal={showModal} handleModal={handleModal} />
+      {showModal && (
+        <EditProfile showModal={showModal} handleModal={handleModal} />
+      )}
     </div>
   );
 };
 
-export default SideBar;
+const mapStateToProps = (state) => ({
+  picture: state.signup.picture,
+  category: state.category.category,
+});
+const mapDispatchToProps = (dispatch) => ({
+  changeCategory: (value) => {
+    dispatch(changeCategory(value));
+  },
+});
+export default connect(mapStateToProps, mapDispatchToProps)(SideBar);
