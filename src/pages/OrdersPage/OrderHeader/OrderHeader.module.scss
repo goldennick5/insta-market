@@ -114,6 +114,10 @@
   margin-right: 16px;
 }
 
+.order__text__mobile{
+  display: none;
+}
+
 .switch {
   display: none;
 }
@@ -133,6 +137,7 @@
     align-items: center;
     letter-spacing: -0.2px;
     color: #15151a;
+    margin-left: 21px;
   }
 
   .switch {
@@ -140,7 +145,7 @@
     align-items: center;
     margin: 0 auto;
     width: 330px;
-    height: 36px;
+    height: 32.5px;
     background: #F7F7F7;
     border-radius: 20px;
     margin-top: 15px;
@@ -149,7 +154,7 @@
   
     .switch__delivery {
       width: 165px;
-      height: 36px;
+      height: 32.5px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -174,7 +179,7 @@
   
     .switch__post {
       width: 165px;
-      height: 36px;
+      height: 32.5px;
       display: flex;
       justify-content: center;
       align-items: center;

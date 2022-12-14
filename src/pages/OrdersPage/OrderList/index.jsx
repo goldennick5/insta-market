@@ -12,7 +12,7 @@ const OrderList = (props) => {
         id={order.id}
       />
     ));
-  return <div style={{ borderBottom: "1px solid #F6F7FD"}}>{o}</div>;
+  return <div>{o}</div>;
 };
 
 export default OrderList;

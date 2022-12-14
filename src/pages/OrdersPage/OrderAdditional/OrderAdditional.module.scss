@@ -26,6 +26,9 @@ hr {
   gap: 8px;
   margin-bottom: 16px;
 }
+.additionalInfo__tab__mobile{
+  display: none;
+}
 .tab {
   &__img {
     margin-right: 8px;
@@ -96,4 +99,59 @@ hr {
   align-items: center;
   letter-spacing: -0.2px;
   color: #9e9ea8;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .additionalInfo {
+    .additionalInfo__tab {
+      display: none;
+    }
+    
+    .additionalInfo__tab__mobile {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 10px 25px;
+
+      .tab__btn {
+        padding: 10px;
+        margin-left: 7px;
+
+        .tab__img{
+          margin: 0;
+        }
+      }
+    }
+
+    .additionalInfo__address {
+      padding: 10px 20px;
+    }
+
+    .additionalInfo__delivery {
+      .additionalInfo__itemsWrapper {
+        padding: 0 20px;
+        
+        .additionalInfo__leftSide {
+          .additionalInfo__img {
+            width: 50px;
+            margin-right: 8px;
+          }
+          .items__content {
+            width: 170px;
+
+            .items__name {
+              font-size: 12px;
+            }
+            .items__count {
+              font-size: 12px;
+            }
+          }
+        }
+        .items__price {
+          font-size: 12px;
+        }
+      }
+    }
+  }
 }

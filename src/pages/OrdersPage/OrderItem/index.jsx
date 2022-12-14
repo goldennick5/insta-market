@@ -35,7 +35,7 @@ const OrderItem = ({
   }, [toggle]);
 
   return (
-    <div className={o.order__container}>
+    <div className={o.order__container} style={{ borderBottom: "1px solid #F6F7FD"}}>
       <div className={o.order__item}>
         <div className={o.item__description}>
           <div className={o.item__img}>
@@ -49,16 +49,21 @@ const OrderItem = ({
             <div className={o.item__details}>{date}</div>
           </div>
         </div>
-        <div className={o.item__description}>
-          <div className={o.item__delivery}>{deliveryStatus}</div>
-          <div className={o.item__deliveryIcon}>
-            <img src={arrivedIcon} alt="" />
+        <div className={o.item__description__two}>
+          <div className={o.delivery__container}>
+            <div className={o.item__delivery}>{deliveryStatus}</div>
+            <div className={o.item__deliveryIcon}>
+              <img src={arrivedIcon} alt="" />
+            </div>
           </div>
-          <div className={o.item__price}>{price} ₸</div>
 
-          <span onClick={toggleShow} className={o.item__iconNext}>
-            <img src={show ? arrowUp : arrowDown} alt="" />
-          </span>
+          <div className={o.price__container}>
+            <div className={o.item__price}>{price} ₸</div>
+
+            <span onClick={toggleShow} className={o.item__iconNext}>
+              <img src={show ? arrowUp : arrowDown} alt="" />
+            </span>
+          </div>
         </div>
       </div>
 
