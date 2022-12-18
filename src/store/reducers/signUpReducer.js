@@ -8,7 +8,7 @@ const CHANGE__PICTURE = 'CHANGE__PICTURE';
 
 const initState = {
   step: 1,
-  picture: frame,
+  picture: null,
   values: {
     phoneNum: '',
     name: '',

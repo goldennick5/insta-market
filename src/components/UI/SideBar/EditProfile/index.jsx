@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import s from './EditProfile.module.scss';
 import exit from '../../../../assets/images/OrdersPage/exitModal.svg';
 import Input from '../../Input/Input';
@@ -13,7 +13,7 @@ import ChangePassword from './ChangePassword';
 import editPhoto from '../../../../assets/images/EditProfile/editPlus.svg';
 import additionalIcon from '../../../../assets/images/EditProfile/additional__icon.svg';
 import { changeCategory } from '../../../../store/reducers/categoryReducer';
-// import Frame from '../../../../assets/images/frame.svg';
+import frame from '../../../../assets/images/frame.svg';
 
 const EditProfile = (props) => {
   const [category, setCategory] = useState('');
@@ -38,6 +38,7 @@ const EditProfile = (props) => {
         name,
         phoneNum,
         email,
+        profilePicture: props.picture,
       },
       props.handleModal(false)
     );
@@ -60,10 +61,6 @@ const EditProfile = (props) => {
     nav(path);
     props.handleModal(false);
   };
-
-  // useEffect(() => {
-
-  // }, [props.category]);
 
   return (
     <div
@@ -90,28 +87,30 @@ const EditProfile = (props) => {
             <div className={s.modal__subtitle}>
               <p>Редактируйте свои персональные данные</p>
             </div>
-            <div
-              className={s.modal__profile}
-              style={{ backgroundImage: `url(${image})` }}
-            >
-              <img
-                className={isPicture ? s.profile__img : s.profile__img3}
-                src={props.picture}
-                alt=""
-              />
-              <label className={s.profileEdit__btn}>
-                <input
-                  className={s.input__file}
-                  type="file"
-                  onChange={changeImage}
-                  name="myImage"
-                ></input>
-                <img
-                  className={s.profileEdit__plus}
-                  src={editPhoto}
-                  alt="editAvatar"
-                />
-              </label>
+            <div className={s.modal__profileWrapper}>
+              <div
+                className={s.modal__profile}
+                style={{ backgroundImage: `url(${image})` }}
+              >
+                {props.picture === null ? (
+                  <img className={s.profile__img3} src={frame} alt="" />
+                ) : (
+                  <img className={s.profile__img} src={props.picture} alt="" />
+                )}
+                <label className={s.profileEdit__btn}>
+                  <input
+                    className={s.input__file}
+                    type="file"
+                    onChange={changeImage}
+                    name="myImage"
+                  ></input>
+                  <img
+                    className={s.profileEdit__plus}
+                    src={editPhoto}
+                    alt="editAvatar"
+                  />
+                </label>
+              </div>
             </div>
             <div className={s.modal__form}>
               <Input
@@ -148,7 +147,7 @@ const EditProfile = (props) => {
 
           <div className={s.additional} onClick={() => openCardPage('cards')}>
             <p className={s.additionalText}>
-              У Вас нет привязанных карт. Привязка карты упростит процесс
+              У Вас нет привязанных карт. <br /> Привязка карты упростит процесс
               оплаты.
             </p>
             <div className={s.additional__icon}>
@@ -161,7 +160,7 @@ const EditProfile = (props) => {
             onClick={() => openAddressPage('addresses')}
           >
             <p className={s.additionalText}>
-              У Вас нет добавленных адресов. Добавление адреса упростит
+              У Вас нет добавленных адресов. <br /> Добавление адреса упростит
               оформление доставки.
             </p>
             <div className={s.additional__icon}>

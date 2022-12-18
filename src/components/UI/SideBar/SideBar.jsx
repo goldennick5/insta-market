@@ -2,7 +2,6 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Address from '../../../assets/images/address.svg';
 import Cards from '../../../assets/images/cards.svg';
-import Frame from '../../../assets/images/frame.svg';
 import Orders from '../../../assets/images/orders.svg';
 import FAQ from '../../../assets/images/faq.svg';
 import image from '../../../assets/images/ellipse.svg';
@@ -13,11 +12,12 @@ import s from './SideBar.module.scss';
 import EditProfile from './EditProfile';
 import { connect } from 'react-redux';
 import { changeCategory } from '../../../store/reducers/categoryReducer';
-
+import frame from '../../../assets/images/frame.svg';
+import Questions from './Questions';
 const SideBar = (props) => {
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
-
+  const [showQuestionModal, setShowQuestionModal] = useState(false);
   const nav = (path) => {
     props.changeCategory(path);
     navigate(`cabinet/${path}`);
@@ -27,6 +27,9 @@ const SideBar = (props) => {
     setShowModal(param);
   };
 
+  const handleQuestionModal = (param) => {
+    setShowQuestionModal(param);
+  };
   return (
     <div className={s.sidebar}>
       <div className={s.sidebar__buton}>
@@ -45,8 +48,13 @@ const SideBar = (props) => {
           className={s.profile__image}
           style={{ backgroundImage: `url(${image})` }}
         >
-          <img src={props.picture} alt="pic" />
+          {props.picture === null ? (
+            <img className={s.profile__img3} src={frame} />
+          ) : (
+            <img className={s.profile__img} src={props.profilePicture} alt="" />
+          )}
         </div>
+
         <div className={s.profile__name}>{props.signUpName}</div>
       </div>
       <div className={s.services}>
@@ -113,7 +121,12 @@ const SideBar = (props) => {
         <div className={s.shop} style={{ backgroundImage: `url(${shopBg})` }}>
           <div className={s.shop__text}>Хотите открыть свой магазин у нас?</div>
         </div>
-        <div className={s.questions}>
+        <div
+          onClick={() => {
+            handleQuestionModal(true);
+          }}
+          className={s.questions}
+        >
           <div className={s.questions__content}>
             <div className={s.questions__icon}>
               <img src={FAQ} alt="faq"></img>
@@ -130,11 +143,18 @@ const SideBar = (props) => {
       {showModal && (
         <EditProfile showModal={showModal} handleModal={handleModal} />
       )}
+      {showQuestionModal && (
+        <Questions
+          showQuestionModal={showQuestionModal}
+          handleQuestionModal={handleQuestionModal}
+        />
+      )}
     </div>
   );
 };
 
 const mapStateToProps = (state) => ({
+  profilePicture: state.signup.values.profilePicture,
   picture: state.signup.picture,
   category: state.category.category,
 });

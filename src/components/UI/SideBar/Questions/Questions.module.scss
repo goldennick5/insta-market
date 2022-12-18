@@ -1,0 +1,117 @@
+.modal__container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 108vw;
+  height: 100vh;
+  transform: translateX(100%);
+  transition: all ease-in-out 0.8s;
+  backdrop-filter: blur(2px);
+  z-index: 2;
+  &.active {
+    transform: translateX(0);
+  }
+
+  .modal__container__content {
+    padding: 60px 115px 60px 160px;
+    color: #000000;
+    width: 30%;
+    height: 100vh;
+    background-color: #ffffff;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+.modal__header {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.modal__title {
+  p {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 140%;
+    letter-spacing: -0.2px;
+    color: #15151a;
+    margin-bottom: 16px;
+  }
+}
+.modal__exit {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.modal__subtitle p {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #9e9ea8;
+  margin-bottom: 40px;
+}
+.btn__finish {
+  width: 312px;
+  height: 40px;
+  background: #458cf5;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  color: #ffffff;
+}
+.support {
+  width: 272px;
+  height: 82px;
+  padding: 0px 20px 0px 20px;
+  background: #4fce5d;
+  border-radius: 4px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+}
+.support__whatsapp {
+  margin-right: 12px;
+}
+.support__content {
+  padding: 0px 20px 0px 20px;
+  width: 169px;
+  height: 38px;
+  margin-right: 25px;
+}
+.support__text {
+  width: 312px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #d1d4de;
+  margin-bottom: 24px;
+}
+.support__title {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 120%;
+  color: #ffffff;
+}
+.support__subtitle {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 120%;
+  color: #ffffff;
+}

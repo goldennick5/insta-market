@@ -5,10 +5,7 @@
   background: #ffffff;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
   border-radius: 4px;
-  // position: relative;
   margin-right: 16px;
-  // display: flex;
-  // flex-direction: column;
 }
 .sidebar__buton {
   position: relative;
@@ -23,6 +20,7 @@
   top: 16px;
   left: 16px;
 }
+
 .sidebar__profile {
   margin: auto;
   position: relative;
@@ -30,29 +28,28 @@
 }
 .profile__image {
   margin-bottom: 12px;
-  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-repeat: no-repeat;
   background-position-x: center;
-  vertical-align: middle;
   background-size: contain;
-  img {
-    width: 40px;
-    height: 40px;
-    border-radius: 80px;
-    object-fit: cover;
-  }
+  vertical-align: middle;
+  height: 80px;
 }
 
-// .profile__img {
-//   width: 80px;
-//   height: 80px;
-//   border-radius: 80px;
-//   object-fit: cover;
-// }
-// .profile__img3 {
-//   width: 40px;
-//   height: 40px;
-// }
+.profile__img {
+  width: 80px;
+  height: 80px;
+  border-radius: 80px;
+  object-fit: cover;
+}
+.profile__img3 {
+  width: 40px;
+  height: 40px;
+  border-radius: 80px;
+  object-fit: cover;
+}
 .profile__image2 {
   background-repeat: no-repeat;
   background-position: center;
@@ -123,6 +120,7 @@
   margin-left: 16px;
   border: 1px solid #dbdfeb;
   border-radius: 8px;
+  background: #ffffff;
 }
 
 .questions__content {
