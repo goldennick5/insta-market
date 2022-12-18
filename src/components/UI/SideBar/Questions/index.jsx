@@ -29,7 +29,7 @@ const Questions = (props) => {
             <img src={exit} alt="exitBtn" />
           </div>
           <div className={s.modal__title}>
-            <p> У вас есть впоросы? </p>
+            <p> У вас есть вопросы? </p>
           </div>
           <div className={s.modal__subtitle}>
             <p>
