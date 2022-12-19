@@ -9,7 +9,7 @@ const Step1 = (props) => {
     }
 
     return (
-        <div>
+        <div className={s.step1_container}>
             <div>
                 <h2 className={s.title_step1}>Подскажите<br/>Ваш номер телефона</h2>
             </div>

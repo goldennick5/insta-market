@@ -52,3 +52,17 @@
     line-height: 140%;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .card {
+    width: 42vw;
+    height: calc(210px / 2);
+    margin-right: 8px;
+
+    .card__body {
+      h5 {
+        font-size: 12px;
+      }
+    }
+  }
+}

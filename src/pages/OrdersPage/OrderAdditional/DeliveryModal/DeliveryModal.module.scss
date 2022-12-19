@@ -27,6 +27,9 @@
   justify-content: space-between;
   margin-bottom: 36px;
 }
+.modal__header__mobile{
+  display: none;
+}
 .modal__order {
   font-family: 'Inter';
   font-style: normal;
@@ -65,12 +68,16 @@
   border: 1px solid #ebebeb;
   border-radius: 8px;
   margin-right: 20px;
+
+  .modal__title__mobile {
+    display: none;
+  }
 }
 .modal__rightPart {
   padding: 20px;
   background: #ffffff;
-  border: 1px solid #ebebeb;
-  border-radius: 8px;
+    border: 1px solid #ebebeb;
+    border-radius: 8px;
 }
 .information__title {
   font-family: 'Inter';
@@ -156,6 +163,9 @@
   padding-left: 30px;
   padding-bottom: 34px;
 }
+.modal__title__mobile{
+  display: none;
+}
 .modal__tracking {
   display: flex;
   flex-direction: column-reverse;
@@ -196,8 +206,6 @@
 .modal__trackingFinish {
   display: flex;
   position: relative;
-  // justify-content: flex-end;
-  // width: 50%;
 }
 .dashedLine {
   content: ' ';
@@ -210,4 +218,85 @@
 }
 .modal__endImg {
   width: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+  .modal__container {
+    position: fixed;
+    width: 166vw;
+    height: 100vh;
+    z-index: 1;
+    .modal__container__content {
+      padding: 0;
+      overflow-y: auto;
+
+      .modal__header{
+        display: none;
+      }
+
+      .modal__header__mobile{
+        display: flex;
+        align-items: center;
+        margin-bottom: 0px;
+        margin-top: 25px;
+
+        .modal__exit__mobile {
+          display: flex;
+          align-items: flex-start;
+          margin-left: 25px;
+        }
+
+        .modal__order__mobile {
+          display: flex;
+          align-items: center;
+          margin: 0 auto;
+          font-size: 17px;
+          font-weight: bold;
+        }
+      }
+      
+      .modal__middle {
+        display: flex;
+        flex-direction: column-reverse;
+        
+        .modal__leftPart {
+          border: none;
+          margin-right: 0;
+          padding: 0;
+          border-bottom: 1px solid #ebebeb;
+          .modal__title {
+            display: none;
+            margin: 0;
+            padding-bottom: 20px;
+          }
+          .modal__title__mobile {
+            display: block;
+            margin: 0;
+            padding: 20px 25px 20px 25px;
+            border-bottom: 1px solid #ebebeb;
+          }
+          .modal__subtitle{
+            margin-top: 20px;
+          }
+        }
+        .modal__rightPart{
+          border: none;
+          padding-bottom: 0;
+          border-bottom: 1px solid #ebebeb;
+          border-radius: 0;
+
+          .modal__title {
+            display: none;
+          }
+
+          .modal__title__mobile {
+            display: block;
+            font-weight: bold;
+            font-size: 17px;
+            margin-bottom: 18px;
+          }
+        }
+      }
+    }
+  }
 }

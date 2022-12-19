@@ -2,6 +2,7 @@ import React from 'react';
 import s from './Header.module.scss';
 import exit from '../../../assets/images/exit.svg';
 import logo from '../../../assets/images/logo.svg';
+import stepBack from '../../../assets/images/stepBack.svg';
 import { useLocation } from 'react-router-dom';
 
 function Header(props) {
@@ -20,6 +21,7 @@ function Header(props) {
             <img src={exit} alt="" className={s.exit__img} />
             <div className={s.exit__text}>Выйти</div>
           </button>
+            <img className={s.exit__btn__mobile} src={stepBack} alt="stepBack"/>
         </div>
       )}
         {props.signUpData === 2 || props.signUpData === 3 || props.signUpData === 4 ? (

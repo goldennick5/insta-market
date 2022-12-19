@@ -40,3 +40,21 @@
     color: #ffffff;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .card {
+    width: 42vw;
+    height: calc(210px / 2);
+    margin-right: 8px;
+
+    h3 {
+      font-size: 15px;
+      margin: 45px 0 8px 7px;
+    }
+
+    h4 {
+      font-size: 12px;
+      margin: 2px 0 0 8px;
+    }
+  }
+}

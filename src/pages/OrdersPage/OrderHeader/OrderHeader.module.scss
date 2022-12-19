@@ -113,3 +113,115 @@
   color: #15151a;
   margin-right: 16px;
 }
+
+.order__text__mobile{
+  display: none;
+}
+
+.switch {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .order__header{
+    display: none;
+  }
+
+  .order__text__mobile {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 140%;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.2px;
+    color: #15151a;
+    margin-left: 21px;
+  }
+
+  .switch {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    width: 330px;
+    height: 32.5px;
+    background: #F7F7F7;
+    border-radius: 20px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    padding: 3px 0;
+  
+    .switch__delivery {
+      width: 165px;
+      height: 32.5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+      background: #ffffff;
+      color: #ffffff;
+      cursor: pointer;
+
+      p {
+        display: flex;
+        align-items: center;
+
+        .current {
+          padding: 5px 9px;
+          border-radius: 50%;
+          background-color: #ffffff;
+          color:#458CF5;
+          margin-left: 6px;
+        }
+      }
+    }
+  
+    .switch__post {
+      width: 165px;
+      height: 32.5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+      background: #458CF5;
+      font-size: 14px;
+      font-weight: 400;
+      padding: 3px 0;
+      color: #ffffff;
+      cursor: pointer;
+
+      .finished {
+          padding: 5px 9px;
+          border-radius: 50%;
+          background-color: #ffffff;
+          color: #458CF5;
+          margin-left: 6px;
+        }
+    }
+  
+    .switch__delivery__two {
+      width: 165px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      border-radius: 20px;
+      cursor: pointer;
+      background: #F7F7F7;
+      color: #ffffff;
+
+      p {
+        margin: 0 auto;
+        color: #9E9EA8;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 15px;
+        display: flex;
+      }
+    }
+  }
+
+
+}

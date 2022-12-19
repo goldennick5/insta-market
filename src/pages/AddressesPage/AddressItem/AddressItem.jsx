@@ -26,8 +26,8 @@ const AddressItem = (props) => {
                 </div>
             </div>
             <div className={s.card__body}>
-                <h5>г. {props.address.city}, ул. {props.address.street}, д. {props.address.homeNum},
-                    кв. {props.address.officeNum}</h5>
+                <h5>г.{props.address.city}, ул.{props.address.street}, д.{props.address.homeNum},
+                    кв.{props.address.officeNum}</h5>
             </div>
         </div>
     );

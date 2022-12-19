@@ -1,9 +1,10 @@
 import React from 'react';
 import {connect} from "react-redux";
 import ButtonModal from "../../../components/UI/button/ButtonModal";
-import {addCard, enterCardValues} from "../../../store/reducers/cardsReducer";
+import {addCard, enterCardValues, clearInputs} from "../../../store/reducers/cardsReducer";
 import closeIcon from '../../../assets/images/Modal/closeIcon.svg';
 import questionIcon from '../../../assets/images/CardsPage/icons/question_icon.svg';
+import back from '../../../assets/images/back.svg';
 import s from './CardsModal.module.scss';
 
 const CardsModal = (props) => {
@@ -24,6 +25,10 @@ const CardsModal = (props) => {
         props.addCard();
     };
 
+    const clearInputs = () => {
+        props.clearInputs();
+    }
+
     return (
         <div className={props.showModal ? `${s.modal__container} ${s.active}` : s.modal__container}>
             <div className={s.modal__container__content}>
@@ -31,6 +36,10 @@ const CardsModal = (props) => {
                     <div className={s.modal__title__container}>
                         <h2 className={s.modal__title}>Добавить карту</h2>
                         <img className={s.modal__img} onClick={() => props.handleModal(false)} src={closeIcon} alt=""/>
+                    </div>
+                    <div className={s.modal__title__container__mobile}>
+                        <h2 className={s.modal__title}>Добавить карту</h2>
+                        <img className={s.modal__img} onClick={() => props.handleModal(false)} src={back} alt=""/>
                     </div>
                     <div>
                         <p className={s.modal__paragraph}>Введите данные Вашей карты</p>
@@ -67,15 +76,22 @@ const CardsModal = (props) => {
                             </div>
                         </div>
                     </div>
-                    <div>
+                    <div className={s.btn__desktop}>
                         <ButtonModal color={'btnBlue'}
                                      name="Добавить"
-                                     addCard={addCard}
+                                     addCard={() => addCard() || clearInputs()}
+                                     handleModal={props.handleModal}/>
+                    </div>
+                    <div className={s.btn__mobile}>
+                        <ButtonModal color={'btnBlue'}
+                                     name="Добавить"
+                                     addCard={() => addCard() || clearInputs()}
                                      handleModal={props.handleModal}/>
                     </div>
                 </div>
             </div>
-        </div>
+            </div>
+        
     );
 };
 
@@ -105,6 +121,9 @@ const mapDispatchToProps = (dispatch) => ({
     addCard: () => {
         dispatch(addCard())
     },
+    clearInputs: () => {
+        dispatch(clearInputs())
+    }
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(CardsModal);

@@ -37,3 +37,43 @@
     margin-top: 8px;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .form {
+    height: 100vh;
+
+    .subform {
+
+      .title{
+        font-family: 'Inter', sans-serif;
+        font-size: 28px;
+        font-weight: 600;
+        margin-top: 20px;
+        margin-bottom: 60px;
+      }
+
+      input {
+        width: 90vw;
+        font-size: 19px;
+        font-weight: 600;
+      }
+
+      .password__container{
+        margin-top: 30px;
+
+        input {
+          width: 90vw;
+          font-size: 19px;
+          font-weight: 600;
+        }
+      }      
+    }
+
+    .btn__container {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: end;
+      margin-top: 0;
+    }
+  }
+}

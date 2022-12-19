@@ -148,3 +148,27 @@
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .address__page__container {
+    .address__title__container{
+      margin-left: 21px;
+      
+      .address__title{
+        font-size: 24px;
+        font-weight: 700;
+      }
+    }
+    .address__body{
+      margin-top: 40px;
+    }
+
+    .address__list__container {
+      .address__list {
+        .address__btn__container {
+          width: 41vw;
+          height: calc(200px / 2);
+        }
+      }
+    }
+  }
+}

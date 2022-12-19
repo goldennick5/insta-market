@@ -9,6 +9,7 @@ import {
 } from "../../../store/reducers/addressesReducer";
 import s from "./AddressesModal.module.scss";
 import closeIcon from "../../../assets/images/Modal/closeIcon.svg";
+import back from '../../../assets/images/back.svg';
 
 const AddressesModal = (props) => {
     const [isSwitched, setIsSwitched] = useState(true);
@@ -61,6 +62,10 @@ const AddressesModal = (props) => {
                     <div className={s.modal__title__container}>
                         <h2 className={s.modal__title}>Добавить адрес</h2>
                         <img className={s.modal__img} onClick={() => props.handleModal(false) || clearInputs()} src={closeIcon} alt=""/>
+                    </div>
+                    <div className={s.modal__title__container__mobile}>
+                        <h2 className={s.modal__title}>Добавить адрес</h2>
+                        <img className={s.modal__img} onClick={() => props.handleModal(false) || clearInputs()} src={back} alt=""/>
                     </div>
 
                     <div className={s.switch}>
@@ -115,7 +120,7 @@ const AddressesModal = (props) => {
                     }
 
 
-                    <div>
+                    <div className={s.btn__container}>
                         <button onClick={() => addAddress() || props.handleModal(false)}
                                 className={s.btnBlue}>Добавить
                         </button>

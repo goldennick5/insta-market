@@ -1,11 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 import o from './OrderHeader.module.scss';
 
 function OrderHeader(props) {
   // const [show, setShow] = useState(false);
+  const [isSwitched, setIsSwitched] = useState(true);
+
+  const toggleBtn = (param) => {
+    setIsSwitched(param);
+  }
 
   return (
-    <div className={o.order__header}>
+    <>
+      <div className={o.order__header}>
       <div className={o.order__text}>Мои заказы</div>
       <div className={o.order__btn}>
         <button
@@ -46,8 +52,21 @@ function OrderHeader(props) {
             {props.finish}
           </div>
         </button>
+       </div>
       </div>
-    </div>
+      
+      <div className={o.order__text__mobile}>Мои заказы</div>
+      <div className={o.switch}>
+        <div onClick={() => (toggleBtn(true), props.doFilter(0))}
+            className={isSwitched ? `${o.switch__delivery} ${o.switch__post}` : `${o.switch__delivery__two} ${o.switch__post__two}`}>
+          <p>Текущие <div className={o.current}>{props.current}</div></p>
+        </div>
+        <div onClick={() => (toggleBtn(false), props.doFilter(1))}
+            className={isSwitched ? `${o.switch__delivery__two} ${o.switch__post__two}` : `${o.switch__delivery} ${o.switch__post}` }>
+          <p>Завершенные <div className={o.finished}>{props.finish}</div></p>
+        </div>
+      </div>
+    </>
   );
 }
 

@@ -17,7 +17,7 @@ const Step2 = (props) => {
     }
 
     return (
-        <div>
+        <div className={s.step2_container}>
             <div>
                 <h2 className={s.title_step2}>Расскажите<br/>немного о себе</h2>
             </div>

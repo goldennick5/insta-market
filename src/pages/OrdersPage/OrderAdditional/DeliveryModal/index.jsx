@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './DeliveryModal.module.scss';
 import exit from '../../../../assets/images/OrdersPage/exitModal.svg';
+import back from '../../../../assets/images/back.svg';
 import qr from '../../../../assets/images/OrdersPage/qr.jpg';
 import link from '../../../../assets/images/OrdersPage/link.svg';
 import DeliveryItem from './DeliveryItem';
@@ -22,40 +23,49 @@ const DeliveryModal = ({ showModal, closeModal, props }) => {
             <img src={exit} alt="exitBtn" />
           </div>
         </div>
+        <div className={s.modal__header__mobile}>
+          <div className={s.modal__exit__mobile} onClick={closeModal}>
+            <img src={back} alt="exitBtn" />
+          </div>
+          <div className={s.modal__order__mobile}>Отслеживание заказа</div>
+        </div>
         <div className={s.modal__middle}>
           <div className={s.modal__leftPart}>
-            <div className={s.modal__title}>Цена:</div>
-            <div className={s.modal__subtitle}>Информация о посылке</div>
-            <div className={s.delivery__information}>
-              <div className={s.information__wrapper}>
-                <div className={s.information__title}>Отправитель</div>
-                <div className={s.information__subtitle}>
-                  {props.name} ({props.account})
+            <div className={s.modal__title__mobile}>Цена:</div>
+            <div style={{ padding: "0 25px"}}>
+              <div className={s.modal__title}>Цена:</div>
+              <div className={s.modal__subtitle}>Информация о посылке</div>
+              <div className={s.delivery__information}>
+                <div className={s.information__wrapper}>
+                  <div className={s.information__title}>Отправитель</div>
+                  <div className={s.information__subtitle}>
+                    {props.name} ({props.account})
+                  </div>
+                  <div className={s.information__address}>
+                    {props.city}, {}
+                    ул. {props.street}, {}
+                    дом {props.house}, {}
+                    офис {props.flat}
+                  </div>
                 </div>
-                <div className={s.information__address}>
-                  {props.city}, {}
-                  ул. {props.street}, {}
-                  дом {props.house}, {}
-                  офис {props.flat}
+                <div className={s.information__wrapper}>
+                  <div className={s.information__title}>Получатель</div>
+                  <div className={s.information__subtitle}>Jane Doe</div>
+                  <div className={s.information__address}>
+                    Алматы, 12 улица, офис 7
+                  </div>
                 </div>
-              </div>
-              <div className={s.information__wrapper}>
-                <div className={s.information__title}>Получатель</div>
-                <div className={s.information__subtitle}>Jane Doe</div>
-                <div className={s.information__address}>
-                  Алматы, 12 улица, офис 7
+                <div className={s.information__wrapper}>
+                  <div className={s.information__title}>Адресная доставка</div>
+                  <div className={s.information__address}>
+                    Алматы, ул. 12, Офис 7
+                  </div>
                 </div>
-              </div>
-              <div className={s.information__wrapper}>
-                <div className={s.information__title}>Адресная доставка</div>
-                <div className={s.information__address}>
-                  Алматы, ул. 12, Офис 7
-                </div>
-              </div>
-              <div className={s.information__wrapper}>
-                <div className={s.information__title}>Комментарий</div>
-                <div className={s.information__address}>
-                  Доставьте в целости на 12 улицу в офис 7
+                <div className={s.information__wrapper}>
+                  <div className={s.information__title}>Комментарий</div>
+                  <div className={s.information__address}>
+                    Доставьте в целости на 12 улицу в офис 7
+                  </div>
                 </div>
               </div>
             </div>
@@ -78,6 +88,9 @@ const DeliveryModal = ({ showModal, closeModal, props }) => {
           <div className={s.modal__rightPart}>
             <div className={s.modal__title}>
               Отслеживание посылки: MP123456789012345
+            </div>
+            <div className={s.modal__title__mobile}>
+              Заказ #654881
             </div>
             <div className={s.modal__tracking}>
               <div className={s.modal__trackingFinish}>

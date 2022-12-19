@@ -2,7 +2,6 @@ import React from 'react';
 import OrderItem from '../OrderItem';
 
 const OrderList = (props) => {
-  console.log(props, 'hi');
   const o =
     props.orders &&
     props.orders.map((order) => (

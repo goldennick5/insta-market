@@ -35,6 +35,20 @@ function OrderAdditional(props) {
           <div>Отменить заказ</div>
         </span>
       </div>
+      <div className={o.additionalInfo__tab__mobile}>
+        <span className={o.tab__btn}>
+          <img className={o.tab__img} src={download} alt="" />
+        </span>
+        <span className={o.tab__btn}>
+          <img className={o.tab__img} src={send} alt="" />
+        </span>
+        <div className={o.tab__btn} onClick={handleModal}>
+          <img className={o.tab__img} src={status} alt="" />
+        </div>
+        <span className={o.tab__btn}>
+          <img className={o.tab__img} src={cancel} alt="" />
+        </span>
+      </div>
       <hr></hr>
       <div className={o.additionalInfo__address}>
         <div className={o.additionalInfo__addressWrapper}>

@@ -43,3 +43,29 @@
   font-weight: 700;
   font-size: 14px;
 }
+
+@media only screen and (max-width: 600px) {
+  .additionalInfo__items{
+    .additionalInfo__itemsWrapper{
+      padding: 0 20px;
+      .additionalInfo__leftSide{
+        .items__content {
+          .items__name{
+            font-size: 12px;
+          }
+          .items__count {
+            font-size: 12px;
+          }
+        }
+        .additionalInfo__img{
+          width: 50px;
+          margin-right: 10px;
+        }
+      }
+
+      .items__price {
+        font-size: 12px;
+      }
+    }
+  }
+}
