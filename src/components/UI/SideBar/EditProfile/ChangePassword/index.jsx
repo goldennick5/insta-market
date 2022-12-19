@@ -49,7 +49,7 @@ const ChangePassword = (props) => {
   };
 
   return (
-    <div className={s.modal__header}>
+    <div className={s.modal}>
       <div className={s.modal__title}>
         <div
           className={s.modal__exit}

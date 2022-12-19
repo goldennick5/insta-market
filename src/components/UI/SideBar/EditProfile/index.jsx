@@ -146,7 +146,7 @@ const EditProfile = (props) => {
           </div>
 
           <div className={s.additional} onClick={() => openCardPage('cards')}>
-            <p className={s.additionalText}>
+            <p className={s.additional__text}>
               У Вас нет привязанных карт. <br /> Привязка карты упростит процесс
               оплаты.
             </p>
@@ -159,7 +159,7 @@ const EditProfile = (props) => {
             className={s.additional}
             onClick={() => openAddressPage('addresses')}
           >
-            <p className={s.additionalText}>
+            <p className={s.additional__text}>
               У Вас нет добавленных адресов. <br /> Добавление адреса упростит
               оформление доставки.
             </p>

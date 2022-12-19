@@ -19,19 +19,19 @@ const Questions = (props) => {
       }
     >
       <div className={s.modal__container__content}>
-        <div className={s.modal__header}>
+        <div className={s.modal__container__header}>
           <div
-            className={s.modal__exit}
+            className={s.modal__container__exit}
             onClick={() => {
               props.handleQuestionModal(false);
             }}
           >
             <img src={exit} alt="exitBtn" />
           </div>
-          <div className={s.modal__title}>
+          <div className={s.modal__container__title}>
             <p> У вас есть вопросы? </p>
           </div>
-          <div className={s.modal__subtitle}>
+          <div className={s.modal__container__subtitle}>
             <p>
               Позвоните или оставьте заявку, <br></br>мы с радостью поможем вам!
             </p>
