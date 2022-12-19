@@ -49,7 +49,7 @@ const ChangePassword = (props) => {
   };
 
   return (
-    <div className={s.modal__header}>
+    <div className={s.modal}>
       <div className={s.modal__title}>
         <div
           className={s.modal__exit}
@@ -61,7 +61,6 @@ const ChangePassword = (props) => {
         </div>
         <p> Изменить пароль </p>
         <div />
-        {/* </div> */}
         <div className={s.modal__subtitle}>
           <p>Смена пароля</p>
         </div>
