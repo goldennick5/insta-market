@@ -27,6 +27,9 @@
   justify-content: space-between;
   margin-bottom: 36px;
 }
+.modal__header__mobile{
+  display: none;
+}
 .modal__order {
   font-family: 'Inter';
   font-style: normal;
@@ -214,8 +217,35 @@
 
 @media only screen and (max-width: 600px) {
   .modal__container {
+    position: fixed;
+    width: 166vw;
+    height: 100vh;
+    z-index: 1;
     .modal__container__content {
       padding: 0;
+      overflow-y: auto;
+
+      .modal__header{
+        display: none;
+      }
+
+      .modal__header__mobile{
+        display: block;
+        justify-content: space-between;
+        margin-bottom: 36px;
+      }
+      
+      .modal__middle {
+        display: flex;
+        flex-direction: column-reverse;
+        
+        .modal__leftPart {
+          border: none;
+        }
+        .modal__rightPart{
+          border: none;
+        }
+      }
     }
   }
 }

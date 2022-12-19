@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './DeliveryModal.module.scss';
 import exit from '../../../../assets/images/OrdersPage/exitModal.svg';
+import back from '../../../../assets/images/back.svg';
 import qr from '../../../../assets/images/OrdersPage/qr.jpg';
 import link from '../../../../assets/images/OrdersPage/link.svg';
 import DeliveryItem from './DeliveryItem';
@@ -20,6 +21,12 @@ const DeliveryModal = ({ showModal, closeModal, props }) => {
           <div className={s.modal__order}>Заказ #654881 Доставка</div>
           <div className={s.modal__exit} onClick={closeModal}>
             <img src={exit} alt="exitBtn" />
+          </div>
+        </div>
+        <div className={s.modal__header__mobile}>
+          <div className={s.modal__order__mobile}>Заказ #654881 Доставка</div>
+          <div className={s.modal__exit__mobile} onClick={closeModal}>
+            <img src={back} alt="exitBtn" />
           </div>
         </div>
         <div className={s.modal__middle}>
