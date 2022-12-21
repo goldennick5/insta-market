@@ -2,7 +2,7 @@ import React from 'react';
 import s from "./steps.module.scss";
 import stepSix from '../../../assets/images/WelcomePage/stepSix.svg';
 
-const Step6 = (props) => {
+const Step6 = () => {
     return (
         <div className={s.step6_container}>
             <div className={s.step6__title}>
@@ -10,11 +10,11 @@ const Step6 = (props) => {
             </div>
 
 
-            <div className={s.step6__paragraph} style={{position: "absolute"}}>
-                <p>Вы можете отслеживать активные <br/> заказы, а также видеть <br/> предыдущие</p>
+            <div className={s.step6__paragraph}>
+                <p>Вы можете отслеживать активные заказы, а также видеть предыдущие</p>
             </div>
 
-            <div className={s.step6__img} style={{position: "relative"}}>
+            <div className={s.step6__img}>
                 <img src={stepSix} alt="stepSix"/>
             </div>
 

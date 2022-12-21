@@ -1,0 +1,198 @@
+.modal__container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 108vw;
+  height: 100vh;
+  transform: translateX(100%);
+  transition: all ease-in-out 0.3s;
+  backdrop-filter: blur(2px);
+
+  &.active {
+    transform: translateX(0);
+  }
+
+  .modal__container__content {
+    color: #000000;
+    width: 50%;
+    height: 100vh;
+    background-color: #ffffff;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    top: 0;
+    right: 0;
+
+    .modal__container__content__body {
+      padding: 60px 115px 0px 200px;
+
+      .modal__title__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+
+        .modal__title {
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 600;
+          font-size: 25px;
+          line-height: 140%;
+          color: #15151A;
+        }
+
+        .modal__img {
+          cursor: pointer;
+        }
+      }
+
+      //Стиль для адресной доставки
+      .switch{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-content: space-around;
+        width: 330px;
+        height: 36px;
+        background: #F7F7F7;
+        border-radius: 20px;
+        margin-top: 36px;
+
+        .switch__delivery{
+          width: 165px;
+          height: 36px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 20px;
+          background: #458CF5;
+          cursor: pointer;
+
+          .paragraph__delivery{
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            color: #fff;
+          }
+        }
+
+        .switch__post{
+          width: 165px;
+          height: 36px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 20px;
+          cursor: pointer;
+
+          .paragraph__post{
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            color: #9E9EA8;
+          }
+        }
+      }
+
+      //Стиль для адресной доставки
+      //...
+
+      .modal__paragraph__container{
+        margin-top: 35px;
+
+        .modal__paragraph {
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 140%;
+          color: #9E9EA8;
+        }
+      }
+
+      .addresses__input__container {
+        margin-top: 40px;
+
+        .addresses__input {
+          font-family: 'Inter';
+          background: transparent;
+          border: none;
+          border-bottom: 1px solid #9E9EA8;
+          width: 305px;
+          margin-bottom: 1.5rem;
+          padding: 3px;
+          color: #000;
+          outline: none;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 22px;
+        }
+
+        .addresses__home {
+          font-family: 'Inter';
+          background: transparent;
+          border: none;
+          border-bottom: 1px solid #9E9EA8;
+          width: 146px;
+          margin-bottom: 1.5rem;
+          margin-right: 6px;
+          font-size: 16px;
+          padding: 3px;
+          color: #000;
+          font-weight: 600;
+          line-height: 22.5px;
+          outline: none;
+        }
+
+        .addresses__office {
+          background: transparent;
+          border: none;
+          border-bottom: 1px solid #9E9EA8;
+          width: 146px;
+          margin-bottom: 1.5rem;
+          font-size: 16px;
+          padding: 3px;
+          color: #000;
+          font-weight: 600;
+          line-height: 22.5px;
+          outline: none;
+        }
+      }
+
+      .btnBlue {
+        width: 312px;
+        height: 40px;
+        margin-top: 5px;
+        background: #458CF5;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 4px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+.modal__paragraph__container{
+  margin-top: 35px;
+
+  .modal__paragraph {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 140%;
+    color: #9E9EA8;
+  }
+}

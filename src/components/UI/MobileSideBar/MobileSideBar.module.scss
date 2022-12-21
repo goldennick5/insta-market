@@ -1,0 +1,36 @@
+.sidebar{
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .sidebar{
+    display: block;
+    width: auto;
+    position: relative;
+
+    .services{
+      display: flex;
+      padding: 0px 25px;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      position: fixed;
+      bottom: 0%;
+      width: 88vw;
+
+      .services__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        padding: 5px 15px;
+      
+        &.active {
+          border-top: 4px solid #387fea;
+          padding: 15px 15px 19px 15px;
+        }
+      }
+    }
+  }
+}

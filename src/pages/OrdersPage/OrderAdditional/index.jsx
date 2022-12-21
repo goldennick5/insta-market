@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import o from './OrderAdditional.module.scss';
 import delivery from '../../../assets/images/delivery.svg';
 import download from '../../../assets/images/download.svg';
@@ -6,8 +6,15 @@ import send from '../../../assets/images/send.svg';
 import status from '../../../assets/images/status.svg';
 import cancel from '../../../assets/images/cancel.svg';
 import OrderAdditionalItem from './OrderAdditionalItem';
+import DeliveryModal from './DeliveryModal';
+
 function OrderAdditional(props) {
-  console.log(props);
+  const [showModal, setShowModal] = useState(false);
+
+  const handleModal = () => {
+    setShowModal(!showModal);
+  };
+
   return (
     <div className={o.additionalInfo}>
       <div className={o.additionalInfo__tab}>
@@ -19,13 +26,27 @@ function OrderAdditional(props) {
           <img className={o.tab__img} src={send} alt="" />
           <div>Отправить чек</div>
         </span>
-        <span className={o.tab__btn}>
+        <div className={o.tab__btn} onClick={handleModal}>
           <img className={o.tab__img} src={status} alt="" />
           <div>Статус доставки</div>
-        </span>
+        </div>
         <span className={o.tab__btn}>
           <img className={o.tab__img} src={cancel} alt="" />
           <div>Отменить заказ</div>
+        </span>
+      </div>
+      <div className={o.additionalInfo__tab__mobile}>
+        <span className={o.tab__btn}>
+          <img className={o.tab__img} src={download} alt="" />
+        </span>
+        <span className={o.tab__btn}>
+          <img className={o.tab__img} src={send} alt="" />
+        </span>
+        <div className={o.tab__btn} onClick={handleModal}>
+          <img className={o.tab__img} src={status} alt="" />
+        </div>
+        <span className={o.tab__btn}>
+          <img className={o.tab__img} src={cancel} alt="" />
         </span>
       </div>
       <hr></hr>
@@ -71,6 +92,12 @@ function OrderAdditional(props) {
           <div className={o.items__price}>{props.deliveryPrice} ₸</div>
         </div>
       </div>
+      <DeliveryModal
+        showModal={showModal}
+        onClick={handleModal}
+        closeModal={() => setShowModal(false)}
+        props={props}
+      />
     </div>
   );
 }

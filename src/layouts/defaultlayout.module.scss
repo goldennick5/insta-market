@@ -1,10 +1,28 @@
 .wrapper {
   .body {
     display: flex;
+    margin-top: 25px;
   }
   width: 1040px;
   margin: auto;
 }
 body {
   background-color: #f4f6fc;
+}
+
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    margin: 0;
+    
+    .body{
+      margin-top: 0;
+      display: flex;
+      width: 100vw;
+      height: 100vh;
+      flex-direction: column;
+    }
+  }
 }

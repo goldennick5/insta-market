@@ -24,7 +24,7 @@ const Step4 = (props) => {
         } else {
             setShowFirstEyeInput(false);
         }
-        props.handleTexttChange(first_text);
+        props.handleTextChange(first_text);
     }
 
     const handleSecondChange = (second_text) => {
@@ -33,11 +33,11 @@ const Step4 = (props) => {
         } else {
             setShowSecondEyeInput(false);
         }
-        props.handleTexttChange(second_text);
+        props.handleTextChange(second_text);
     }
 
     return (
-        <div>
+        <div className={s.step4_container}>
             <div>
                 <h2 className={s.title_step4}>Придумайте пароль</h2>
             </div>
@@ -45,15 +45,15 @@ const Step4 = (props) => {
                 <Input type={firstShown ? 'text' : 'password'}
                        label__focus="Пароль"
                        label="Введите пароль"
-                       handleTexttChange={handleFirstChange}/>
+                       handleTextChange={handleFirstChange}/>
                 {showFirstEyeInput ? <button className={s.btn__first} onClick={toggleFirstPassword}>
                     {firstShown ? <img alt="showeye" src={showeye}/> : <img alt="showeye" src={unshoweye}/>}
                 </button> : ''}
-
+                <div className={s.separator}></div>
                 <Input type={secondShown ? 'text' : 'password'}
                        label__focus="Повторите пароль"
                        label="Повторите пароль"
-                       handleTexttChange={handleSecondChange}/>
+                       handleTextChange={handleSecondChange}/>
                 {showSecondEyeInput ? <button className={s.btn__second} onClick={toggleSecondPassword}>
                     {secondShown ? <img alt="showeye" src={showeye}/> : <img alt="showeye" src={unshoweye}/>}
                 </button> : ''}

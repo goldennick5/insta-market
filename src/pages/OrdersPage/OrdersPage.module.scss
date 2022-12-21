@@ -1,3 +1,15 @@
+.order {
+  width: 688px;
+  min-height: 610px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-right: 18px;
+  padding-left: 24px;
+  background: #ffffff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  position: relative;
+}
 .order__item {
   display: flex;
   justify-content: space-between;

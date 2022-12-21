@@ -1,0 +1,60 @@
+.card {
+  width: 206px;
+  height: 125px;
+  filter: drop-shadow(0px 4px 20px rgba(12, 107, 250, 0.25));
+  border-radius: 8px;
+  color: #ffffff;
+  background-image: url("../../../assets/images/CardsPage/blueCard.svg");
+  background-size: cover;
+  background-color: #0C6BFA;
+  background-repeat: no-repeat;
+  background-size: 129%;
+  background-position: center;
+  margin-right: 6px;
+  margin-top: 6px;
+
+  img {
+    position: absolute;
+    right: 8px;
+    margin-top: 7px;
+    cursor: pointer;
+  }
+
+  h3 {
+    margin: 50px 0 0 7px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 18px;
+    color: #ffffff;
+  }
+
+  h4 {
+    margin: 18px 0 0 8px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #ffffff;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+    width: 42vw;
+    height: calc(210px / 2);
+    margin-right: 8px;
+
+    h3 {
+      font-size: 15px;
+      margin: 45px 0 8px 7px;
+    }
+
+    h4 {
+      font-size: 12px;
+      margin: 2px 0 0 8px;
+    }
+  }
+}

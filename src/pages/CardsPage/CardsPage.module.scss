@@ -3,7 +3,6 @@
   flex-direction: column;
 
   .cards__title__container {
-    margin-bottom: 88px;
 
     .cards__title {
       font-family: 'Inter';
@@ -20,6 +19,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 120px;
 
     .cards__paragraph__container {
       margin-top: 24px;
@@ -55,5 +55,116 @@
         line-height: 18px;
       }
     }
+  }
+
+  .card__list__container {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+
+    p {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 140%;
+      color: #9E9EA8;
+      margin-top: 16px;
+      margin-bottom: 25px;
+    }
+
+    .card__list {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      flex-wrap: wrap;
+
+      .cards__btn__container {
+        width: 206px;
+        height: 118px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        color: #CACFE0;
+        border: dashed 2px #CACFE0;
+        cursor: pointer;
+        margin-top: 5px;
+
+        .cards__btn__text {
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 18px;
+        }
+      }
+    }
+  }
+
+  .cardsModal{
+    display: block;
+  }
+  .mobileCardsModal {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .cards__page__container {
+    display: flex;
+    flex-direction: column;
+  
+    .cards__title__container {
+      margin-left: 21px;
+      
+      .cards__title {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 140%;
+        color: #15151A;
+      }
+    }
+
+    .cards__body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 40px;
+  
+      .cards__paragraph__container {
+        margin-top: 24px;
+  
+        .cards__paragraph {
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 140%;
+          color: #9E9EA8;
+          text-align: center;
+        }
+      }
+    }
+
+    .card__list__container {
+      .card__list{
+        .cards__btn__container{
+          width: 41vw;
+          height: calc(200px / 2);
+        }
+      }
+    }
+  }
+
+  .cardsModal {
+    display: none;
+  }
+    
+  .mobileCardsModal {
+    display: block;
   }
 }

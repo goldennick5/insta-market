@@ -5,8 +5,22 @@
   input {
     background: transparent;
     border: none;
+    border-bottom: 1px solid #9e9ea8;
+    width: 312px;
+    margin-bottom: 1.5rem;
+    font-size: 16px;
+    padding: 3px;
+    color: #000;
+    font-weight: 600;
+    line-height: 22.5px;
+    outline: none;
+  }
+
+  .addresses__input {
+    background: transparent;
+    border: none;
     border-bottom: 1px solid #9E9EA8;
-    width: 230px;
+    width: 312px;
     margin-bottom: 1.5rem;
     font-size: 16px;
     padding: 3px;
@@ -20,7 +34,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    color: #9E9EA8;
+    color: #9e9ea8;
     transition: all 0.2s ease;
     pointer-events: none;
   }
@@ -34,7 +48,7 @@
   }
 
   input:focus {
-    border-bottom: 2px solid #458CF5;
+    border-bottom: 2px solid #458cf5;
   }
 
   span {
@@ -44,9 +58,3 @@
     display: none;
   }
 }
-
-
-
-
-
-

@@ -1,7 +1,6 @@
 import React from 'react';
 import s from './steps.module.scss';
 import stepFive from '../../../assets/images/WelcomePage/stepFive.png';
-import stepFiveHello from '../../../assets/images/WelcomePage/Привет.png';
 
 const Step5 = (props) => {
 

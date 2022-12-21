@@ -6,7 +6,7 @@ const Step2 = (props) => {
     const [nameError, setNameError] = useState(false);
 
     const handleTextTwo = (text) => {
-        props.handleTexttChange(text);
+        props.handleTextChange(text);
         if (text.length < 4) {
             setNameError(true);
         } else if (text.length === 0) {
@@ -17,13 +17,13 @@ const Step2 = (props) => {
     }
 
     return (
-        <div>
+        <div className={s.step2_container}>
             <div>
                 <h2 className={s.title_step2}>Расскажите<br/>немного о себе</h2>
             </div>
             <Input label__focus="Имя"
                    label="Введите имя"
-                   handleTexttChange={handleTextTwo}
+                   handleTextChange={handleTextTwo}
                    value={props.value}/>
             {nameError ? <div className={s.warning_step2}>Недостаточно символов</div> : null}
         </div>

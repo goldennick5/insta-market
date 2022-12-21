@@ -2,12 +2,13 @@ import s from "./steps.module.scss";
 import Input from "../../../components/UI/Input/Input";
 
 const Step3 = (props) => {
+
     const handleTextThree = (text) => {
-        props.handleTexttChange(text);
+        props.handleTextChange(text);
     }
 
     return (
-        <div>
+        <div className={s.step3_container}>
             <div>
                 <h2 className={s.title_step3}>И ваш адрес<br/>электронной почты?</h2>
             </div>
@@ -16,7 +17,7 @@ const Step3 = (props) => {
             </div>
             <Input label__focus="Email"
                    label="Введите e-mail"
-                   handleTexttChange={handleTextThree}
+                   handleTextChange={handleTextThree}
                    value={props.value}/>
         </div>
     )
